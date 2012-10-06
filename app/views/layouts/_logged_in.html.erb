@@ -1,0 +1,14 @@
+<ul class="nav">
+  <li><%= link_to "Projects", tyne_core.projects_path  %></li>
+</ul>
+<ul class="nav pull-right">
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      <%= current_user.name %>
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Logout", main_app.logout_path, :method => :delete %></li>
+    </ul>
+  </li>
+</ul>
