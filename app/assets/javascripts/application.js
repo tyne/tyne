@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require twitter/bootstrap
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require tyne_ui
 //= require_tree .
