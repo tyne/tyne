@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: 57c1da841a2b7c4eb41788532e7a7ddcae5a4634
+  revision: ce58fbb3b25ea13a35397e6eb081ec1b317d5dfd
   branch: master
   specs:
     tyne_auth (0.0.1)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: f60080c9a06e588a1e3f9db7c3b3e46334ad58e0
+  revision: 22780e505086cf2188359e1ad640df78ee119b7b
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -126,7 +126,6 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
-    dalli (2.3.0)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -315,7 +314,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers!
   coffee-rails (~> 3.2.1)
-  dalli
   execjs
   jquery-rails
   jquery-ui-themes
