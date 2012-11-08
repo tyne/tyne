@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001195813) do
+ActiveRecord::Schema.define(:version => 20121108213237) do
 
   create_table "tyne_auth_organizations", :force => true do |t|
     t.string   "name"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(:version => 20121001195813) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
 
   add_index "tyne_core_projects", ["key"], :name => "index_tyne_core_projects_on_key"
+  add_index "tyne_core_projects", ["user_id"], :name => "index_tyne_core_projects_on_user_id"
 
 end

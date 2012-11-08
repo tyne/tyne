@@ -33,6 +33,8 @@ gem 'modernizr-rails'
 gem 'jquery-ui-themes'
 gem 'twitter-bootstrap-rails'
 
+gem "i18n-js"
+
 # Webserver
 gem 'thin'
 

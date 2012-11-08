@@ -14,3 +14,4 @@
 /log/*.log
 /tmp
 .sass-cache/
+app/assets/javascripts/i18n/*
