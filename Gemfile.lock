@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: e87f37c7f428bb813160aee8125d9f6248317ed8
+  revision: 00e274e1608b61dfccdf7740f58f663b37f71b0d
   branch: master
   specs:
     tyne_core (0.0.1)
