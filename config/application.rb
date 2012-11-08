@@ -9,9 +9,6 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-require "client_side_validations"
-require "client_side_validations-simple_form"
-
 module TyneHost
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
