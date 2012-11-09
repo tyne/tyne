@@ -15,7 +15,6 @@ group :assets do
 end
 
 gem "jquery-rails"
-gem 'execjs'
 gem 'therubyracer'
 
 gem 'responders', :git => 'https://github.com/plataformatec/responders.git'
@@ -32,6 +31,7 @@ gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'ma
 gem 'modernizr-rails'
 gem 'jquery-ui-themes'
 gem 'twitter-bootstrap-rails'
+gem "less-rails"
 
 gem "i18n-js"
 
