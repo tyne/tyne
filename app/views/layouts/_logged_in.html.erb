@@ -1,10 +1,14 @@
 <ul class="nav">
-  <li><%= link_to "Projects", tyne_core.projects_path  %></li>
+  <% if @project && !admin_area? %>
+    <li><%= link_to "Backlog", project_issues_path(@project) %></li>
+  <% end %>
 </ul>
+
 <ul class="nav pull-right">
+  <li><%= link_to "Administration", tyne_core.projects_path %></li>
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <%= current_user.name %>
+      <%= avatar(current_user) %> <%= current_user.name %>
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
@@ -12,3 +16,9 @@
     </ul>
   </li>
 </ul>
+
+<div class="pull-right">
+  <%= link_to "Create Issue", tyne_core.projects_path, :class => "btn btn-small btn-warning" %>
+</div>
+
+<%= render :partial => "layouts/administration" %>

@@ -1,0 +1,5 @@
+<% content_for :sidebar do %>
+  <ul class="nav nav-list">
+    <li><%= link_to "Projects (#{current_user.projects.count})", tyne_core.projects_path %></li>
+  </ul>
+<% end if admin_area? %>

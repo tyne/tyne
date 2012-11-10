@@ -1,5 +1,5 @@
 TyneHost::Application.routes.draw do
   mount TyneCore::Engine => "/core"
 
-  root :to => "tyne_core/projects#index"
+  root :to => "tyne_core/dashboards#index"
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108213237) do
+ActiveRecord::Schema.define(:version => 20121109231109) do
 
   create_table "tyne_auth_organizations", :force => true do |t|
     t.string   "name"
@@ -25,9 +25,31 @@ ActiveRecord::Schema.define(:version => 20121108213237) do
     t.string   "username"
     t.string   "email"
     t.string   "token"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string  "gravatar_id"
+  end
+
+  create_table "tyne_core_dashboards", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "tyne_core_dashboards", ["user_id"], :name => "index_tyne_core_dashboards_on_user_id"
+
+  create_table "tyne_core_issues", :force => true do |t|
+    t.string   "summary"
+    t.text     "description"
+    t.integer  "reported_by_id"
+    t.integer  "project_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "tyne_core_issues", ["project_id"], :name => "index_tyne_core_issues_on_project_id"
+  add_index "tyne_core_issues", ["reported_by_id"], :name => "index_tyne_core_issues_on_reported_by_id"
 
   create_table "tyne_core_projects", :force => true do |t|
     t.string   "name"
