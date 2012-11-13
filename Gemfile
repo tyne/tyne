@@ -40,6 +40,7 @@ gem 'thin'
 
 group :production do
  gem 'pg'
+ gem 'unicorn'
 end
 
 # Testing
