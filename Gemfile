@@ -41,6 +41,7 @@ gem 'thin'
 group :production do
  gem 'pg'
  gem 'unicorn'
+ gem 'newrelic_rpm'
 end
 
 # Testing
