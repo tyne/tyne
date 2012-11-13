@@ -38,6 +38,9 @@ gem "i18n-js"
 # Webserver
 gem 'thin'
 
+# Assets
+gem "asset_sync"
+
 group :production do
  gem 'pg'
  gem 'unicorn'
