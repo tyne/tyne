@@ -1,13 +1,11 @@
 module ApplicationHelper
   def brand
-    text = "Tyne"
-    text = "#{text}:#{project}" if @project and !admin_area?
-
-    content_tag :span, text.html_safe, :class => "brand-name"
+    result = content_tag(:span, "Tyne", :class => "brand-name")
+    result.html_safe
   end
 
-  def project
-    content_tag :span, @project.key, :class => "brand-project" if @project
+  def project_name
+    content_tag :span, "#{@project.user.username}/#{@project.key}", :class => "brand-project" if @project
   end
 
   def avatar_url(user, options={})

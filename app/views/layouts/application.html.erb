@@ -57,6 +57,11 @@
     </div>
 
     <div class="container-fluid">
+      <% if @project && !admin_area? %>
+        <div class="row-fluid project-name">
+          <%= project_name %>
+        </div>
+      <% end %>
       <div class="row-fluid">
         <% spans = 12 %>
         <% if content_for? :sidebar %>
