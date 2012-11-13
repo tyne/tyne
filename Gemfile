@@ -42,6 +42,7 @@ group :production do
  gem 'pg'
  gem 'unicorn'
  gem 'newrelic_rpm'
+ gem 'dalli'
 end
 
 # Testing
