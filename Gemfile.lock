@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 4e3bd8e905136c9ad634cb74e6b6ce7c0035e765
+  revision: d6ca7320d793e0e07838dd3703fa1e4823cd515a
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -58,7 +58,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: e41eca2cecd0616b84f02424c0436d2f211bbc8a
+  revision: 9245211fbd4568f1cd92852d95d311f92102d72f
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -264,7 +264,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     rainbow (1.1.4)
     raindrops (0.10.0)
-    rake (0.9.2.2)
+    rake (10.0.0)
     rb-fsevent (0.9.2)
     rdoc (3.12)
       json (~> 1.4)
@@ -282,7 +282,7 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.11.0)
     rubyzip (0.9.9)
-    sass (3.2.2)
+    sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
