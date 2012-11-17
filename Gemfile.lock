@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: 26e5deb63106662214a24c8af48bff3d94df4e92
+  revision: 62d6af8831252020dc9675c2a86fa7130f2f517f
   branch: master
   specs:
     tyne_auth (0.0.1)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 824ba17eee98390ff187d3bcfdaca54dbecf92b1
+  revision: 5b5a58dcc647ee442e42ed7f4d69e928e7285d48
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -218,6 +218,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    md_emoji (1.0.0)
+      railties (>= 3.1.0)
+      redcarpet (>= 2.0)
     method_source (0.8.1)
     mime-types (1.19)
     modernizr-rails (2.0.6)
@@ -288,6 +291,7 @@ GEM
     rb-fsevent (0.9.2)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.2.2)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -370,11 +374,13 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-themes
   less-rails
+  md_emoji
   modernizr-rails
   mousetrap-rails
   newrelic_rpm
   pg
   rails (= 3.2.8)
+  redcarpet
   responders!
   sass-rails (~> 3.2.3)
   simple_form

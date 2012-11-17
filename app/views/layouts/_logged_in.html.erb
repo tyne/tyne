@@ -1,6 +1,6 @@
 <ul class="nav">
-  <% if @project && !admin_area? %>
-    <li><%= link_to "Backlog", issues_path(@project) %></li>
+  <% if @project && !admin_area?%>
+    <li><%= link_to "Backlog", main_app.issues_path(:user => @project.user.username, :key => @project.key) %></li>
   <% end %>
 </ul>
 
@@ -26,7 +26,7 @@
 </ul>
 
 <div class="pull-right">
-  <%= link_to "Create Issue", "#", :class => "btn btn-small btn-warning btn-create-issue", :data => { :dialog => tyne_core.dialog_issues_path(:formats => [:pjax]), :keybinding => 'c' } %>
+  <%= link_to "Create Issue", "#", :class => "btn btn-small btn-warning btn-create-issue", :data => { :dialog => main_app.dialog_issues_path(:user => current_user.username, :key => ':key', :format => :pjax), :keybinding => 'c' } %>
 </div>
 
 <%= render :partial => "layouts/administration" %>
