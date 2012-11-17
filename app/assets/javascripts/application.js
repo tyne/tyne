@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mousetrap
 //= require jquery-ui
 //= require twitter/bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require tyne_ui
+//= require tyne_core
 //= require i18n
 //= require i18n/translations
 //= require_tree .

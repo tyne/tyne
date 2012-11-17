@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'compass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -22,6 +23,7 @@ gem "active_model_serializers", :git => "https://github.com/josevalim/active_mod
 gem "simple_form"
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem "mousetrap-rails"
 
 # Tyne
 gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
