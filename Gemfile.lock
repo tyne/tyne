@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: 62d6af8831252020dc9675c2a86fa7130f2f517f
+  revision: bba2a1413c1c1feceb0109165d3b4f1c188be967
   branch: master
   specs:
     tyne_auth (0.0.1)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 9089a1c2bf427d25ded74f1de0f3cae1a6f42d5b
+  revision: ea8eb79e54388206cf498e32e83d3a82a2efcb13
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-dev.git
-  revision: a38daaeb48d71c85804a8129d4047fbace2f34f7
+  revision: 9540e49455d400d5a71e29da1c612bb7beade670
   branch: master
   specs:
     tyne_dev (0.0.1)
@@ -59,7 +59,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: df29c3280f710389f0ce8aa13e423e4b00809383
+  revision: 691a3b1f78820b62a2cfcd0c9b39e29628fc0446
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -139,6 +139,12 @@ GEM
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.0)
+    evergreen (1.0.0.rc)
+      capybara (~> 1.0)
+      coffee-script
+      json_pure
+      launchy
+      sinatra (~> 1.1)
     excon (0.16.8)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -202,9 +208,12 @@ GEM
     jquery-ui-themes (0.0.7)
       httparty
     json (1.7.5)
+    json_pure (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
     kgio (2.7.4)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     less (2.2.2)
       commonjs (~> 0.2.6)
     less-rails (2.2.6)
@@ -267,6 +276,8 @@ GEM
     rack-pjax (0.6.0)
       nokogiri (~> 1.5)
       rack (~> 1.3)
+    rack-protection (1.2.0)
+      rack
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.2)
@@ -327,6 +338,10 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    sinatra (1.3.3)
+      rack (~> 1.3, >= 1.3.6)
+      rack-protection (~> 1.2)
+      tilt (~> 1.3, >= 1.3.3)
     slop (3.3.3)
     sprockets (2.1.3)
       hike (~> 1.2)
@@ -372,6 +387,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   dalli
+  evergreen
   i18n-js
   jquery-rails
   jquery-ui-themes
