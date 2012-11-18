@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 1.9.3
+script: bundle exec rspec spec
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+env:
+  global:
+    - secure: "jJFtnrqe+r/ynhImy0b7km/P/8aAHS6RXEomjL5t04HYmSYI1W8YQKDntPUI\nU6SE/2DVX1HPhiKzJai6JqqxhNJENYwN5K+wDQTFOMlH+aCAEhfOHfzTnFXo\n3N8HT+GqMkBH/bqc6/8NH9zoywBddencWkwALvQQCV4BJ1NfeTg="
+    - CAPYBARA_USER="tyne-capybara"
+    - DISPLAY=:99.0
