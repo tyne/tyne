@@ -1,7 +1,10 @@
 language: ruby
 rvm:
   - 1.9.3
-script: bundle exec rspec spec
+script:
+  - "firefox --version"
+  - bundle install
+  - DISPLAY=:99.0 bundle exec rspec spec
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
