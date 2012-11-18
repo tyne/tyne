@@ -18,7 +18,6 @@ describe :authentication do
       end
 
       click_button "Sign in"
-      puts page.html
 
       click_link "user_dropdown"
       click_link "Logout"
