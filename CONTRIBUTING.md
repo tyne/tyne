@@ -2,7 +2,7 @@
 
 ## Submitting a new issue
 
-If you need to submit a new issue please go to: https://github.com/tyne/tyne-ui/issues
+If you need to submit a new issue please go to: https://github.com/tyne/tyne/issues
 
 ## Merging requests
 
