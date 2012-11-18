@@ -3,7 +3,6 @@ rvm:
   - 1.9.3
 script:
   - "firefox --version"
-  - bundle install
   - DISPLAY=:99.0 bundle exec rspec spec
 before_install:
   - "export DISPLAY=:99.0"

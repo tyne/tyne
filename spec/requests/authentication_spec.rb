@@ -18,6 +18,7 @@ describe :authentication do
       end
 
       click_button "Sign in"
+      click_button "Allow"
 
       click_link "user_dropdown"
       click_link "Logout"
