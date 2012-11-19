@@ -59,10 +59,11 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 691a3b1f78820b62a2cfcd0c9b39e29628fc0446
+  revision: 6305874416787e62f3ef6e624b3b292131898336
   branch: master
   specs:
     tyne_ui (0.0.1)
+      cells
       coffee-rails
       compass-rails
       rails (~> 3.2.8)
@@ -112,6 +113,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    cells (3.8.6)
+      actionpack (~> 3.0)
+      railties (~> 3.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
