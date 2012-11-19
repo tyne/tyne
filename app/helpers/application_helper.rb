@@ -26,8 +26,10 @@ module ApplicationHelper
   def breadcrumb
     project = @project && @project.persisted?
     issue = @issue && @issue.persisted?
+    user = @user && @user.persisted? ? @user : current_user
 
-    user_link = link_to(current_user.username, main_app.root_path)
+    user_link = link_to(user.username, main_app.overview_path(:user => user.username))
+
     project_link = link_to(@project.name, main_app.backlog_path(:user => current_user.username, :key => @project.key)) if project
     issue_link = link_to(@issue.summary, main_app.issue_path(:user => current_user.username, :key => @project.key, :id => @issue.number)) if issue
     admin_link = link_to("Administration", tyne_core.projects_path) if admin_area?
