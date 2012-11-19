@@ -39,11 +39,6 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
           <a class="brand" href="<%= main_app.root_path %>"><%= brand %></a>
           <div class="container-fluid nav-collapse">
             <% if current_user %>
@@ -57,10 +52,8 @@
     </div>
 
     <div class="container-fluid">
-      <% if @project && !admin_area? %>
-        <div class="row-fluid project-name">
-          <%= project_name %>
-        </div>
+      <% if current_user %>
+        <%= breadcrumb %>
       <% end %>
       <div class="row-fluid">
         <% spans = 12 %>
