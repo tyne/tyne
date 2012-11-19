@@ -59,7 +59,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 463eab678b7bc00eb0b78daa70b644968a2068e5
+  revision: 475f30e9f54e53098ae7a4b8c4a2187cfc911be1
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -161,7 +161,7 @@ GEM
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
-    ffi (1.1.5)
+    ffi (1.2.0)
     fog (1.7.0)
       builder
       excon (~> 0.14)
