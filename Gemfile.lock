@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: ea8eb79e54388206cf498e32e83d3a82a2efcb13
+  revision: 92806301fae91e8cbd9cbffb3f08d0e53d0c4270
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -116,7 +116,7 @@ GEM
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
     client_side_validations (3.2.1)
-    client_side_validations-simple_form (2.0.0)
+    client_side_validations-simple_form (2.0.1)
       client_side_validations (~> 3.2.0)
       simple_form (~> 2.0.3)
     coderay (1.0.8)
@@ -299,7 +299,7 @@ GEM
       thor (>= 0.14.6, < 2.0)
     rainbow (1.1.4)
     raindrops (0.10.0)
-    rake (10.0.1)
+    rake (10.0.2)
     rb-fsevent (0.9.2)
     rdoc (3.12)
       json (~> 1.4)
