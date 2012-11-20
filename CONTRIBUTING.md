@@ -7,7 +7,7 @@ If you need to submit a new issue please go to: https://github.com/tyne/tyne/iss
 ## Merging requests
 
 If you have permissions to merge pull requests please ensure the code has been reviewed and all the comments have been addressed.
-Please make sure that the current build is not broken before you merge any code changes: https://travis-ci.org/tyne/tyne-ui
+Please make sure that the current build is not broken before you merge any code changes: https://travis-ci.org/tyne/tyne
 
 ## Making a pull request
 
