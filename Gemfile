@@ -28,7 +28,7 @@ gem "redcarpet"
 gem "md_emoji"
 
 # Tyne
-gem 'tyne_ui', :path => '../tyne-ui' #:git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
+gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
 gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'master'
 gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
 
