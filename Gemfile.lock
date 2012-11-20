@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails-api/active_model_serializers.git
-  revision: 9f5e1b1776b67e2a601b0205fbba705a0cde55e6
+  revision: f3159dfd0dc58f38bd15e74aed21c7b0c044087d
   specs:
     active_model_serializers (0.5.2)
       activemodel (>= 3.0)
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 9ddd2f2616ac76ae56c37cf974642f3aa896ddf3
+  revision: 61cdfdf5e5cbbff2c0d0faf0800883169239ec44
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -38,7 +38,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-dev.git
-  revision: 9540e49455d400d5a71e29da1c612bb7beade670
+  revision: 1a03b5ccd44939a8b335e6f70b5ac95676b6756c
   branch: master
   specs:
     tyne_dev (0.0.1)
@@ -52,6 +52,7 @@ GIT
       pry
       rails (~> 3.2.8)
       rb-fsevent (~> 0.9.1)
+      rspec-cells
       rspec-rails
       shoulda-matchers
       simplecov
@@ -59,7 +60,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 475f30e9f54e53098ae7a4b8c4a2187cfc911be1
+  revision: d0fd3a8d8faf1a17def56d9cdb6432bf2b061697
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -139,17 +140,17 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
-    dalli (2.3.0)
+    dalli (2.5.0)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.0)
-    evergreen (1.0.0.rc)
+    evergreen (1.0.0)
       capybara (~> 1.0)
       coffee-script
       json_pure
       launchy
       sinatra (~> 1.1)
-    excon (0.16.8)
+    excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.1.0)
@@ -245,7 +246,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
-    newrelic_rpm (3.5.0.1)
+    newrelic_rpm (3.5.2.17)
     nokogiri (1.5.5)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -312,6 +313,10 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    rspec-cells (0.1.6)
+      cells (~> 3.4)
+      railties (~> 3.0)
+      rspec-rails (~> 2.2)
     rspec-core (2.12.0)
     rspec-expectations (2.12.0)
       diff-lcs (~> 1.1.3)
