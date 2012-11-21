@@ -26,7 +26,7 @@
 </ul>
 
 <div class="pull-right">
-  <%= link_to "Create Issue", "#", :class => "btn btn-small btn-warning btn-create-issue", :data => { :dialog => main_app.dialog_issues_path(:user => current_user.username, :key => ':key', :format => :pjax), :keybinding => 'c' } %>
+  <%= render_cell :issue, :create, main_app.dialog_issues_path(:user => current_user.username, :key => ':key', :format => :pjax) %>
 </div>
 
 <%= render :partial => "layouts/administration" %>
