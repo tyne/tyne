@@ -60,7 +60,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: fa1127681ad8dabf6b69ce1eeb5df78d86ad86b9
+  revision: f60125895ce29eabf6ac65a45addcc17f38102d4
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -390,7 +390,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    websocket (1.0.3)
+    websocket (1.0.4)
     xpath (0.1.4)
       nokogiri (~> 1.3)
     yard (0.8.3)
