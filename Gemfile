@@ -33,7 +33,6 @@ gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'ma
 gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
 
 gem 'modernizr-rails'
-gem 'jquery-ui-themes'
 gem 'twitter-bootstrap-rails'
 gem "less-rails"
 

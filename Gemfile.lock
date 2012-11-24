@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 9e2960c5b05903f1dbf4d937db8d8d74df5eb526
+  revision: f01e8690fe03c8cccbed1751f335339619b65873
   branch: master
   specs:
     tyne_core (0.0.1)
@@ -60,7 +60,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: f60125895ce29eabf6ac65a45addcc17f38102d4
+  revision: 61e950fccbc098ab2b8978b5848a4cb8533f2fb0
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -191,9 +191,6 @@ GEM
     haml (3.1.7)
     hashie (1.2.0)
     hike (1.2.1)
-    httparty (0.9.0)
-      multi_json (~> 1.0)
-      multi_xml
     httpauth (0.2.0)
     i18n (0.6.1)
     i18n-js (2.1.2)
@@ -211,8 +208,6 @@ GEM
     jquery-rails (2.1.3)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    jquery-ui-themes (0.0.7)
-      httparty
     json (1.7.5)
     json_pure (1.7.5)
     jwt (0.1.5)
@@ -242,7 +237,6 @@ GEM
     modernizr-rails (2.0.6)
     mousetrap-rails (0.0.6)
     multi_json (1.3.7)
-    multi_xml (0.5.1)
     multipart-post (1.1.5)
     mustache (0.99.4)
     net-scp (1.0.4)
@@ -409,7 +403,6 @@ DEPENDENCIES
   evergreen
   i18n-js
   jquery-rails
-  jquery-ui-themes
   less-rails
   md_emoji
   modernizr-rails
