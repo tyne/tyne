@@ -52,8 +52,6 @@ Start your rails server via ```rails s```
 
 This gem uses rspec. Simply run ```bundle exec rspec spec``` as usual.
 
-You can run the whole test suite via ```bundle exec fudge build```
-
 The test suite is using a github user in order to test the OmniAuth integration. Please make sure you have added the following environment variables:
 
 ```
