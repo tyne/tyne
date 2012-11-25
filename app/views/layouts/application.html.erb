@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Tyne" %></title>
+
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -35,7 +36,6 @@
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -52,23 +52,17 @@
     </div>
 
     <div class="container-fluid">
-      <% if current_user %>
-        <%= breadcrumb %>
-      <% end %>
+      <%= breadcrumb if current_user %>
+
       <div class="row-fluid">
-        <% spans = 12 %>
-        <% if content_for? :sidebar %>
-          <% spans = 9 %>
+        <% have_sidebar = content_for?(:sidebar) %>
+
+        <% if have_sidebar %>
           <div class="span3">
-            <div class="well sidebar-nav">
-              <%= yield(:sidebar) %>
-            </div><!--/.well -->
-          </div><!--/span-->
+            <div class="well sidebar-nav"><%= yield(:sidebar) %></div>
+          </div>
         <% end %>
-        <div class="span<%= spans %>" id="main">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
+        <div class="span<%= have_sidebar ? 9 : 12 %>" id="main"><%= yield %></div>
       </div><!--/row-->
 
     </div> <!-- /container -->
@@ -87,5 +81,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
+    <%= flash_notification %>
   </body>
 </html>
