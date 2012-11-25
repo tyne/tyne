@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '~> 3.2.8'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,7 +33,6 @@ gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'ma
 gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
 
 gem 'modernizr-rails'
-gem 'jquery-ui-themes'
 gem 'twitter-bootstrap-rails'
 gem "less-rails"
 

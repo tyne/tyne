@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118164232) do
+ActiveRecord::Schema.define(:version => 20121123184753) do
 
   create_table "tyne_auth_organizations", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20121118164232) do
 
   add_index "tyne_auth_users", ["uid"], :name => "index_tyne_auth_users_on_uid"
   add_index "tyne_auth_users", ["username"], :name => "index_tyne_auth_users_on_username"
+
+  create_table "tyne_core_comments", :force => true do |t|
+    t.text     "message"
+    t.integer  "issue_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tyne_core_comments", ["issue_id"], :name => "index_tyne_core_comments_on_issue_id"
 
   create_table "tyne_core_dashboards", :force => true do |t|
     t.string   "name"
