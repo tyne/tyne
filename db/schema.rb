@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123184753) do
+ActiveRecord::Schema.define(:version => 20121126221416) do
 
   create_table "tyne_auth_organizations", :force => true do |t|
     t.string   "name"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(:version => 20121123184753) do
 
   add_index "tyne_core_dashboards", ["user_id"], :name => "index_tyne_core_dashboards_on_user_id"
 
+  create_table "tyne_core_issue_priorities", :force => true do |t|
+    t.string   "name"
+    t.integer  "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tyne_core_issue_priorities", ["number"], :name => "index_tyne_core_issue_priorities_on_number"
+
   create_table "tyne_core_issue_types", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -64,13 +73,15 @@ ActiveRecord::Schema.define(:version => 20121123184753) do
     t.text     "description"
     t.integer  "reported_by_id"
     t.integer  "project_id"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.integer  "issue_type_id"
-    t.string   "state",          :default => "open"
+    t.string   "state",             :default => "open"
     t.integer  "number"
+    t.integer  "issue_priority_id"
   end
 
+  add_index "tyne_core_issues", ["issue_priority_id"], :name => "index_tyne_core_issues_on_issue_priority_id"
   add_index "tyne_core_issues", ["issue_type_id"], :name => "index_tyne_core_issues_on_issue_type_id"
   add_index "tyne_core_issues", ["number"], :name => "index_tyne_core_issues_on_number"
   add_index "tyne_core_issues", ["project_id"], :name => "index_tyne_core_issues_on_project_id"
