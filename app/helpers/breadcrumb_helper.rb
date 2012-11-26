@@ -36,7 +36,7 @@ module BreadcrumbHelper
     } if project
 
     entries << {
-      :text => "#{project.key}-#{issue.number}",
+      :text => issue.key,
       :path => main_app.issue_path(:user => user.username, :key => project.key, :id => issue.number)
     } if issue
 
