@@ -29,11 +29,11 @@ Run the following command: ```bundle exec rake db:setup```
 
 ### OmniAuth configuration
 
-In order to use OmniAuth via Github you need to set up the following environment keys:
+In order to use OmniAuth via Github you need to set up some environment keys. Add the following to your ```.bash_profile``` or ```.bashrc```.
 
-```
-GITHUB_KEY=your_key
-GITHUB_SECRET=your_secret
+```bash
+export GITHUB_KEY=your_key
+export GITHUB_SECRET=your_secret
 ```
 
 You will need to register a new developer application in order to get those details. Simply go to https://github.com/settings/applications and register a new application with the following details:
@@ -51,8 +51,6 @@ Start your rails server via ```rails s```
 ## Testing
 
 This gem uses rspec. Simply run ```bundle exec rspec spec``` as usual.
-
-You can run the whole test suite via ```bundle exec fudge build```
 
 The test suite is using a github user in order to test the OmniAuth integration. Please make sure you have added the following environment variables:
 
