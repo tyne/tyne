@@ -54,7 +54,7 @@ This gem uses rspec. Simply run ```bundle exec rspec spec``` as usual.
 
 The test suite is using a github user in order to test the OmniAuth integration. Please make sure you have added the following environment variables:
 
-```
+```bash
 export CAPYBARA_USER=username
 export CAPYBARA_PASSWORD=password
 ```
