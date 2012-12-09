@@ -15,6 +15,7 @@
 //= require mousetrap
 //= require jquery-ui
 //= require twitter/bootstrap
+//= require twitter/bootstrap/rails/confirm
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require tyne_ui

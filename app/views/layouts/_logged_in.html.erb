@@ -1,18 +1,13 @@
 <ul class="nav">
   <% if @project && @project.key && !admin_area?%>
     <li><%= link_to "Backlog", main_app.issues_path(:user => @project.user.username, :key => @project.key) %></li>
+    <li><%= link_to "Admin", main_app.admin_project_path(:user => @project.user.username, :key => @project.key) if @project.user == current_user %></li>
   <% end %>
 </ul>
 
 <ul class="nav pull-right">
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <%= image_tag("cog.png") %>
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "Administration", tyne_core.projects_path %></li>
-    </ul>
+  <li>
+    <%= link_to "New Project", tyne_core.new_project_path %>
   </li>
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown">
@@ -24,9 +19,3 @@
     </ul>
   </li>
 </ul>
-
-<div class="pull-right">
-  <%= render_cell :issue, :create, main_app.dialog_issues_path(:user => current_user.username, :key => ':key', :format => :pjax) %>
-</div>
-
-<%= render :partial => "layouts/administration" %>
