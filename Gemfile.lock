@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/rails-api/active_model_serializers.git
-  revision: 720f1dabf8858b55fa2542fccad4a04b075f951c
+  revision: 3fdd4bb71dad6c6ab048ec79f132b0bc45a6631b
   specs:
     active_model_serializers (0.5.2)
       activemodel (>= 3.0)
@@ -25,8 +25,8 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: dcf36335cb204e2b84535526f90e45f8a6f4ae34
-  branch: projects_refactor
+  revision: c36e448de1db0d9ed37d3386994f3bff95ec6047
+  branch: master
   specs:
     tyne_core (0.0.1)
       client_side_validations
@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 522e7340e295a7ae9aab2866113a9f3a47c8f8b3
+  revision: e54414251ec8d4f8186f031e604e8ff188827613
   branch: master
   specs:
     tyne_ui (0.0.1)
@@ -167,7 +167,7 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.2.0)
-    fog (1.7.0)
+    fog (1.8.0)
       builder
       excon (~> 0.14)
       formatador (~> 0.2.0)
@@ -208,9 +208,9 @@ GEM
       coffee-rails
       haml
     journey (1.0.4)
-    jquery-rails (2.1.3)
-      railties (>= 3.1.0, < 5.0)
-      thor (~> 0.14)
+    jquery-rails (2.1.4)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     json (1.7.5)
     json_pure (1.7.5)
     jwt (0.1.5)
@@ -223,7 +223,7 @@ GEM
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libv8 (3.3.10.4)
+    libv8 (3.11.8.4)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -241,15 +241,15 @@ GEM
     mime-types (1.19)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
-    modernizr-rails (2.0.6)
-    mousetrap-rails (0.0.6)
+    modernizr-rails (2.6.1)
+    mousetrap-rails (0.0.7)
     multi_json (1.4.0)
     multipart-post (1.1.5)
     mustache (0.99.4)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.2)
-    newrelic_rpm (3.5.2.17)
+    newrelic_rpm (3.5.3.25)
     nokogiri (1.5.5)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -312,6 +312,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.2.2)
+    ref (1.0.2)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -370,8 +371,8 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
     state_machine (1.1.2)
-    therubyracer (0.10.2)
-      libv8 (~> 3.3.10)
+    therubyracer (0.11.0)
+      ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -390,7 +391,7 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    unicorn (4.4.0)
+    unicorn (4.5.0)
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
@@ -414,6 +415,7 @@ DEPENDENCIES
   i18n-js
   jquery-rails
   less-rails
+  libv8 (~> 3.11.8)
   md_emoji
   modernizr-rails
   mousetrap-rails

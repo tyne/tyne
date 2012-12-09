@@ -9,13 +9,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'libv8', '~> 3.11.8'
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem "jquery-rails"
-gem 'therubyracer'
 gem 'compass-rails'
 
 gem 'responders', :git => 'https://github.com/plataformatec/responders.git'
@@ -29,7 +29,7 @@ gem "md_emoji"
 
 # Tyne
 gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
-gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'projects_refactor'
+gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'master'
 gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
 
 gem 'modernizr-rails'
