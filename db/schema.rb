@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208213957) do
+ActiveRecord::Schema.define(:version => 20121209170602) do
 
   create_table "tyne_auth_organizations", :force => true do |t|
     t.string   "name"
@@ -98,6 +98,22 @@ ActiveRecord::Schema.define(:version => 20121208213957) do
 
   add_index "tyne_core_projects", ["key"], :name => "index_tyne_core_projects_on_key"
   add_index "tyne_core_projects", ["user_id"], :name => "index_tyne_core_projects_on_user_id"
+
+  create_table "tyne_core_team_members", :force => true do |t|
+    t.integer "user_id"
+    t.integer "team_id"
+  end
+
+  add_index "tyne_core_team_members", ["team_id"], :name => "index_tyne_core_team_members_on_team_id"
+  add_index "tyne_core_team_members", ["user_id"], :name => "index_tyne_core_team_members_on_user_id"
+
+  create_table "tyne_core_teams", :force => true do |t|
+    t.string  "name"
+    t.integer "project_id"
+    t.boolean "admin_privileges"
+  end
+
+  add_index "tyne_core_teams", ["project_id"], :name => "index_tyne_core_teams_on_project_id"
 
   create_table "tyne_core_votes", :force => true do |t|
     t.integer  "user_id"
