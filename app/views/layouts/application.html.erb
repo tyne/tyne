@@ -51,8 +51,9 @@
       </div>
     </div>
 
+    <%= breadcrumb if current_user %>
+
     <div class="container-fluid">
-      <%= breadcrumb if current_user %>
 
       <div class="row-fluid">
         <% have_sidebar = content_for?(:sidebar) %>
@@ -70,7 +71,7 @@
     <footer class="footer">
       <div class="container">
         <p>Designed and developed by Tobias Haar.</p>
-        <p>&copy; Tobias Haar 2012</p>
+        <p>&copy; Tobias Haar 2012 - 2013</p>
       </div>
     </footer>
 
