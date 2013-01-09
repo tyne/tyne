@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 567042a7ac91250d2aaf7eacda470a6eef5ef603
+  revision: 6f60e6efc21e4cc97d95b6ce25ff7aeb08cf663d
   branch: master
   specs:
     tyne_ui (0.0.2)
