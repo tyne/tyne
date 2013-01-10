@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: d94248212b36781c98bd6f11d489f2c29d82cf4f
+  revision: 8520d1d8f4a2b28419cd51dbdc36d490a831b522
   branch: master
   specs:
     tyne_core (0.0.2)
@@ -166,7 +166,7 @@ GEM
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
-    ffi (1.3.0)
+    ffi (1.3.1)
     fog (1.8.0)
       builder
       excon (~> 0.14)
@@ -258,7 +258,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    octokit (1.20.0)
+    octokit (1.21.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
       faraday_middleware (~> 0.9)
