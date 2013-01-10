@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 6b2d547ff6739620c0d6d17d6a64bf05e40a5b3d
+  revision: eae8f6f944d054f7aa9c30e4fd46c61416939d5c
   branch: master
   specs:
     tyne_core (0.0.2)
@@ -118,9 +118,9 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    cells (3.8.6)
-      actionpack (~> 3.0)
-      railties (~> 3.0)
+    cells (3.8.8)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.7)
