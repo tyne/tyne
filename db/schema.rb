@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211190305) do
+ActiveRecord::Schema.define(:version => 20130112124446) do
 
   create_table "tyne_auth_organization_memberships", :force => true do |t|
     t.integer  "organization_id"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20121211190305) do
     t.string   "state",             :default => "open"
     t.integer  "number"
     t.integer  "issue_priority_id"
+    t.integer  "assigned_to_id"
   end
 
   add_index "tyne_core_issues", ["issue_priority_id"], :name => "index_tyne_core_issues_on_issue_priority_id"

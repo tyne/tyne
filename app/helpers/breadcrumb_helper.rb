@@ -41,9 +41,9 @@ module BreadcrumbHelper
     } if issue
 
     entries << {
-      :text => 'New Project',
-      :path => tyne_core.new_project_path
-    } if admin_area?
+      :text => 'Admin',
+      :path => main_app.admin_project_path(:user => user.username, :key => project.key)
+    } if is_admin_area?
 
     entries
   end
