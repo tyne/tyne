@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 85f3b2cf45546bcec0e10a6d94863011d748b64e
+  revision: aa6bf167f3e43c3e71b29721c913b129af3e16c2
   branch: master
   specs:
     tyne_core (0.1.0)
@@ -327,7 +327,7 @@ GEM
     rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
     rspec-mocks (2.12.1)
-    rspec-rails (2.12.1)
+    rspec-rails (2.12.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
