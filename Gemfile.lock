@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: c0bbd1a553e71141b1fc87814f9916199f00f75f
+  revision: a978595039e7d778e38ca06a529bb521eb5170ab
   branch: master
   specs:
     tyne_auth (0.0.2)
@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 5c4c7c6e238f92e50c0dc53957a6a609ee3d3686
-  branch: teams
+  revision: 85f3b2cf45546bcec0e10a6d94863011d748b64e
+  branch: master
   specs:
-    tyne_core (0.0.2)
+    tyne_core (0.1.0)
       client_side_validations
       client_side_validations-simple_form
       rack-pjax
