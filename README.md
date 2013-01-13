@@ -8,7 +8,8 @@ Tyne is a webbased issue tracking application with the following features:
 * Github authentication
 * Project import from github
 * Project management
-* Issue tracking
+* Issue tracking (includes sorting, filtering, basic workflow, etc.)
+* Basic role management
 
 Do you want to check the current status of the project? We have deployed a demo to http://sultry-earth-9895.herokuapp.com
 
@@ -70,4 +71,4 @@ Please read our [contribution-guidelines](https://github.com/tyne/tyne/blob/mast
 
 ## License
 
-MIT License. Copyright 2012 Tobias Haar.
+MIT License. Copyright 2012 - 2013 Tobias Haar.
