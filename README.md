@@ -71,4 +71,4 @@ Please read our [contribution-guidelines](https://github.com/tyne/tyne/blob/mast
 
 ## License
 
-MIT License. Copyright 2012 Tobias Haar.
+MIT License. Copyright 2012 - 2013 Tobias Haar.
