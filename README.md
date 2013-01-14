@@ -60,6 +60,14 @@ export CAPYBARA_USER=username
 export CAPYBARA_PASSWORD=password
 ```
 
+## Contact us
+
+Please don't hesitate to ask any questions at our google groups.
+
+For general questions please use the following discussion list: [tyne-talk@googlegroups.com](http://groups.google.com/group/tyne-talk)
+
+If you have questions to the internals of tyne or just want to propose some changes, please use the following discussion list: [tyne-core@googlegroups.com](http://groups.google.com/group/tyne-core)
+
 ## Contribute
 
 Please read our [contribution-guidelines](https://github.com/tyne/tyne/blob/master/CONTRIBUTING.md).
