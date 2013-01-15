@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe :authentication do
   before :each do
+    OmniAuth.config.test_mode = false
+
     Capybara.run_server = true
     Capybara.app_host = "http://localhost:3000"
     Capybara.server_port = 3000
