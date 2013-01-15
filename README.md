@@ -11,7 +11,7 @@ Tyne is a webbased issue tracking application with the following features:
 * Issue tracking (includes sorting, filtering, basic workflow, etc.)
 * Basic role management
 
-Do you want to check the current status of the project? We have deployed a demo to http://tyne.herokuapp.com
+Do you want to check the current status of the project? We have deployed a demo to http://www.tyne-tickets.org
 
 ## Installation
 
@@ -59,6 +59,14 @@ The test suite is using a github user in order to test the OmniAuth integration.
 export CAPYBARA_USER=username
 export CAPYBARA_PASSWORD=password
 ```
+
+## Contact us
+
+Please don't hesitate to ask any questions at our google groups.
+
+For general questions please use the following discussion list: [tyne-talk@googlegroups.com](http://groups.google.com/group/tyne-talk)
+
+If you have questions to the internals of tyne or just want to propose some changes, please use the following discussion list: [tyne-core@googlegroups.com](http://groups.google.com/group/tyne-core)
 
 ## Contribute
 
