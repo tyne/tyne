@@ -25,10 +25,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: d826bf4f5c224678836ad6b0841951bd4df74c05
+  revision: 32d1cefeec6a66fb92c6c6e369b60b5d2b6372d6
   branch: master
   specs:
-    tyne_core (0.1.0)
+    tyne_core (0.1.1)
       client_side_validations
       client_side_validations-simple_form
       rack-pjax
@@ -61,10 +61,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: d3a9319636d2d73d7390d629a5ee48a8a2664138
+  revision: ade0fd0165aa9b6e09b28a1c5ad643e0f1a9b50e
   branch: master
   specs:
-    tyne_ui (0.0.2)
+    tyne_ui (0.0.3)
       cells
       coffee-rails
       compass-rails
@@ -258,7 +258,7 @@ GEM
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    octokit (1.21.0)
+    octokit (1.22.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
       faraday_middleware (~> 0.9)
@@ -280,7 +280,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
-    rack (1.4.3)
+    rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-pjax (0.7.0)
@@ -337,7 +337,7 @@ GEM
     ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.2.5)
-    sass-rails (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
