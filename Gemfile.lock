@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 19d5d228d41aae5b6242ed9f0cbe43050a9d3007
+  revision: e65804a7e7f53b2dcf7618d5380a0a3e95a73346
   branch: master
   specs:
     tyne_core (0.1.1)
@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: e7560c69203d59cc0aea5aa17865e84ef38c2609
+  revision: e79fd13419ada52b3858257178ed9ea42f078712
   branch: master
   specs:
     tyne_ui (0.0.3)
@@ -276,10 +276,10 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
-    pry (0.9.10)
+    pry (0.9.11.1)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
-      slop (~> 3.3.1)
+      slop (~> 3.4)
     rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -360,7 +360,7 @@ GEM
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
-    slop (3.3.3)
+    slop (3.4.3)
     smt_rails (0.2.4)
       mustache (>= 0.99.4)
       rails (>= 3.1.0)
