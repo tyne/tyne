@@ -1,3 +1,24 @@
 .sign-in {
   margin-top: 8px !important;
 }
+
+#sidebar, .centered {
+  border-radius: 0px;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.25);
+}
+
+#authentication {
+  margin-top: 25px;
+
+  h1 {
+    color: #555;
+    font-weight: 500;
+    font-size: 2.5em;
+    letter-spacing: -0.05em;
+  }
+
+  .sign-in-button {
+    margin-top: 20px;
+    text-align: center;
+  }
+}

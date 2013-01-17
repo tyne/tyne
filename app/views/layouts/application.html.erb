@@ -60,7 +60,7 @@
 
         <% if have_sidebar %>
           <div class="span3">
-            <div class="well sidebar-nav"><%= yield(:sidebar) %></div>
+            <div class="well sidebar-nav" id="sidebar"><%= yield(:sidebar) %></div>
           </div>
         <% end %>
         <div class="span<%= have_sidebar ? 9 : 12 %>" id="main"><%= yield %></div>
