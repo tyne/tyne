@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: a978595039e7d778e38ca06a529bb521eb5170ab
+  revision: 328b80c7db4ec206e51a27d4e58d150074c21689
   branch: master
   specs:
     tyne_auth (0.0.2)
@@ -188,7 +188,7 @@ GEM
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
-    guard-rspec (2.3.3)
+    guard-rspec (2.4.0)
       guard (>= 1.1)
       rspec (~> 2.11)
     haml (3.1.7)
@@ -276,7 +276,7 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
-    pry (0.9.11.1)
+    pry (0.9.11.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
