@@ -25,10 +25,11 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 6760334b11be4c27a8c6d153f0f3f9211e6c6676
+  revision: 7251c90028a08862175112f3bd2c4786f389e85f
   branch: master
   specs:
     tyne_core (0.1.1)
+      audited-activerecord
       client_side_validations
       client_side_validations-simple_form
       rack-pjax
@@ -61,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 1f879954b69a59449a2d40bca745212fd1870db4
+  revision: c5b148a9655ef26eb4394468a236ac499da258d1
   branch: master
   specs:
     tyne_ui (0.0.3)
@@ -108,6 +109,10 @@ GEM
     asset_sync (0.5.3)
       activemodel
       fog
+    audited (3.0.0)
+    audited-activerecord (3.0.0)
+      activerecord (~> 3.0)
+      audited (= 3.0.0)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
