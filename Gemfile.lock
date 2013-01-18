@@ -61,7 +61,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: 39567bf05a9058afec6dee4b036b6f28ac1080af
+  revision: 1f879954b69a59449a2d40bca745212fd1870db4
   branch: master
   specs:
     tyne_ui (0.0.3)
@@ -276,7 +276,7 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
-    pry (0.9.11.2)
+    pry (0.9.11.3)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
