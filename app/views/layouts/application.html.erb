@@ -35,7 +35,7 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
-  <body>
+  <body class="logged_<%= current_user ? "in" : "out" %> page-<%= controller.controller_name %>-<%= params[:action] %>">
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container-fluid">
