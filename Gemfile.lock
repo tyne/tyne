@@ -22,10 +22,11 @@ GIT
       omniauth
       omniauth-github
       rails (~> 3.2.8)
+      twitter-bootstrap-rails
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 8e2d5f6831bcddc64a6e889d71111075e0ff1a1d
+  revision: c562ff81399ad38cf7095dc9e35b01261b18bb28
   branch: master
   specs:
     tyne_core (0.1.1)
@@ -40,7 +41,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-dev.git
-  revision: f52dba104da438b46b4a4118c889778a3b0c9075
+  revision: f17fa0c01b4308d8ee040ce239b4f38898151a02
   branch: master
   specs:
     tyne_dev (0.0.2)
