@@ -36,44 +36,50 @@
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body class="logged_<%= current_user ? "in" : "out" %> page-<%= controller.controller_name %>-<%= params[:action] %>">
-    <div class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="brand" href="<%= main_app.root_path %>"><%= brand %></a>
-          <div class="container-fluid nav-collapse">
-            <% if current_user %>
-              <%= render :partial => "layouts/logged_in" %>
-            <% else %>
-              <%= render :partial => "layouts/logged_out" %>
-            <% end %>
-          </div><!--/.nav-collapse -->
+    <div class="wrapper">
+      <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="brand" href="<%= main_app.root_path %>"><%= brand %></a>
+            <div class="container-fluid nav-collapse">
+              <% if current_user %>
+                <%= render :partial => "layouts/logged_in" %>
+              <% else %>
+                <%= render :partial => "layouts/logged_out" %>
+              <% end %>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
 
-    <%= render_breadcrumbs %>
-
-    <div class="container-fluid">
-
-      <div class="row-fluid">
-        <% have_sidebar = content_for?(:sidebar) %>
-
-        <% if have_sidebar %>
-          <div class="span3">
-            <div class="well sidebar-nav" id="sidebar"><%= yield(:sidebar) %></div>
-          </div>
-        <% end %>
-        <div class="span<%= have_sidebar ? 9 : 12 %>" id="main"><%= yield %></div>
-      </div><!--/row-->
-
-    </div> <!-- /container -->
-
-    <footer class="footer">
-      <div class="container">
-        <p>Designed and developed by Tobias Haar.</p>
-        <p>&copy; Tobias Haar 2012 - 2013</p>
+      <div class="breadcrumb-wrapper">
+        <%= render_breadcrumbs %>
       </div>
-    </footer>
+
+      <div class="container-fluid">
+
+        <div class="row-fluid">
+          <% have_sidebar = content_for?(:sidebar) %>
+
+          <% if have_sidebar %>
+            <div class="span3">
+              <div class="well sidebar-nav" id="sidebar"><%= yield(:sidebar) %></div>
+            </div>
+          <% end %>
+          <div class="span<%= have_sidebar ? 9 : 12 %>" id="main"><%= yield %></div>
+        </div><!--/row-->
+
+      </div> <!-- /container -->
+      <div class="push"></div>
+    </div> <!-- /wrap-->
+
+    <div class="footer">
+      <footer>
+        <div class="container">
+          <p>&copy; Tobias Haar 2012 - 2013</p>
+        </div>
+      </footer>
+    </div>
 
     <%= render_cell :notification, :show %>
 
