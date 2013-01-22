@@ -63,7 +63,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: c5b148a9655ef26eb4394468a236ac499da258d1
+  revision: f87cd256cf10f5f348050afef7c74c2853ba2edb
   branch: master
   specs:
     tyne_ui (0.0.3)
@@ -230,9 +230,6 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.11.8.13)
-    libwebsocket (0.1.7.1)
-      addressable
-      websocket
     listen (0.7.2)
     lumberjack (1.0.2)
     mail (2.4.4)
@@ -282,7 +279,7 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
-    pry (0.9.11.3)
+    pry (0.9.11.4)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.4)
@@ -347,11 +344,11 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.27.2)
+    selenium-webdriver (2.29.0)
       childprocess (>= 0.2.5)
-      libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+      websocket (~> 1.0.4)
     shoulda-matchers (1.4.2)
       activesupport (>= 3.0.0)
       bourne (~> 1.1.2)
