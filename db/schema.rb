@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118181423) do
+ActiveRecord::Schema.define(:version => 20130121213202) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -131,6 +131,15 @@ ActiveRecord::Schema.define(:version => 20130118181423) do
 
   add_index "tyne_core_projects", ["key"], :name => "index_tyne_core_projects_on_key"
   add_index "tyne_core_projects", ["user_id"], :name => "index_tyne_core_projects_on_user_id"
+
+  create_table "tyne_core_sprints", :force => true do |t|
+    t.string   "name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tyne_core_team_members", :force => true do |t|
     t.integer "user_id"
