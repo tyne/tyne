@@ -26,10 +26,11 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 3cb51d1ef49cc50b6cf5583ce8ca64f3b401b113
-  branch: master
+  revision: f24cf7e74f04e677b9342a4e419c35c0c222d1c8
+  branch: sprints
   specs:
     tyne_core (0.1.1)
+      acts_as_list
       audited-activerecord
       client_side_validations
       client_side_validations-simple_form
@@ -105,6 +106,7 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_list (0.1.9)
     addressable (2.3.2)
     arel (3.0.2)
     asset_sync (0.5.3)

@@ -59,14 +59,7 @@
       <div class="container-fluid">
 
         <div class="row-fluid">
-          <% have_sidebar = content_for?(:sidebar) %>
-
-          <% if have_sidebar %>
-            <div class="span3">
-              <div class="well sidebar-nav" id="sidebar"><%= yield(:sidebar) %></div>
-            </div>
-          <% end %>
-          <div class="span<%= have_sidebar ? 9 : 12 %>" id="main"><%= yield %></div>
+          <%= yield %>
         </div><!--/row-->
 
       </div> <!-- /container -->

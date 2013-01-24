@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121213202) do
+ActiveRecord::Schema.define(:version => 20130123231729) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -112,6 +112,9 @@ ActiveRecord::Schema.define(:version => 20130121213202) do
     t.integer  "number"
     t.integer  "issue_priority_id"
     t.integer  "assigned_to_id"
+    t.integer  "sprint_id"
+    t.integer  "position"
+    t.integer  "sprint_position"
   end
 
   add_index "tyne_core_issues", ["issue_priority_id"], :name => "index_tyne_core_issues_on_issue_priority_id"
@@ -119,6 +122,7 @@ ActiveRecord::Schema.define(:version => 20130121213202) do
   add_index "tyne_core_issues", ["number"], :name => "index_tyne_core_issues_on_number"
   add_index "tyne_core_issues", ["project_id"], :name => "index_tyne_core_issues_on_project_id"
   add_index "tyne_core_issues", ["reported_by_id"], :name => "index_tyne_core_issues_on_reported_by_id"
+  add_index "tyne_core_issues", ["sprint_id"], :name => "index_tyne_core_issues_on_sprint_id"
 
   create_table "tyne_core_projects", :force => true do |t|
     t.string   "name"
