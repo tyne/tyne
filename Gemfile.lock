@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 3cb51d1ef49cc50b6cf5583ce8ca64f3b401b113
+  revision: 6280bc54ed18fc03159f764e201d41b58015b257
   branch: master
   specs:
     tyne_core (0.1.1)
@@ -128,7 +128,7 @@ GEM
     cells (3.8.8)
       actionpack (>= 3.0)
       railties (>= 3.0)
-    childprocess (0.3.6)
+    childprocess (0.3.7)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.7)
     client_side_validations (3.2.1)
@@ -164,10 +164,10 @@ GEM
     excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.1.0)
+    factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.1.0)
-      factory_girl (~> 4.1.0)
+    factory_girl_rails (4.2.0)
+      factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
@@ -219,7 +219,7 @@ GEM
       jquery-rails (~> 2.0)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
-    jquery-rails (2.1.4)
+    jquery-rails (2.2.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.6)
