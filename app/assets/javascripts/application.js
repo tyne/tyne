@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.cookie
 //= require jquery_ujs
 //= require mousetrap
 //= require jquery-ui
