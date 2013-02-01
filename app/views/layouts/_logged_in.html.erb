@@ -1,7 +1,8 @@
 <ul class="nav">
   <% if @project && @project.key %>
     <li><%= link_to "Backlog", main_app.issues_path(:user => @project.user.username, :key => @project.key) %></li>
-    <li><%= link_to "Sprints", main_app.sprints_path(:user => @project.user.username, :key => @project.key) if is_collaborator? %></li>
+    <li><%= link_to "Planning", main_app.sprints_path(:user => @project.user.username, :key => @project.key) if is_collaborator? %></li>
+    <li><%= link_to "Current Sprint", main_app.current_sprints_path(:user => @project.user.username, :key => @project.key) if is_collaborator? %></li>
     <li><%= link_to "Admin", main_app.admin_project_path(:user => @project.user.username, :key => @project.key), :class => 'admin-link' if @project.user == current_user %></li>
   <% end %>
 </ul>
