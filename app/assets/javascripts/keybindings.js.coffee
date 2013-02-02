@@ -34,4 +34,3 @@ $ ->
   Mousetrap.bind mouseTrapRails.toggleKeys, -> mouseTrapRails.toggleHints()
 
   mouseTrapRails.toggleHints() if mouseTrapRails.showOnLoad
-
