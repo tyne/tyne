@@ -12,10 +12,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 49a08cb45ed5d11ed71f6f1d2e9ecd528a7e6409
-  branch: sprints
+  revision: 281d84eb7edf59abf63c51f9209c467cb6c7017c
+  branch: master
   specs:
-    tyne_core (0.2.0)
+    tyne_core (0.3.0)
       acts_as_list
       audited-activerecord
       best_in_place
