@@ -19,3 +19,5 @@ en:
       show: "%{user}/%{key} - Team"
     sessions:
       new: "Login"
+    reports:
+      index: "%{user}/%{key} - Reports"
