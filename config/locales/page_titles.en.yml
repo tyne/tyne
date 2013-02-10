@@ -21,3 +21,4 @@ en:
       new: "Login"
     reports:
       index: "%{user}/%{key} - Reports"
+      issue_type_ratio: "%{user}/%{key} - Issue Type Ratio"

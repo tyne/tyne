@@ -34,6 +34,7 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+    <%= yield(:head_assets) if content_for?(:head_assets) %>
   </head>
   <body class="logged_<%= current_user ? "in" : "out" %> page-<%= controller.controller_name %>-<%= params[:action] %>">
     <div class="wrapper">
@@ -80,7 +81,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "https://www.google.com/jsapi" %>
 
     <%= flash_notification %>
   </body>

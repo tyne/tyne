@@ -12,10 +12,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: be06bae47d8a3b5688f76f32828bda9747d26fe0
+  revision: 66f0f9b44e48bb772da09ae8cb1671cd8a95c576
   branch: master
   specs:
-    tyne_core (0.3.0)
+    tyne_core (0.4.0)
       acts_as_list
       audited-activerecord
       best_in_place
@@ -53,10 +53,10 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: ffe216b1fda39161cd184c4e13e6e1e256963046
+  revision: 9d8b8ffd18aa47106da284549ad18caa837e2792
   branch: master
   specs:
-    tyne_ui (0.1.0)
+    tyne_ui (0.1.1)
       cells
       coffee-rails
       compass-rails
