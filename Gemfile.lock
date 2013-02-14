@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 66f0f9b44e48bb772da09ae8cb1671cd8a95c576
+  revision: 142271fc368979e13f2e7d433fd9f5736f7ff83c
   branch: master
   specs:
     tyne_core (0.4.0)
@@ -249,7 +249,7 @@ GEM
       metaclass (~> 0.0.1)
     modernizr-rails (2.6.2)
     mousetrap-rails (0.0.9)
-    multi_json (1.6.0)
+    multi_json (1.6.1)
     multipart-post (1.1.5)
     mustache (0.99.4)
     net-scp (1.0.4)
@@ -271,7 +271,7 @@ GEM
       hashie (~> 1.2)
       multi_json (~> 1.3)
       netrc (~> 0.7.7)
-    omniauth (1.1.2)
+    omniauth (1.1.3)
       hashie (~> 1.2)
       rack
     omniauth-github (1.0.3)
