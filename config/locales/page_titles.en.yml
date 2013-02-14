@@ -1,0 +1,24 @@
+en:
+  titles:
+    dashboards:
+      index: "Dashboard"
+    issues:
+      index: "%{user}/%{key}"
+      new: "%{user}/%{key} - New Issue"
+      show: "%{user}/%{key}-%{number}"
+      edit: "%{user}/%{key}-%{number} - Edit"
+    users:
+      overview: "%{user}"
+    projects:
+      new: "New Project"
+      admin: "%{user}/%{key} - Admin"
+    sprints:
+      index: "%{user}/%{key} - Planning"
+      current: "%{user}/%{key} - Current Sprint"
+    teams:
+      show: "%{user}/%{key} - Team"
+    sessions:
+      new: "Login"
+    reports:
+      index: "%{user}/%{key} - Reports"
+      issue_type_ratio: "%{user}/%{key} - Issue Type Ratio"

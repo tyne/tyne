@@ -11,9 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.cookie
 //= require jquery_ujs
 //= require mousetrap
 //= require jquery-ui
+//= require best_in_place
 //= require twitter/bootstrap
 //= require twitter/bootstrap/rails/confirm
 //= require rails.validations

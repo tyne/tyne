@@ -1,48 +1,40 @@
 GIT
-  remote: https://github.com/plataformatec/responders.git
-  revision: a3d0640aea263c96606fe3ed61878b56829da8c1
-  specs:
-    responders (0.9.3)
-      railties (~> 3.1)
-
-GIT
-  remote: https://github.com/rails-api/active_model_serializers.git
-  revision: 3fdd4bb71dad6c6ab048ec79f132b0bc45a6631b
-  specs:
-    active_model_serializers (0.5.2)
-      activemodel (>= 3.0)
-
-GIT
   remote: https://github.com/tyne/tyne-auth.git
-  revision: 4e4f4917bd56e427b9d687fdd5d5a414572b47f2
+  revision: 7aa1f11722ac877e046303c7015b9c28c4c5b1e2
   branch: master
   specs:
-    tyne_auth (0.0.1)
+    tyne_auth (0.0.2)
       octokit
       omniauth
       omniauth-github
       rails (~> 3.2.8)
+      twitter-bootstrap-rails
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: b354f45e7ae408153e12d35bdc79c056791c233b
+  revision: 66f0f9b44e48bb772da09ae8cb1671cd8a95c576
   branch: master
   specs:
-    tyne_core (0.0.1)
+    tyne_core (0.4.0)
+      acts_as_list
+      audited-activerecord
+      best_in_place
       client_side_validations
       client_side_validations-simple_form
+      jquery-cookie-rails
       rack-pjax
       rails (~> 3.2.8)
+      responders
       simple_form
       state_machine
       twitter-bootstrap-rails-confirm
 
 GIT
   remote: https://github.com/tyne/tyne-dev.git
-  revision: 1122183ba692346a23862a1084c88f4be72e2f36
+  revision: f17fa0c01b4308d8ee040ce239b4f38898151a02
   branch: master
   specs:
-    tyne_dev (0.0.1)
+    tyne_dev (0.0.2)
       capybara
       factory_girl_rails
       fudge
@@ -61,27 +53,29 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-ui.git
-  revision: e54414251ec8d4f8186f031e604e8ff188827613
+  revision: 9d8b8ffd18aa47106da284549ad18caa837e2792
   branch: master
   specs:
-    tyne_ui (0.0.1)
+    tyne_ui (0.1.1)
       cells
       coffee-rails
       compass-rails
+      google_visualr (>= 2.1)
       rails (~> 3.2.8)
       sass-rails
+      simple_form
       smt_rails
       twitter-bootstrap-rails
 
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (3.2.9)
-      actionpack (= 3.2.9)
+    actionmailer (3.2.11)
+      actionpack (= 3.2.11)
       mail (~> 2.4.4)
-    actionpack (3.2.9)
-      activemodel (= 3.2.9)
-      activesupport (= 3.2.9)
+    actionpack (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
       journey (~> 1.0.4)
@@ -89,25 +83,33 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    activemodel (3.2.9)
-      activesupport (= 3.2.9)
+    activemodel (3.2.11)
+      activesupport (= 3.2.11)
       builder (~> 3.0.0)
-    activerecord (3.2.9)
-      activemodel (= 3.2.9)
-      activesupport (= 3.2.9)
+    activerecord (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activeresource (3.2.9)
-      activemodel (= 3.2.9)
-      activesupport (= 3.2.9)
-    activesupport (3.2.9)
+    activeresource (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
+    activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts_as_list (0.1.9)
     addressable (2.3.2)
     arel (3.0.2)
-    asset_sync (0.5.0)
+    asset_sync (0.5.4)
       activemodel
       fog
+    audited (3.0.0)
+    audited-activerecord (3.0.0)
+      activerecord (~> 3.0)
+      audited (= 3.0.0)
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 3.1)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
@@ -118,12 +120,12 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    cells (3.8.6)
-      actionpack (~> 3.0)
-      railties (~> 3.0)
-    childprocess (0.3.6)
+    cells (3.8.8)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
+    childprocess (0.3.7)
       ffi (~> 1.0, >= 1.0.6)
-    chunky_png (1.2.6)
+    chunky_png (1.2.7)
     client_side_validations (3.2.1)
     client_side_validations-simple_form (2.0.1)
       client_side_validations (~> 3.2.0)
@@ -144,7 +146,7 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     daemons (1.1.9)
-    dalli (2.5.0)
+    dalli (2.6.2)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -157,17 +159,17 @@ GEM
     excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.1.0)
+    factory_girl (4.2.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.1.0)
-      factory_girl (~> 4.1.0)
+    factory_girl_rails (4.2.0)
+      factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    faraday (0.8.4)
+    faraday (0.8.5)
       multipart-post (~> 1.1)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
-    ffi (1.2.0)
-    fog (1.8.0)
+    ffi (1.3.1)
+    fog (1.9.0)
       builder
       excon (~> 0.14)
       formatador (~> 0.2.0)
@@ -178,17 +180,19 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.4)
-    fssm (0.2.9)
+    fssm (0.2.10)
     fudge (0.0.4)
       activesupport
       rainbow
       thor
-    guard (1.5.4)
-      listen (>= 0.4.2)
+    google_visualr (2.1.6)
+    guard (1.6.2)
+      listen (>= 0.6.0)
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
+      terminal-table (>= 1.4.3)
       thor (>= 0.14.6)
-    guard-rspec (2.3.1)
+    guard-rspec (2.4.0)
       guard (>= 1.1)
       rspec (~> 2.11)
     haml (3.1.7)
@@ -208,14 +212,18 @@ GEM
       coffee-rails
       haml
     journey (1.0.4)
+    jquery-cookie-rails (0.1.1)
+      jquery-rails (~> 2.0)
+      railties (>= 3.2.0, < 5.0)
+      thor (~> 0.14)
     jquery-rails (2.1.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.7.5)
-    json_pure (1.7.5)
+    json (1.7.6)
+    json_pure (1.7.6)
     jwt (0.1.5)
       multi_json (>= 1.0)
-    kgio (2.7.4)
+    kgio (2.8.0)
     launchy (2.1.2)
       addressable (~> 2.3)
     less (2.2.2)
@@ -223,11 +231,8 @@ GEM
     less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
-    libv8 (3.11.8.4)
-    libwebsocket (0.1.7.1)
-      addressable
-      websocket
-    listen (0.6.0)
+    libv8 (3.11.8.13)
+    listen (0.7.2)
     lumberjack (1.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -238,31 +243,33 @@ GEM
       redcarpet (>= 2.0)
     metaclass (0.0.1)
     method_source (0.8.1)
-    mime-types (1.19)
+    mime-types (1.21)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     modernizr-rails (2.6.1)
-    mousetrap-rails (0.0.7)
-    multi_json (1.4.0)
+    mousetrap-rails (0.0.8)
+    multi_json (1.5.0)
     multipart-post (1.1.5)
     mustache (0.99.4)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
-    net-ssh (2.6.2)
-    newrelic_rpm (3.5.3.25)
-    nokogiri (1.5.5)
+    net-ssh (2.6.3)
+    netrc (0.7.7)
+    newrelic_rpm (3.5.6.46)
+    nokogiri (1.5.6)
     oauth2 (0.8.0)
       faraday (~> 0.8)
       httpauth (~> 0.1)
       jwt (~> 0.1.4)
       multi_json (~> 1.0)
       rack (~> 1.2)
-    octokit (1.19.0)
+    octokit (1.22.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
       faraday_middleware (~> 0.9)
       hashie (~> 1.2)
       multi_json (~> 1.3)
+      netrc (~> 0.7.7)
     omniauth (1.1.1)
       hashie (~> 1.2)
       rack
@@ -274,58 +281,60 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
-    pry (0.9.10)
+    pry (0.9.11.4)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
-      slop (~> 3.3.1)
-    rack (1.4.1)
+      slop (~> 3.4)
+    rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
-    rack-pjax (0.6.0)
+    rack-pjax (0.7.0)
       nokogiri (~> 1.5)
       rack (~> 1.3)
-    rack-protection (1.2.0)
+    rack-protection (1.3.2)
       rack
-    rack-ssl (1.3.2)
+    rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (3.2.9)
-      actionmailer (= 3.2.9)
-      actionpack (= 3.2.9)
-      activerecord (= 3.2.9)
-      activeresource (= 3.2.9)
-      activesupport (= 3.2.9)
+    rails (3.2.11)
+      actionmailer (= 3.2.11)
+      actionpack (= 3.2.11)
+      activerecord (= 3.2.11)
+      activeresource (= 3.2.11)
+      activesupport (= 3.2.11)
       bundler (~> 1.0)
-      railties (= 3.2.9)
-    railties (3.2.9)
-      actionpack (= 3.2.9)
-      activesupport (= 3.2.9)
+      railties (= 3.2.11)
+    railties (3.2.11)
+      actionpack (= 3.2.11)
+      activesupport (= 3.2.11)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rainbow (1.1.4)
     raindrops (0.10.0)
-    rake (10.0.2)
-    rb-fsevent (0.9.2)
-    rdoc (3.12)
+    rake (10.0.3)
+    rb-fsevent (0.9.3)
+    rdoc (3.12.1)
       json (~> 1.4)
     redcarpet (2.2.2)
     ref (1.0.2)
+    responders (0.9.3)
+      railties (~> 3.1)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
-    rspec-cells (0.1.6)
+    rspec-cells (0.1.7)
       cells (~> 3.4)
-      railties (~> 3.0)
+      railties (>= 3.0, < 4.1)
       rspec-rails (~> 2.2)
-    rspec-core (2.12.1)
-    rspec-expectations (2.12.0)
+    rspec-core (2.12.2)
+    rspec-expectations (2.12.1)
       diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.0)
-    rspec-rails (2.12.0)
+    rspec-mocks (2.12.2)
+    rspec-rails (2.12.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -334,16 +343,16 @@ GEM
       rspec-mocks (~> 2.12.0)
     ruby-hmac (0.4.0)
     rubyzip (0.9.9)
-    sass (3.2.3)
-    sass-rails (3.2.5)
+    sass (3.2.5)
+    sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.27.1)
+    selenium-webdriver (2.29.0)
       childprocess (>= 0.2.5)
-      libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+      websocket (~> 1.0.4)
     shoulda-matchers (1.4.2)
       activesupport (>= 3.0.0)
       bourne (~> 1.1.2)
@@ -354,11 +363,11 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
-    sinatra (1.3.3)
-      rack (~> 1.3, >= 1.3.6)
-      rack-protection (~> 1.2)
+    sinatra (1.3.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
-    slop (3.3.3)
+    slop (3.4.3)
     smt_rails (0.2.4)
       mustache (>= 0.99.4)
       rails (>= 3.1.0)
@@ -369,20 +378,22 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
+    sqlite3 (1.3.7)
     state_machine (1.1.2)
-    therubyracer (0.11.0)
+    terminal-table (1.4.5)
+    therubyracer (0.11.3)
+      libv8 (~> 3.11.8.12)
       ref
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.16.0)
+    thor (0.17.0)
     tilt (1.3.3)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.1.7)
+    twitter-bootstrap-rails (2.2.1)
       actionpack (>= 3.1)
       execjs
       railties (>= 3.1)
@@ -395,16 +406,15 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    websocket (1.0.4)
+    websocket (1.0.7)
     xpath (0.1.4)
       nokogiri (~> 1.3)
-    yard (0.8.3)
+    yard (0.8.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers!
   asset_sync
   client_side_validations
   client_side_validations-simple_form
@@ -413,7 +423,7 @@ DEPENDENCIES
   dalli
   evergreen
   i18n-js
-  jquery-rails
+  jquery-rails (~> 2.1.0)
   less-rails
   libv8 (~> 3.11.8)
   md_emoji
@@ -423,7 +433,6 @@ DEPENDENCIES
   pg
   rails (~> 3.2.8)
   redcarpet
-  responders!
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
