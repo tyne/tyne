@@ -1,6 +1,6 @@
 # tyne
 
-[![travis-ci](https://secure.travis-ci.org/tyne/tyne.png)](http://travis-ci.org/#!/tyne/tyne) [![Dependency Status](https://gemnasium.com/tyne/tyne.png)](https://gemnasium.com/tyne/tyne) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/tyne/tyne)
+[![travis-ci](https://secure.travis-ci.org/tyne/tyne.png)](http://travis-ci.org/#!/tyne/tyne) [![Dependency Status](https://gemnasium.com/tyne/tyne.png)](https://gemnasium.com/tyne/tyne) [![Code Climate](https://codeclimate.com/github/tyne/tyne.png)](https://codeclimate.com/github/tyne/tyne)
 
 ## Description
 
