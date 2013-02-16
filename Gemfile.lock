@@ -12,13 +12,12 @@ GIT
 
 GIT
   remote: https://github.com/tyne/tyne-core.git
-  revision: 8c7e6aae938643e5e76545eaafec2472d32b1a95
+  revision: 60dfbdf127cdbba84290d19a0ae27c35a535a094
   branch: master
   specs:
     tyne_core (0.4.0)
       acts_as_list
       audited-activerecord
-      best_in_place
       client_side_validations
       client_side_validations-simple_form
       jquery-cookie-rails
@@ -107,9 +106,6 @@ GEM
     audited-activerecord (3.0.0)
       activerecord (~> 3.0)
       audited (= 3.0.0)
-    best_in_place (2.0.3)
-      jquery-rails
-      rails (~> 3.1)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
