@@ -24,6 +24,7 @@ gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"
 gem "md_emoji"
+gem "best_in_place", :git => 'https://github.com/tyne/best_in_place.git'
 
 # Tyne
 gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'

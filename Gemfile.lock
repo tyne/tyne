@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/tyne/best_in_place.git
+  revision: e12177f473fc998089da8d1a8628edbcdb3197eb
+  specs:
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 3.1)
+
+GIT
   remote: https://github.com/tyne/tyne-auth.git
   revision: 7aa1f11722ac877e046303c7015b9c28c4c5b1e2
   branch: master
@@ -252,7 +260,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.6.5)
     netrc (0.7.7)
-    newrelic_rpm (3.5.5.38)
+    newrelic_rpm (3.5.6.55)
     nokogiri (1.5.6)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -413,6 +421,7 @@ PLATFORMS
 
 DEPENDENCIES
   asset_sync
+  best_in_place!
   client_side_validations
   client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
