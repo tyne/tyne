@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tyne/best_in_place.git
-  revision: e12177f473fc998089da8d1a8628edbcdb3197eb
+  revision: 5897cf5ebc61c7f33e71d7a9d44b954a8b5f8cd9
   specs:
     best_in_place (2.0.3)
       jquery-rails
