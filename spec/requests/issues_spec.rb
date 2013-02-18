@@ -13,4 +13,25 @@ describe :projects do
 
     logout
   end
+
+  it "should update an issue" do
+    expected = "Lorem ipsum dolor sit"
+
+    login
+
+    create_project 'Foo'
+    create_issue 'Bar'
+
+    click_link "Edit"
+
+    within ".edit_issue" do
+      fill_in 'Description', :with => expected
+    end
+
+    click_button "Update Issue"
+
+    page.should have_content(expected)
+
+    logout
+  end
 end
