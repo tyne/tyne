@@ -1,0 +1,22 @@
+.LoadingIndicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+
+  .LoadingIndicatorLayer {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.75;
+  }
+
+  .LoadingIndicatorIcon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 32px;
+    height: 32px;
+  }
+}

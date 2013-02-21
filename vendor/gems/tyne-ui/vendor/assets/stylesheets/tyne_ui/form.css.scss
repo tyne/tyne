@@ -1,0 +1,47 @@
+form table {
+  width: 100%;
+
+  td {
+    vertical-align: top;
+  }
+
+  td.half {
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+textarea {
+  height: 75px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  background-color: #fafafa;
+
+  &:focus {
+    background-color: #ffffff;
+  }
+}
+
+div.controls {
+  padding-right: 15px;
+}
+
+form.form-search {
+  margin: 0px;
+}
+
+input.search-query {
+  width: 125px;
+  margin-top: 7px;
+  margin-bottom: 0px;
+  line-height: 18px;
+  padding: 3px 9px;
+}

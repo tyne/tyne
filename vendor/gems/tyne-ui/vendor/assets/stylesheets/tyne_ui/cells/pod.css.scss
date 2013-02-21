@@ -1,0 +1,47 @@
+.Pod {
+  margin-bottom: 6px;
+
+  .PodTitle {
+    cursor: pointer;
+
+    &.expanded {
+      background: image-url("arrow_state_grey_expanded.png") 0px 2px no-repeat;
+    }
+
+    &.collapsed {
+      background: image-url("arrow_state_grey_collapsed.png") 0px 2px no-repeat;
+    }
+
+    span {
+      @include user-select(none);
+      padding-left: 20px;
+      font-size: 16px;
+      color: #688586;
+    }
+  }
+
+  .PodContent {
+    form {
+      margin: 0px;
+    }
+
+    .Pod {
+      margin-bottom: 0px;
+      // Nested pods
+      .PodTitle {
+        &.expanded {
+          background: image-url("bullet_toggle_minus.png") 0px 2px no-repeat;
+        }
+
+        &.collapsed {
+          background: image-url("bullet_toggle_plus.png") 0px 2px no-repeat;
+        }
+
+        span {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  }
+}

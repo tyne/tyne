@@ -1,0 +1,16 @@
+.tag {
+  @include border-radius(4px);
+  background-color: #f0f0f0;
+  color: #b8b8b8;
+  font-size: small;
+  padding: 0px;
+  border: 1px solid #ddd;
+  min-width: 100px;
+  display: inline-block;
+  text-align: center;
+
+  &.tag-short {
+    min-width: 20px;
+    width: 20px;
+  }
+}

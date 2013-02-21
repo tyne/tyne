@@ -1,0 +1,23 @@
+.group {
+  width: 90%;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+
+  .group-header {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    color: #333;
+    @include background-image(linear-gradient(#ccc, #eee));
+    border-bottom: 1px solid #bbb;
+
+    &.group-danger {
+      @include background-image(linear-gradient(darken(red, 20%), darken(red, 30%)));
+      color: WhiteSmoke;
+    }
+  }
+
+  .group-content {
+    padding: 10px;
+  }
+}

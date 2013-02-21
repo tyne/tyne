@@ -1,0 +1,12 @@
+.grid {
+  tbody tr {
+    &:hover {
+      cursor: pointer;
+      background-color: #eeeeee;
+    }
+
+    td:first-child {
+      width: 70px;
+    }
+  }
+}
