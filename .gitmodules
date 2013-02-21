@@ -1,0 +1,3 @@
+[submodule "vendor/gems/best_in_place"]
+	path = vendor/gems/best_in_place
+	url = git@github.com:tyne/best_in_place.git

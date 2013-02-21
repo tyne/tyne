@@ -27,7 +27,7 @@ gem "md_emoji"
 gem "best_in_place", :git => 'https://github.com/tyne/best_in_place.git'
 
 # Tyne
-gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
+gem 'tyne_ui', :path => 'vendor/gems/tyne-ui'
 gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'master'
 gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
 
