@@ -3,7 +3,6 @@ rvm:
   - 1.9.3
 script:
   - DISPLAY=:99.0 ./ci/build.sh
-  - cd ./vendor/gems/tyne-ui/ && ./ci/build.sh
 before_install:
   - git submodule update --init --recursive
   - "export DISPLAY=:99.0"
