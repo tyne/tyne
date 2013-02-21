@@ -24,7 +24,7 @@ gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"
 gem "md_emoji"
-gem "best_in_place", :git => 'https://github.com/tyne/best_in_place.git'
+gem "best_in_place", :path => 'vendor/gems/best_in_place'
 
 # Tyne
 gem 'tyne_ui', :path => 'vendor/gems/tyne-ui'
@@ -52,7 +52,7 @@ end
 
 # Testing
 group :test, :development do
-  gem 'tyne_dev', :git => 'https://github.com/tyne/tyne-dev.git', :branch => 'master'
-  gem 'evergreen', :require => 'evergreen/rails'
   gem "sqlite3"
+  gem "rspec-rails"
+  gem "capybara"
 end
