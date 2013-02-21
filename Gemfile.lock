@@ -1,7 +1,12 @@
-GIT
-  remote: https://github.com/tyne/tyne-auth.git
-  revision: 7aa1f11722ac877e046303c7015b9c28c4c5b1e2
-  branch: master
+PATH
+  remote: vendor/gems/best_in_place
+  specs:
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 3.1)
+
+PATH
+  remote: vendor/gems/tyne-auth
   specs:
     tyne_auth (0.0.2)
       octokit
@@ -10,10 +15,8 @@ GIT
       rails (~> 3.2.8)
       twitter-bootstrap-rails
 
-GIT
-  remote: https://github.com/tyne/tyne-core.git
-  revision: b789b18abea037d93d64d3f13b6b5f907ed6024c
-  branch: master
+PATH
+  remote: vendor/gems/tyne-core
   specs:
     tyne_core (0.4.0)
       acts_as_list
@@ -27,13 +30,6 @@ GIT
       simple_form
       state_machine
       twitter-bootstrap-rails-confirm
-
-PATH
-  remote: vendor/gems/best_in_place
-  specs:
-    best_in_place (2.0.3)
-      jquery-rails
-      rails (~> 3.1)
 
 PATH
   remote: vendor/gems/tyne-ui

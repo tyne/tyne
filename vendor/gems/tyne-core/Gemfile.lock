@@ -1,0 +1,406 @@
+GIT
+  remote: https://github.com/tyne/best_in_place.git
+  revision: 5897cf5ebc61c7f33e71d7a9d44b954a8b5f8cd9
+  specs:
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 3.1)
+
+GIT
+  remote: https://github.com/tyne/tyne-auth.git
+  revision: 7aa1f11722ac877e046303c7015b9c28c4c5b1e2
+  branch: master
+  specs:
+    tyne_auth (0.0.2)
+      octokit
+      omniauth
+      omniauth-github
+      rails (~> 3.2.8)
+      twitter-bootstrap-rails
+
+GIT
+  remote: https://github.com/tyne/tyne-dev.git
+  revision: 553a9cc0028c1d600aad0991fd8af4e8cb9a144b
+  branch: master
+  specs:
+    tyne_dev (0.0.3)
+      capybara
+      factory_girl_rails
+      fudge
+      guard-rspec
+      method_source
+      pry
+      rails (~> 3.2.8)
+      rb-fsevent (~> 0.9.1)
+      rspec-cells
+      rspec-rails
+      shoulda-matchers
+      simplecov
+      yard
+
+GIT
+  remote: https://github.com/tyne/tyne-ui.git
+  revision: b0eb52353140a6eaa80087bf6b294f18cacff538
+  branch: master
+  specs:
+    tyne_ui (0.1.1)
+      cells
+      coffee-rails
+      compass-rails
+      google_visualr (>= 2.1)
+      rails (~> 3.2.8)
+      sass-rails
+      simple_form
+      smt_rails
+      twitter-bootstrap-rails
+
+PATH
+  remote: .
+  specs:
+    tyne_core (0.4.0)
+      acts_as_list
+      audited-activerecord
+      client_side_validations
+      client_side_validations-simple_form
+      jquery-cookie-rails
+      rack-pjax
+      rails (~> 3.2.8)
+      responders
+      simple_form
+      state_machine
+      twitter-bootstrap-rails-confirm
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (3.2.12)
+      actionpack (= 3.2.12)
+      mail (~> 2.4.4)
+    actionpack (3.2.12)
+      activemodel (= 3.2.12)
+      activesupport (= 3.2.12)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.5)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.12)
+      activesupport (= 3.2.12)
+      builder (~> 3.0.0)
+    activerecord (3.2.12)
+      activemodel (= 3.2.12)
+      activesupport (= 3.2.12)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.12)
+      activemodel (= 3.2.12)
+      activesupport (= 3.2.12)
+    activesupport (3.2.12)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    acts_as_list (0.1.9)
+    addressable (2.3.3)
+    arel (3.0.2)
+    audited (3.0.0)
+    audited-activerecord (3.0.0)
+      activerecord (~> 3.0)
+      audited (= 3.0.0)
+    bourne (1.1.2)
+      mocha (= 0.10.5)
+    builder (3.0.4)
+    capybara (1.1.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 0.1.4)
+    cells (3.8.8)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
+    childprocess (0.3.8)
+      ffi (~> 1.0, >= 1.0.11)
+    chunky_png (1.2.7)
+    client_side_validations (3.2.1)
+    client_side_validations-simple_form (2.0.1)
+      client_side_validations (~> 3.2.0)
+      simple_form (~> 2.0.3)
+    coderay (1.0.9)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.4.0)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+    daemons (1.1.9)
+    diff-lcs (1.1.3)
+    erubis (2.7.0)
+    eventmachine (1.0.0)
+    evergreen (1.0.0)
+      capybara (~> 1.0)
+      coffee-script
+      json_pure
+      launchy
+      sinatra (~> 1.1)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faraday (0.8.5)
+      multipart-post (~> 1.1)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
+    ffi (1.4.0)
+    fssm (0.2.10)
+    fudge (0.0.5)
+      activesupport
+      rainbow
+      thor
+    google_visualr (2.1.6)
+    guard (1.6.2)
+      listen (>= 0.6.0)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      terminal-table (>= 1.4.3)
+      thor (>= 0.14.6)
+    guard-rspec (2.4.1)
+      guard (>= 1.1)
+      rspec (~> 2.11)
+    hashie (1.2.0)
+    hike (1.2.1)
+    http_parser.rb (0.5.3)
+    httpauth (0.2.0)
+    i18n (0.6.1)
+    journey (1.0.4)
+    jquery-cookie-rails (0.1.1)
+      jquery-rails (~> 2.0)
+      railties (>= 3.2.0, < 5.0)
+      thor (~> 0.14)
+    jquery-rails (2.2.1)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    json (1.7.7)
+    json_pure (1.7.7)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
+    launchy (2.2.0)
+      addressable (~> 2.3)
+    libv8 (3.11.8.13)
+    listen (0.7.2)
+    lumberjack (1.0.2)
+    mail (2.4.4)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    md_emoji (1.0.0)
+      railties (>= 3.1.0)
+      redcarpet (>= 2.0)
+    metaclass (0.0.1)
+    method_source (0.8.1)
+    mime-types (1.21)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
+    modernizr-rails (2.6.2)
+    mousetrap-rails (0.0.9)
+    multi_json (1.6.1)
+    multipart-post (1.1.5)
+    mustache (0.99.4)
+    netrc (0.7.7)
+    nokogiri (1.5.6)
+    oauth2 (0.8.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    octokit (1.23.0)
+      addressable (~> 2.2)
+      faraday (~> 0.8)
+      faraday_middleware (~> 0.9)
+      hashie (~> 1.2)
+      multi_json (~> 1.3)
+      netrc (~> 0.7.7)
+    omniauth (1.1.3)
+      hashie (~> 1.2)
+      rack
+    omniauth-github (1.1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    pg (0.14.1)
+    poltergeist (1.0.2)
+      capybara (~> 1.1)
+      childprocess (~> 0.3)
+      faye-websocket (~> 0.4, >= 0.4.4)
+      http_parser.rb (~> 0.5.3)
+      multi_json (~> 1.0)
+    polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.4.5)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-pjax (0.7.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.3)
+    rack-protection (1.3.2)
+      rack
+    rack-ssl (1.3.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rails (3.2.12)
+      actionmailer (= 3.2.12)
+      actionpack (= 3.2.12)
+      activerecord (= 3.2.12)
+      activeresource (= 3.2.12)
+      activesupport (= 3.2.12)
+      bundler (~> 1.0)
+      railties (= 3.2.12)
+    railties (3.2.12)
+      actionpack (= 3.2.12)
+      activesupport (= 3.2.12)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
+    rainbow (1.1.4)
+    rake (10.0.3)
+    rb-fsevent (0.9.3)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
+    rdoc (3.12.1)
+      json (~> 1.4)
+    redcarpet (2.2.2)
+    ref (1.0.2)
+    responders (0.9.3)
+      railties (~> 3.1)
+    rspec (2.12.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+    rspec-cells (0.1.7)
+      cells (~> 3.4)
+      railties (>= 3.0, < 4.1)
+      rspec-rails (~> 2.2)
+    rspec-core (2.12.2)
+    rspec-expectations (2.12.1)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.12.2)
+    rspec-rails (2.12.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+    rubyzip (0.9.9)
+    sass (3.2.5)
+    sass-rails (3.2.6)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
+    selenium-webdriver (2.30.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
+    shoulda-matchers (1.4.2)
+      activesupport (>= 3.0.0)
+      bourne (~> 1.1.2)
+    simple_form (2.0.4)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
+    sinatra (1.3.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.3)
+      tilt (~> 1.3, >= 1.3.3)
+    slop (3.4.3)
+    smt_rails (0.2.4)
+      mustache (>= 0.99.4)
+      rails (>= 3.1.0)
+      sprockets (>= 2.0.3)
+      tilt (>= 1.3.3)
+    sprockets (2.2.2)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.7)
+    state_machine (1.1.2)
+    terminal-table (1.4.5)
+    therubyracer (0.11.3)
+      libv8 (~> 3.11.8.12)
+      ref
+    thin (1.5.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thor (0.17.0)
+    tilt (1.3.3)
+    treetop (1.4.12)
+      polyglot
+      polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.4)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
+    twitter-bootstrap-rails-confirm (0.0.5)
+    tzinfo (0.3.35)
+    websocket (1.0.7)
+    xpath (0.1.4)
+      nokogiri (~> 1.3)
+    yard (0.8.4.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  best_in_place!
+  client_side_validations
+  client_side_validations-simple_form
+  compass-rails
+  evergreen
+  execjs
+  jquery-rails
+  md_emoji
+  modernizr-rails
+  mousetrap-rails
+  pg
+  poltergeist
+  rb-inotify (~> 0.8.8)
+  redcarpet
+  responders
+  sass-rails
+  shoulda-matchers
+  simple_form
+  sqlite3
+  therubyracer
+  thin
+  twitter-bootstrap-rails
+  tyne_auth!
+  tyne_core!
+  tyne_dev!
+  tyne_ui!

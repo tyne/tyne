@@ -1,0 +1,41 @@
+.comments {
+  width: 100%;
+  margin-bottom: 5px;
+  .comment {
+    border-bottom: 1px dashed #ded;
+
+    td {
+      padding-top: 10px;
+    }
+
+    > div {
+      float: left;
+    }
+
+    .comment-avatar {
+      margin: 5px 10px 5px 0px;
+      width: 60px;
+      vertical-align: top;
+    }
+
+    .comment-date {
+      color: #AAA;
+    }
+
+    .comment-body {
+      margin: 5px 10px 0px 10px;
+      .comment-headline {
+        a {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.comments-present {
+  color: #333;
+  background-color: #FCFCE9;
+  font-weight: bold;
+  @include border-radius(2px);
+}

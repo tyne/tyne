@@ -1,0 +1,29 @@
+<div class="span3">
+  <div class="well no-padding">
+    <div class="top-bar">
+      <%= link_to t("misc.new_project"), new_project_path, :class => 'btn btn-inverse btn-small new-project' %>
+      <h2>My projects <em>(<%= @accessible_projects.count %>)</em></h2>
+    </div>
+    <ul class="nav nav-list">
+      <%= render :partial => "project", :collection => @accessible_projects %>
+    </ul>
+    <div class="top-bar">
+      <h2>Most active projects</h2>
+    </div>
+    <ul class="nav nav-list">
+      <%= render :partial => "project", :collection => @most_active_projects %>
+    </ul>
+  </div>
+</div>
+
+<div class="span9">
+  <div class="well" data-cell="DashboardTour">
+  <div class="activities-anchor"></div>
+  <table class="Activities">
+    <tbody>
+      <%= render :partial => "audit", :collection => @audits %>
+      <%= content_tag :p, t("misc.no_recent_activity") if @audits.count == 0 %>
+    </tbody>
+  </table>
+  </div>
+</div>

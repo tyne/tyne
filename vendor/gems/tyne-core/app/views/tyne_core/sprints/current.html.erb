@@ -1,0 +1,44 @@
+<% if @sprint %>
+  <div class="options">
+    <%= link_to "Finish", main_app.finish_sprint_path(:user => @sprint.project.user.username, :key => @sprint.project.key, :id => @sprint.id), :class => "btn btn-small", :confirm => "Are you sure you wish to finish your sprint?", :method => :put, :data => { :"confirm-title" => "Finish sprint #{@sprint.name}", :"confirm-proceed" => "Finish", :"confirm-proceed-class" => "btn-success" } %>
+  </div>
+
+  <div class="board">
+    <div class="row-fluid">
+    <div class="span4">
+      <div class="well">
+        <h3>To Do</h3>
+        <ul class="work-items">
+          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.to_do %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="well">
+        <h3>In Progress</h3>
+        <ul class="work-items">
+          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.in_progress %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="span4">
+      <div class="well">
+        <h3>Done</h3>
+        <ul class="work-items">
+          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.closed %>
+        <ul>
+      </div>
+    </div>
+    </div>
+  </div>
+<% else %>
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="well centered">
+        <p>There is currently no active sprint.</p>
+      </div>
+    </div>
+  </div>
+<% end %>

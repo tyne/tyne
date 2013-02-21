@@ -1,0 +1,19 @@
+<% cache ["v2", "projects", "new", current_user] do %>
+  <div class="centered">
+  <%= simple_form_for(@project, :validate => true) do |f| %>
+    <table>
+      <tr>
+        <td class="half"><%= f.input :name %></td>
+        <td><%= f.input :key %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= t("hints.project_key") %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.input :description, :hint => t("hints.markdown_enabled") %></td>
+      </tr>
+    </table>
+    <%= f.button :submit, :class => "btn btn-success" %>
+  <% end %>
+  </div>
+<% end %>

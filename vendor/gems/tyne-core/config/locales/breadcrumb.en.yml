@@ -1,0 +1,19 @@
+en:
+  breadcrumbs:
+    tyne_core:
+      dashboards:
+        index: "Dashboard"
+      issues:
+        new: "New Issue"
+      sprints:
+        planning: "Planning"
+        current: "Current Sprint"
+      projects:
+        new: "New Project"
+        index: "Dashboard"
+        admin: "Admin"
+      teams:
+        admin: "Admin"
+      reports:
+        index: "Reports"
+        issue_type_ratio: "Issue Type Ratio"

@@ -1,0 +1,16 @@
+<div class="well no-padding planning-sprint" data-cell="SprintDeletion">
+  <div class="sprint-header">
+    <span class="planning-sprint-name"><%= best_in_place sprint, :name, :type => :input, :path => main_app.sprint_path(:id => sprint.id, :user => sprint.project.user.username, :key => sprint.project.key) %></span>
+    <span class="issue-count"><%= pluralize(sprint.issues.count, "Issue") %></span>
+    <%= start_sprint_button(sprint) %>
+    <%= link_to "&times;".html_safe, main_app.sprint_path(:user => @project.user.username, :key => @project.key, :id => sprint.id), :class => "delete-sprint close", :confirm => "Are you sure you want to delete this sprint?", :method => :delete, :remote => true, :data => { :"confirm-title" => "Delete #{sprint.name}", :"confirm-proceed" => "Delete", :"confirm-proceed-class" => "btn-danger" } %>
+  </div>
+
+  <ul class="planning-sprint-items backlog-sortable backlog-connected" data-reorder-url="<%= main_app.reorder_sprint_path(:user => @project.user.username, :key => @project.key, :id => sprint.id) %>">
+      <%= render :partial => "issue", :collection => sprint.issues %>
+  </ul>
+  <div class="planning-sprint-drag-information">
+    Drag items from the backlog into this area to add it to the sprint.
+  </div>
+</div>
+<%= render :partial => 'sprint_dialog', :locals => { :sprint => sprint } %>

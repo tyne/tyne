@@ -1,0 +1,13 @@
+<% cache ["v2", comment] do %>
+<tr class="comment">
+  <td class="comment-avatar"><%= avatar(comment.user, :width => 48) %></td>
+  <td class="comment-body">
+    <div class="comment-headline">
+    <p><%= link_to(comment.user.name, main_app.overview_path(:user => comment.user.username)) %> <span class="comment-date"> &bullet; <%= time_ago_in_words(comment.created_at) %> ago</span></p>
+    </div>
+    <div class="comment-message">
+      <p><%= markup_to_html(comment.message) %></p>
+    </div>
+  </td>
+</tr>
+<% end %>

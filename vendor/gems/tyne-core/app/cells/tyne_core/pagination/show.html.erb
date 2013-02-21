@@ -1,0 +1,18 @@
+<div class="tyne-pagination" data-cell="Pagination" data-page="<%= @current_page %>" data-max=<%= @page_count %>>
+  <%= simple_form_for :pagination do |f| %>
+  <div>
+      <span>Total: <%= @total %></span>
+  </div>
+  <div class="pagination-controls">
+    <ul>
+      <li><%= link_to "Prev", "#", :data => { :pagination => "prev" } %></li>
+      <li><span>Page <%= @current_page %> of <%= @page_count %></span></li>
+      <li><%= link_to "Next", "#", :data => { :pagination => "next" } %></li>
+    </ul>
+  </div>
+  <div class="page-information">
+    <%= f.input :size, :collection => @sizes, :as => :select, :label => false, :include_blank => false, :selected => @page_size %>
+    <span>per page</span>
+  </div>
+  <% end %>
+</div>

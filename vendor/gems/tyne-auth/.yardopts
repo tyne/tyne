@@ -1,0 +1,4 @@
+lib/**/*.rb
+lib/*.rb
+app/**/*.rb
+app/*.rb

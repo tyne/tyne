@@ -1,0 +1,4 @@
+build :default do
+  yard 'stats --list-undoc', :coverage => 100
+  task :rspec, :coverage => 100
+end

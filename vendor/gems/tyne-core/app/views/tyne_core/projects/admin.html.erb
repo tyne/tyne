@@ -1,0 +1,16 @@
+<div class="centered centered-70">
+<div class="tabbable tabs-left">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#options" data-toggle="tab"><%= t("projects.options") %></a><li>
+    <li><a href="#teams" data-toggle="tab"><%= t("projects.teams") %></a><li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="options">
+      <%= render :partial => "admin_options" %>
+    </div>
+    <div class="tab-pane" id="teams">
+      <%= render :partial => "admin_teams" %>
+    </div>
+  </div>
+</div>
+</div>

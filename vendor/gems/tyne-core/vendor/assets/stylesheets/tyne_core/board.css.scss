@@ -1,0 +1,76 @@
+.board {
+  .well {
+    padding: 0;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 1.6em;
+    letter-spacing: -0.05em;
+    color: #777;
+    text-align: center;
+    border-bottom: 1px dashed #ddd;
+  }
+
+  .work-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 15px;
+
+    .work-item {
+      border-top: 1px solid #CCC;
+      &:hover {
+        // cursor: move;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      .work-item-main {
+        padding-left: 10px;
+      }
+
+      .dragger {
+        height: 50px;
+        width: 8px;
+      }
+
+      &.state-bug {
+        .dragger { background-color: #F03826; }
+      }
+
+      &.state-feature {
+        .dragger { background-color: #44A143; }
+      }
+
+      &.state-enhancement {
+        .dragger { background-color: #3A5A64; }
+      }
+
+      &.state-story {
+        .dragger { background-color: #A81F5E; }
+      }
+
+      &.state-task {
+        .dragger { background-color: #F2811D; }
+      }
+
+      .td-last {
+        width: 40px;
+      }
+
+      .work-item-content {
+        height: 50px;
+
+        @include background-image(linear-gradient(#fff, #f8f8f8));
+
+        &:hover {
+          background: #f8f8f8;
+        }
+      }
+    }
+  }
+}

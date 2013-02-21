@@ -1,0 +1,8 @@
+en:
+  authentication:
+    sign_in:
+      github: "Sign in with Github"
+    logged_in: "You have been successfully logged in."
+    logged_out: "You have been logged out."
+    not_allowed: "It is not allowed to perform this action."
+    login_first: "You have tried to access a restricted area. You need to login first."

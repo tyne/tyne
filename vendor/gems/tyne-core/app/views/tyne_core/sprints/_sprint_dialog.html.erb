@@ -1,0 +1,16 @@
+<div id="<%= "sprint_#{sprint.id}_dialog" %>" class="modal hide fade" tabindex="-1" role="dialog">
+  <%= simple_form_for(sprint, :url => main_app.start_sprint_path(:user => sprint.project.user.username, :key => sprint.project.key, :id => sprint.id), :validate => true) do |f| %>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3>Start <%= sprint.name %></h3>
+  </div>
+  <div class="modal-body">
+    <%= f.input :start_date, :as => :datepicker %>
+    <%= f.input :end_date, :as => :datepicker %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.button :submit, :value => 'Start sprint', :class => 'btn btn-success' %>
+  </div>
+  <% end %>
+</div>

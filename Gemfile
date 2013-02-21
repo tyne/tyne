@@ -24,12 +24,12 @@ gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"
 gem "md_emoji"
-gem "best_in_place", :path => 'vendor/gems/best_in_place'
 
 # Tyne
+gem "best_in_place", :path => 'vendor/gems/best_in_place'
 gem 'tyne_ui', :path => 'vendor/gems/tyne-ui'
-gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'master'
-gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
+gem 'tyne_core', :path => 'vendor/gems/tyne-core'
+gem 'tyne_auth', :path => 'vendor/gems/tyne-auth'
 
 gem 'modernizr-rails'
 gem 'twitter-bootstrap-rails'

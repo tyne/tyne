@@ -1,0 +1,37 @@
+.top-bar {
+  border-bottom: 1px solid #DDD;
+  @include background-image(linear-gradient(#EEE, #FFF));
+  padding: 10px;
+
+  h2 {
+    margin: 0px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    display: inline;
+    color: #555;
+
+    em {
+      color: #aaa;
+    }
+  }
+
+  .new-project {
+    float: right;
+    margin: 0px 10px;
+  }
+}
+
+ul.nav-list {
+  padding: 0;
+  li {
+    border-bottom: 1px dashed #ddd;
+
+    a {
+      padding: 0;
+      margin: 0;
+      display: block;
+      padding: 5px 15px;
+    }
+  }
+}

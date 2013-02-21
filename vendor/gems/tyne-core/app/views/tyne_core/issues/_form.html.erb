@@ -1,0 +1,27 @@
+<%= simple_form_for(issue, :url => url, :validate => true) do |f| %>
+  <table>
+    <tr>
+      <td colspan="2">
+        <%= f.input :summary %>
+      </td>
+    </tr>
+    <tr>
+      <td class="half"><%= f.association :issue_type, :prompt => false %></td>
+      <td><%= f.association :issue_priority, :prompt => false %></td>
+    </tr>
+    <tr>
+      <td class="half"><%= f.association :assigned_to, :collection => users_to_assign(issue) %></td>
+      <td class="half"><%= f.input :estimate %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= f.input :description, :hint => "Markdown enabled" %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= f.input_field :redirect_to, :value => main_app.new_issue_path, :type => :checkbox, :id => :redirect_to %>
+        <%= f.label "Create another", :for => :redirect_to %>
+      </td>
+    </tr>
+  </table>
+  <%= f.button :submit, :class => "btn" %>
+<% end %>
