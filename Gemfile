@@ -29,7 +29,6 @@ gem "md_emoji"
 gem "best_in_place", :path => 'vendor/gems/best_in_place'
 gem 'tyne_ui', :path => 'vendor/gems/tyne-ui'
 gem 'tyne_core', :path => 'vendor/gems/tyne-core'
-gem 'tyne_auth', :path => 'vendor/gems/tyne-auth'
 
 gem 'modernizr-rails'
 gem 'twitter-bootstrap-rails'
@@ -43,6 +42,10 @@ gem 'thin'
 # Assets
 gem "asset_sync"
 
+gem "omniauth"
+gem "omniauth-github"
+gem "octokit"
+
 group :production do
  gem 'pg'
  gem 'unicorn'
@@ -55,4 +58,5 @@ group :test, :development do
   gem "sqlite3"
   gem "rspec-rails"
   gem "capybara"
+  gem "shoulda-matchers"
 end

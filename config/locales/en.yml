@@ -2,4 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  authentication:
+    sign_in:
+      github: "Sign in with Github"
+    logged_in: "You have been successfully logged in."
+    logged_out: "You have been logged out."
+    not_allowed: "It is not allowed to perform this action."
+    login_first: "You have tried to access a restricted area. You need to login first."

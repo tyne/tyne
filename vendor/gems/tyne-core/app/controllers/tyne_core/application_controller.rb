@@ -2,13 +2,13 @@
 class TyneCore::ApplicationController < ApplicationController
   private
   def load_user
-    @user = TyneAuth::User.find_by_username(params[:user])
+    @user = User.find_by_username(params[:user])
 
     add_breadcrumb @user.username, main_app.overview_path(:user => params[:user])
   end
 
   def load_project
-    @project = TyneCore::Project.joins(:user).where(:key => params[:key]).where(:tyne_auth_users => {:username => params[:user]  }).first
+    @project = TyneCore::Project.joins(:user).where(:key => params[:key]).where(:users => {:username => params[:user]  }).first
 
     add_breadcrumb @project.name, main_app.backlog_path(:user => params[:user], :key => params[:key])
   end

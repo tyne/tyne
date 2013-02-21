@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216121641) do
+ActiveRecord::Schema.define(:version => 20130221205348) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -34,36 +34,22 @@ ActiveRecord::Schema.define(:version => 20130216121641) do
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
-  create_table "tyne_auth_organization_memberships", :force => true do |t|
+  create_table "organization_memberships", :force => true do |t|
     t.integer  "organization_id"
     t.integer  "user_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
-  add_index "tyne_auth_organization_memberships", ["organization_id", "user_id"], :name => "organization_id_user_id", :unique => true
-  add_index "tyne_auth_organization_memberships", ["organization_id"], :name => "index_tyne_auth_organization_memberships_on_organization_id"
-  add_index "tyne_auth_organization_memberships", ["user_id"], :name => "index_tyne_auth_organization_memberships_on_user_id"
+  add_index "organization_memberships", ["organization_id", "user_id"], :name => "organization_id_user_id", :unique => true
+  add_index "organization_memberships", ["organization_id"], :name => "index_tyne_auth_organization_memberships_on_organization_id"
+  add_index "organization_memberships", ["user_id"], :name => "index_tyne_auth_organization_memberships_on_user_id"
 
-  create_table "tyne_auth_organizations", :force => true do |t|
+  create_table "organizations", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "tyne_auth_users", :force => true do |t|
-    t.string   "uid"
-    t.string   "name"
-    t.string   "username"
-    t.string   "email"
-    t.string   "token"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.string   "gravatar_id"
-  end
-
-  add_index "tyne_auth_users", ["uid"], :name => "index_tyne_auth_users_on_uid"
-  add_index "tyne_auth_users", ["username"], :name => "index_tyne_auth_users_on_username"
 
   create_table "tyne_core_comments", :force => true do |t|
     t.text     "message"
@@ -175,5 +161,19 @@ ActiveRecord::Schema.define(:version => 20130216121641) do
 
   add_index "tyne_core_votes", ["user_id"], :name => "index_tyne_core_votes_on_user_id"
   add_index "tyne_core_votes", ["votable_type", "votable_id"], :name => "index_tyne_core_votes_on_votable_type_and_votable_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "uid"
+    t.string   "name"
+    t.string   "username"
+    t.string   "email"
+    t.string   "token"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "gravatar_id"
+  end
+
+  add_index "users", ["uid"], :name => "index_tyne_auth_users_on_uid"
+  add_index "users", ["username"], :name => "index_tyne_auth_users_on_username"
 
 end

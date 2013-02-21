@@ -9,7 +9,7 @@ module TyneCore
     validates :key, :name, :uniqueness => { :scope => :user_id }
     validates :key, :format => { :with => /^[a-zA-Z\d\s]*$/ }
 
-    belongs_to :user, :class_name => "TyneAuth::User"
+    belongs_to :user, :class_name => "User"
     has_many :issues, :class_name => "TyneCore::Issue", :dependent => :destroy
     has_many :backlog_items, :class_name => "TyneCore::BacklogItem", :dependent => :destroy, :order => 'position'
     has_many :sprint_items, :class_name => "TyneCore::SprintItem", :dependent => :destroy, :order => 'sprint_position'

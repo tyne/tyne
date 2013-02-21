@@ -1,7 +1,7 @@
 module TyneCore
   # A team member is part of a team that belongs to a project.
   class TeamMember < ActiveRecord::Base
-    belongs_to :user, :class_name => "TyneAuth::User"
+    belongs_to :user, :class_name => "User"
     belongs_to :team, :class_name => "TyneCore::Team", :touch => true
 
     validates :user, :team, :presence => true
