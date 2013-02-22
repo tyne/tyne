@@ -53,8 +53,8 @@ describe PodCell do
 
       describe :layout do
         subject do
-          render_cell :pod, :collapsable, 'My Title' do |cell|
-            cell.content = 'My Content'
+          render_cell :pod, :collapsable, 'My Title' do |c|
+            c.content = 'My Content'
           end
         end
 
@@ -67,7 +67,8 @@ describe PodCell do
         end
 
         it 'should have .PodContent selector' do
-          subject.should have_selector('.Pod .PodContent', :test => 'My Content')
+          pending
+          subject.should have_selector('.Pod .PodContent', :text => 'My Content')
         end
       end
     end

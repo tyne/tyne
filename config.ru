@@ -2,4 +2,4 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 use Rack::Deflater
-run TyneHost::Application
+run Tyne::Application

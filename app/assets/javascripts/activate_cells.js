@@ -1,3 +1,0 @@
-$(function() {
-  Cell.initializeAll();
-});

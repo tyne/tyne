@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
- *= require tyne_ui
  *= require tyne_core
  *= require mousetrap
  *= require_tree .
