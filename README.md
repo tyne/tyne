@@ -65,6 +65,20 @@ If you have questions to the internals of tyne or just want to propose some chan
 
 Please read our [contribution-guidelines](https://github.com/tyne/tyne/blob/master/CONTRIBUTING.md).
 
+Note Also that this repository contains submodules so cloning is best done like so:
+
+```bash
+git clone --recursive git@github.com:tyne/tyne.git
+```
+
+Or if you have already cloned it, run this in your repo root:
+
+```bash
+git submodule init
+git submodule update
+```
+
+
 ## Maintainers
 
 * Tobias Haar (http://github.com/Tobscher)
