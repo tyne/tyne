@@ -50,6 +50,7 @@ module Extensions
     # @param [User] user
     # @return [Boolean]
     def upvote_for(user)
+      return unless vote_weight_for_user(user) < 1
       vote_for(user, 1)
     end
 
@@ -58,7 +59,15 @@ module Extensions
     # @param [User] user
     # @return [Boolean]
     def downvote_for(user)
+      return unless vote_weight_for_user(user) > -1
       vote_for(user, -1)
     end
+
+    private
+
+    def vote_weight_for_user(user)
+      votes.where(:user_id => user.id).sum(:weight)
+    end
+
   end
 end
