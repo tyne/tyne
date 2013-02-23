@@ -1,0 +1,4 @@
+<%= simple_form_for(comment, :validate => true, :url => issue_comments_path(:user => comment.issue.project.user.username, :key => comment.issue.project.key, :issue_id => comment.issue.number, :format => :pjax), :html => { :data => { :cell => "Comment" } }) do |f| %>
+  <%= f.input :message, :hint => t("hints.markdown_enabled") %>
+  <%= f.button :submit, :class => "btn" %>
+<% end %>

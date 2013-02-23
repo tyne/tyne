@@ -27,10 +27,14 @@ gem "redcarpet"
 gem "md_emoji"
 gem "cells"
 gem "smt_rails"
+gem "audited-activerecord"
+gem "responders"
+gem "state_machine"
+gem "acts_as_list"
+gem "google_visualr"
 
 # Tyne
 gem "best_in_place", :path => 'vendor/gems/best_in_place'
-gem 'tyne_core', :path => 'vendor/gems/tyne-core'
 
 gem 'modernizr-rails'
 gem 'twitter-bootstrap-rails'
@@ -62,7 +66,5 @@ group :test, :development do
   gem "shoulda-matchers"
   gem "rspec-cells"
   gem "pry"
-  gem "guard-spork"
-  gem "guard-rspec"
-  gem 'rb-fsevent', '~> 0.9.1'
+  gem "factory_girl_rails"
 end

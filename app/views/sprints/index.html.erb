@@ -1,0 +1,23 @@
+<div class="span6">
+  <div class="options">
+    <%= link_to "Create", new_issue_path(:user => @project.user.username, :key => @project.key), :class => "btn btn-small" if current_user %>
+  </div>
+
+  <div class="well no-padding backlog">
+    <div class="backlog-headline">
+      <span class="backlog-headline-content">Backlog</span>
+      <span class="backlog-headline-issue-count issue-count"><%= pluralize(@issues.count, "Issue") %></span>
+    </div>
+
+    <ul class="backlog-items backlog-sortable backlog-connected" data-reorder-url="<%= reorder_issues_path(:user => @project.user.username, :key => @project.key) %>">
+      <%= render :partial => "issue", :collection => @issues %>
+    </ul>
+  </div>
+</div>
+
+<div class="span6">
+  <div class="planning">
+    <%= render @sprints %>
+    <%= render :partial => "sprint_placeholder" %>
+  </div>
+</div>

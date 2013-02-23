@@ -1,2 +1,3 @@
 require('/assets/jquery.js');
-stylesheet('/assets/tyne_ui.css');
+require('/assets/tyne_ui.js');
+stylesheet('/assets/tyne_core.css');

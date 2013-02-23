@@ -1,18 +1,31 @@
-@import "compass";
-
 .tag {
-  @include border-radius(4px);
-  background-color: #f0f0f0;
-  color: #b8b8b8;
-  font-size: small;
-  padding: 0px;
-  border: 1px solid #ddd;
-  min-width: 100px;
-  display: inline-block;
-  text-align: center;
+  &.bug, &.reopened {
+    color: #800000;
+    background-color: #f7e7e7;
+  }
 
-  &.tag-short {
-    min-width: 20px;
-    width: 20px;
+  &.enhancement {
+    color: #000080;
+    background-color: #e7e7f7;
+  }
+
+  &.story {
+    color: #A81F5E;
+    background-color: lighten(#A81F5E, 52%);
+  }
+
+  &.task {
+    color: #F2811D;
+    background-color: lighten(#F2811D, 40%);
+  }
+
+  &.feature, &.wip {
+    color: #008000;
+    background-color: #e7f7e7;
+  }
+
+  &.high {
+    color: #f7e7e7;
+    background-color: #C00000;
   }
 }

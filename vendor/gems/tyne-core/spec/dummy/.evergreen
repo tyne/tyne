@@ -1,4 +1,0 @@
-Evergreen.configure do |config|
-  config.root = "#{File.dirname(__FILE__)}/../.."
-  config.template_dir = 'spec/templates'
-end

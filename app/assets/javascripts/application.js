@@ -25,7 +25,6 @@
 //= require mustache
 //= require_tree ./support
 //= require_tree ./plugins
-//= require tyne_core
 //= require_tree .
 
 $(function() {

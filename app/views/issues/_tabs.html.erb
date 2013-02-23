@@ -1,0 +1,11 @@
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#comments" data-toggle="tab"><%= t("issues.comments", :count => issue.comments.scoped.count) %></a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="comments">
+      <%= render :partial => "comments/list", :locals => { :comments => issue.comments.scoped } %>
+      <%= render :partial => "comments/form", :locals => { :comment => issue.comments.build } if current_user %>
+    </div>
+  </div>
+</div>
