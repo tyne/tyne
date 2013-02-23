@@ -16,4 +16,4 @@ If you'd like to submit a pull request and contribute to the project please ensu
 1. Your code is fully documented. We are using [YARD](http://yardoc.org/) to ensure 100% documentation coverage.
 2. Your code is fully tested. We are using [SimpleCov](https://github.com/colszowka/simplecov) to ensure 100% code coverage.
 3. You have merged with master.
-4. You have ran the test suite and it passes. You have to run ```bundle exec fudge build``` from the top level of your project.
+4. You have ran the test suite and it passes. You have to run ```script/ci``` from the top level of your project.
