@@ -2,14 +2,9 @@
 module AuditFormatter
   # Base class for formatted audit messages
   class Base
-    include Rails.application.routes.url_helpers
-    include ActionView::Helpers::UrlHelper
-    include AvatarHelper
     include ActionView::Helpers::TranslationHelper
 
     attr_reader :object, :options
-
-    delegate :controller, :image_tag, :to => :view_context
 
     def initialize(object, options={})
       @object, @options = object, options
@@ -31,13 +26,17 @@ module AuditFormatter
     end
 
     private
+
+    def format_context
+      FormatContexts::Html.new
+    end
+
     def user
       @user ||= object.user
     end
 
     def user_link
-      return "Unknown" unless user
-      link_to user.username, overview_path(:user => user.username)
+      LinkHelper.new(format_context).user_link(user)
     end
 
     def view_context

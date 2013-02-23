@@ -8,7 +8,7 @@ class IssueAuditFormatter < AuditFormatter::Base
   end
 
   def icon
-    image_tag "icon-sweets/32/#{icon_name}"
+    format_context.image_tag "icon-sweets/32/#{icon_name}"
   end
 
   def details
@@ -50,11 +50,11 @@ class IssueAuditFormatter < AuditFormatter::Base
   end
 
   def issue_link
-    link_to "#{issue.key} - #{issue.summary}", issue_path(:user => project.user.username, :key => project.key, :id => issue.number)
+    LinkHelper.new(format_context).issue_link(issue)
   end
 
   def project_link
-    link_to project.name, backlog_path(:user => project.user.username, :key => project.key)
+    LinkHelper.new(format_context).project_link(project)
   end
 
   def icon_name
