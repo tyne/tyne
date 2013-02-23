@@ -53,13 +53,6 @@ Start your rails server via ```rails s```
 
 You can run the following command to run the whole test script: ```script/ci```
 
-The test suite is using a github user in order to test the OmniAuth integration. Please make sure you have added the following environment variables:
-
-```bash
-export CAPYBARA_USER=username
-export CAPYBARA_PASSWORD=password
-```
-
 ## Contact us
 
 Please don't hesitate to ask any questions at our google groups.
