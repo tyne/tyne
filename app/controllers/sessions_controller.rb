@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     auth_hash = request.env['omniauth.auth']
 
-    user = User.find_or_create(auth_hash)
+    user = AuthProcessor.new(auth_hash).find_or_create_user
     session[:user_id] = user.id
 
     redirect_to main_app.root_path, :notice => I18n.t("authentication.logged_in", :username => user.name)
