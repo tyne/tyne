@@ -24,6 +24,8 @@ class TeamsController < AdminController
       skope = skope.where(User.arel_table[:id].not_eq(member.user.id))
     end
 
+    skope = skope.limit(10)
+
     respond_with(skope.all.map{|x| {:label => x.username, :value => x.id}})
   end
 

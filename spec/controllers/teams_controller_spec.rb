@@ -39,7 +39,7 @@ describe TeamsController do
 
       it "should return user that match with the term" do
         hash = JSON.parse(response.body)
-        hash[0]['label'].should == "Bar"
+        hash.last['label'].should == "Bar"
       end
     end
   end
