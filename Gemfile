@@ -16,8 +16,8 @@ group :assets do
   gem 'jquery-cookie-rails'
 end
 
-gem "jquery-rails", '~> 2.1.0'
 gem 'compass-rails'
+gem "jquery-rails", '~> 2.1.0'
 
 gem "simple_form"
 gem 'client_side_validations'
