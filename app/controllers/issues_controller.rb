@@ -77,13 +77,13 @@ class IssuesController < ApplicationController
 
   # Votes the issue up
   def upvote
-    @issue.upvote_for(current_user) if @issue.votes.where(:user_id => current_user.id).sum(:weight) < 1
+    @issue.upvote_for(current_user)
     render :json => @issue.total_votes.to_json
   end
 
   # Votes the issue down
   def downvote
-    @issue.downvote_for(current_user) if @issue.votes.where(:user_id => current_user.id).sum(:weight) > -1
+    @issue.downvote_for(current_user)
     render :json => @issue.total_votes.to_json
   end
 
