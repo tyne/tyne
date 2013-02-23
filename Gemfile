@@ -13,11 +13,11 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-cookie-rails'
 end
 
 gem 'compass-rails'
 gem "jquery-rails", '~> 2.1.0'
+gem 'jquery-cookie-rails'
 
 gem "simple_form"
 gem 'client_side_validations'
