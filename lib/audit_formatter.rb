@@ -63,7 +63,7 @@ module AuditFormatter
 
     # Returns the particular formatter constant.
     #
-    # e.g. TyneCore::Foo => TyneCore::FooAuditFormatter
+    # e.g. Foo => FooAuditFormatter
     def audit_formatter_class
       klass = self.auditable_type
       "#{klass}AuditFormatter".safe_constantize
@@ -89,8 +89,4 @@ module AuditFormatter
       @audit_formatter ||= audit_formatter_class.new(self)
     end
   end
-end
-
-ActiveSupport.on_load(:active_record) do
-  Audited::Adapters::ActiveRecord::Audit.send(:include, AuditFormatter::Support)
 end

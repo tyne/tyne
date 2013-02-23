@@ -1,5 +1,5 @@
 <ul class="filter" data-filter="<%= field[0] %>">
-  <li class="filter-options">
+  <li class="filter-options selected">
     <%= f.input field[0], :label => "All", :required => false, :input_html => { :id => "filter_#{field[0]}_all", :type => :checkbox, :value => ''}, :label_html => { :for => "filter_#{field[0]}_all", :class => "selected" }, :wrapper_html => { :class => "filter-controls-hidden" } %>
   </li>
     <% field[1].each do |option| %>

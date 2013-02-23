@@ -14,6 +14,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
+  gem 'jquery-cookie-rails'
 end
 
 gem "jquery-rails", '~> 2.1.0'
@@ -32,6 +33,7 @@ gem "responders"
 gem "state_machine"
 gem "acts_as_list"
 gem "google_visualr"
+gem 'twitter-bootstrap-rails-confirm', :git => 'https://github.com/bluerail/twitter-bootstrap-rails-confirm.git'
 
 # Tyne
 gem "best_in_place", :path => 'vendor/gems/best_in_place'
@@ -67,4 +69,6 @@ group :test, :development do
   gem "rspec-cells"
   gem "pry"
   gem "factory_girl_rails"
+  gem "guard-jasmine"
+  gem 'jasminerice'
 end
