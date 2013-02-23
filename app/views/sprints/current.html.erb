@@ -9,7 +9,7 @@
       <div class="well">
         <h3>To Do</h3>
         <ul class="work-items">
-          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.to_do %>
+          <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.to_do %>
         </ul>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <div class="well">
         <h3>In Progress</h3>
         <ul class="work-items">
-          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.in_progress %>
+          <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.in_progress %>
         </ul>
       </div>
     </div>
@@ -27,7 +27,7 @@
       <div class="well">
         <h3>Done</h3>
         <ul class="work-items">
-          <%= render :partial => 'tyne_core/sprints/work_item', :collection => @sprint.issues.closed %>
+          <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.closed %>
         <ul>
       </div>
     </div>
