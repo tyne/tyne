@@ -1,0 +1,20 @@
+.ui-autocomplete {
+  border: 1px solid #CCC;
+  width: 250px;
+  list-style-type: none;
+
+  .ui-menu-item > a.ui-corner-all {
+    background-color: #fff;
+    padding: 5px;
+    text-decoration: none;
+    color: #555;
+    display: block;
+    cursor: pointer;
+
+    &.ui-state-hover, &.ui-state-active, &.ui-state-focus {
+      background-color: #eee;
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}

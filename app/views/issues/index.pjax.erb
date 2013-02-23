@@ -1,0 +1,4 @@
+<table>
+  <%= render :partial => 'issue', :collection => @issues, :formats => [:html] %>
+</table>
+<%= render_cell :pagination, :show, :collection => @issues, :total => @total, :current_page => @current_page, :page_count => @page_count, :page_size => @page_size %>

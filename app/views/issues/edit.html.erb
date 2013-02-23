@@ -1,0 +1,5 @@
+<% cache ["v6", "issue", 'edit', @issue] do %>
+  <div class="centered">
+    <%= render :partial => 'form', :locals => { :issue => @issue, :url => main_app.issue_path(:user => @project.user.username, :key => @project.key, :id => @issue.number) } %>
+  </div>
+<% end %>

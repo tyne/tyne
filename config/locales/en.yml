@@ -2,4 +2,121 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  authentication:
+    sign_in:
+      github: "Sign in with Github"
+    logged_in: "You have been successfully logged in."
+    logged_out: "You have been logged out."
+    not_allowed: "It is not allowed to perform this action."
+    login_first: "You have tried to access a restricted area. You need to login first."
+
+  headlines:
+    tyne_core/projects:
+      import: "Import"
+      index: "Projects"
+
+  descriptions:
+    projects:
+      import: "I have found the following projects on Github:"
+    teams:
+      admin_html: "Owners have <b>full access</b> to the project and can <b>administrate</b> it."
+      default_html: "Contributors can be <b>assigned</b> to issues and contribute to the project. Contributors <b>don't have access to administrate</b> a project."
+
+  overview:
+    public_projects: "Public projects"
+    open_issues:
+      one: "%{count} Open Issue"
+      other: "%{count} Open Issues"
+    collaborators:
+      one: "%{count} Collaborator"
+      other: "%{count} Collaborators"
+
+  states:
+    open: "Open"
+    reopened: "Reopened"
+    wip: "In Progress"
+    done: "Done"
+    invalid: "Invalid"
+    transitions:
+      start_working: "Start Progress"
+      stop_working: "Stop Progress"
+      task_is_done: "Resolved"
+      task_is_invalid: "Invalid"
+      reopen: "Reopen"
+
+  order:
+    asc: "Ascending"
+    desc: "Descending"
+
+  pod:
+    titles:
+      dates: "Dates"
+      workflow: "Workflow"
+      people: "People"
+      description: "Description"
+
+  misc:
+    issue:
+      one: "%{count} Issue"
+      other: "%{count} Issues"
+    new_project: "New Project"
+    no_recent_activity: "No recent activity"
+    danger: "Danger!"
+
+  hints:
+    markdown_enabled: "Markdown enabled"
+    project_key: "The project key is used to identify your project and is used to build a unique issue key."
+    project_delete: "Once you have deleted a project you won't be able to restore it."
+
+  activerecord:
+    models:
+      tyne_core/issue: "Issue"
+
+  labels:
+    reporter: "Reporter"
+    type: "Type"
+    priority: "Priority"
+    today: "Today"
+    opened: "Opened"
+    state: "State"
+    comments: "Comments"
+
+  teams:
+    names:
+      defaults:
+        owners: "Owners"
+        contributors: "Contributors"
+
+  projects:
+    options: "Options"
+    teams: "Teams"
+
+  issues:
+    reported: "Reported:"
+    last_update: "Last update:"
+    not_assigned: "Not assigned"
+    reported_by: "Reported by:"
+    assigned_to: "Assigned to:"
+    comments:
+      one: "%{count} Comment"
+      other: "%{count} Comments"
+    state: "State:"
+
+  actions:
+    create: "Create"
+    edit: "Edit"
+    refresh: "Refresh"
+    list_view: "List view"
+    detail_view: "Detail view"
+    assign_to_me: "Assign to me"
+
+  confirm:
+    project:
+      caption: "Delete this project"
+      message: "Are you sure you want to delete this project?"
+      title: "Delete %{name}?"
+      button: "Delete (forever!)"
+
+  sprints:
+    already_running: "You cannot start a new sprint whilst another sprint is running."
+    zero_issues: "You cannot start a new sprint with zero issues."

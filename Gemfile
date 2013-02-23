@@ -13,6 +13,8 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'jquery-cookie-rails'
 end
 
 gem "jquery-rails", '~> 2.1.0'
@@ -24,12 +26,17 @@ gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"
 gem "md_emoji"
-gem "best_in_place", :git => 'https://github.com/tyne/best_in_place.git'
+gem "cells"
+gem "smt_rails"
+gem "audited-activerecord"
+gem "responders"
+gem "state_machine"
+gem "acts_as_list"
+gem "google_visualr"
+gem 'twitter-bootstrap-rails-confirm', :git => 'https://github.com/bluerail/twitter-bootstrap-rails-confirm.git'
 
 # Tyne
-gem 'tyne_ui', :git => 'https://github.com/tyne/tyne-ui.git', :branch => 'master'
-gem 'tyne_core', :git => 'https://github.com/tyne/tyne-core.git', :branch => 'master'
-gem 'tyne_auth', :git => 'https://github.com/tyne/tyne-auth.git', :branch => 'master'
+gem "best_in_place", :path => 'vendor/gems/best_in_place'
 
 gem 'modernizr-rails'
 gem 'twitter-bootstrap-rails'
@@ -43,16 +50,27 @@ gem 'thin'
 # Assets
 gem "asset_sync"
 
+gem "omniauth"
+gem "omniauth-github"
+gem "octokit"
+
 group :production do
  gem 'pg'
- gem 'unicorn'
  gem 'newrelic_rpm'
  gem 'dalli'
 end
 
 # Testing
 group :test, :development do
-  gem 'tyne_dev', :git => 'https://github.com/tyne/tyne-dev.git', :branch => 'master'
-  gem 'evergreen', :require => 'evergreen/rails'
   gem "sqlite3"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "shoulda-matchers"
+  gem "rspec-cells"
+  gem "pry"
+  gem "factory_girl_rails"
+  gem "guard-jasmine"
+  gem "jasminerice"
+  gem "yard"
+  gem "simplecov"
 end

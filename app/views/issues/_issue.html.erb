@@ -1,0 +1,27 @@
+<% cache ["v12", issue] do %>
+<tr class="issue <%= issue.state %> state-<%= issue.issue_type.name.downcase %>">
+  <td class="td-first dragger"></td>
+  <td class="td-second">
+    <p class="issue-headline issue-line-1">
+      <span class="issue-type-short">
+        <%= issue_type(issue, true) %>
+      </span>
+
+      <%= issue_comments(issue) %>
+      <%= issue_id(issue) %>
+      <span class="issue-summary"><%= content_tag :span, issue.summary, :class => "issue-#{issue.state}" %></span>
+      <span class="issue-assigned_to"><%= issue.assigned_to.try(:name) || t("issues.not_assigned") %></span>
+    </p>
+    <p class="issue-description issue-line-2">
+      <%= issue.description %>
+    </p>
+    <p class="issue-labels issue-line-3">
+      <%= issue_type(issue) %>
+      <%= issue_state(issue) %>
+      <%= issue_priority(issue) %>
+      <%= issue_reported_by(issue) %>
+      <%= issue_reported_at(issue) %>
+    </p>
+  </td>
+</tr>
+<% end %>

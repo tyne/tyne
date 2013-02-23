@@ -10,7 +10,7 @@ describe :authentication do
   end
 
   describe :github do
-    it "authenticates via github", :js => true do
+    it "authenticates via github", :js => true, :slow => true do
       visit root_path
       click_link 'Sign in with Github'
 

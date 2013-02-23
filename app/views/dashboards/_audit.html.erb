@@ -1,0 +1,16 @@
+<tr class="Activity <%= cycle("odd", "even") %>">
+  <td class="ActivityIcon">
+    <%= audit.icon %>
+  </td>
+  <td class="ActivityDescription">
+    <span class="activity-date"><%= time_ago_in_words(audit.created_at) %> ago</span>
+    <% cache ["v3", "dashboard", "audit", audit] do %>
+      <span class="activity-message">
+        <%= audit.formatted %>
+      </span>
+      <p class="activity-details">
+      <%= avatar(audit.user) %> <%= audit.details if audit.details %>
+      </p>
+    <% end %>
+  </td>
+</tr>

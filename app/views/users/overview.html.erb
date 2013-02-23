@@ -1,0 +1,34 @@
+<% cache ['v3', @user, 'overview', @user.projects.cache_key] do %>
+  <div class="well centered">
+  <table class="overview">
+    <tr>
+      <td class="td-first">
+        <p class="user">
+          <%= image_tag avatar_url(@user, :width => 128), :class => 'portrait', :width => 128 %>
+        </p>
+    </td>
+    <td>
+      <div class="overview-details">
+        <span class="user-name"><%= @user.name %></span>
+        <span class="user-nickname"><%= @user.username %> (<%= link_to "Github", "http://github.com/#{@user.username}" %>)</span>
+      </div>
+      <%= content_tag :h5, t("overview.public_projects") %>
+      <table class="table overview-project">
+        <% @user.projects.order("name").each do |project| %>
+          <tr>
+            <td>
+              <%= link_to(project.name, main_app.backlog_path(:user => @user.username, :key => project.key)) %>
+              <%= content_tag :p, project.description, :class => :description if project.description %>
+            </td>
+            <td class="td-last">
+            <span class="overview-project-issues"><%= I18n.t("overview.open_issues", :count => project.issues.not_completed.count) %></span>
+            <span class="overview-project-collaborators"><%= I18n.t("overview.collaborators", :count => project.workers.uniq { |x| x.user_id }.count ) %></span>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </td>
+  </tr>
+  </table>
+</div>
+<% end %>

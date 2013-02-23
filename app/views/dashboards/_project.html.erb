@@ -1,0 +1,3 @@
+<% cache ["v2", "dashboard", project] do %>
+  <li><%= link_to project.name, main_app.backlog_path(:user => project.user.username, :key => project.key) %></li>
+<% end %>

@@ -1,0 +1,4 @@
+<p>
+  <%= t("issues.reported") %> <%= issue.created_at? ? issue.created_at.to_formatted_s(:short) : '-' %><br />
+  <%= t("issues.last_updated") %> <%= issue.updated_at? ? issue.updated_at.to_formatted_s(:short) : '-' %>
+</p>

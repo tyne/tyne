@@ -1,0 +1,16 @@
+<li class="work-item state-<%= work_item.issue_type.name.downcase %> ">
+  <div class="work-item-content">
+    <table>
+      <tr>
+        <td class="dragger"></td>
+        <td class="work-item-main">
+          <div class="work-item-key"><%= issue_id(work_item) %></div>
+          <div class="work-item-summary"><%= work_item.summary %></div>
+        </td>
+        <td class="td-last">
+          <div class="work-item-gravatar"><%= avatar(work_item.assigned_to, :width => 32) %></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</li>

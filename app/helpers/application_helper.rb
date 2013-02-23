@@ -24,4 +24,14 @@ module ApplicationHelper
 
     "#{title} - Tyne"
   end
+
+  def markup_to_html(markup)
+    markdown = Redcarpet::Markdown.new(MdEmoji::Render, :autolink => true, :space_after_headers => true, :no_intra_emphasis => true)
+    markdown.render(markup).html_safe
+  end
+
+  # Alias for the issue path as scoped under user and project.
+  def path_to_issue(issue)
+    main_app.issue_path(:user => issue.project.user.username, :key => issue.project.key, :id => issue.number)
+  end
 end

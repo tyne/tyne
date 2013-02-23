@@ -1,0 +1,41 @@
+.Activities {
+  border: none;
+  width: 100%;
+
+  .Activity {
+    border-bottom: 1px solid #EEE;
+    padding: 10px;
+
+    &.even {
+      background-color: #f4f4f4;
+    }
+
+    td {
+      padding: 5px 0px;
+    }
+
+    .ActivityIcon {
+      vertical-align: top;
+      padding: 10px 10px 0px 10px;
+
+      img {
+        max-width: none;
+      }
+    }
+
+    .activity-message {
+      font-weight: bold;
+    }
+
+    .activity-details {
+      color: #888;
+    }
+
+    .activity-date {
+      vertical-align: top;
+      color: #AAA;
+      display: block;
+      font-size: small;
+    }
+  }
+}

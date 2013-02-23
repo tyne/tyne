@@ -1,0 +1,13 @@
+<table class="table table-bordered projects grid">
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= Project.human_attribute_name(:key) %></th>
+      <th><%= Project.human_attribute_name(:name) %></th>
+      <th><%= Project.human_attribute_name(:description) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render projects %>
+  </tbody>
+</table>

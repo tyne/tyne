@@ -1,0 +1,4 @@
+<p>
+  <%= t("issues.reported_by") %> <%= link_to issue.reported_by.username, main_app.overview_path(:user => issue.reported_by.username) %><br />
+  <%= t("issues.assigned_to") %> <%= issue.assigned_to ? link_to(issue.assigned_to.username, main_app.overview_path(:user => issue.assigned_to.username)) : t("issues.not_assigned") %>
+</p>

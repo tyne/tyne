@@ -1,0 +1,148 @@
+@import "compass";
+
+/** Sticky footer */
+html, body {
+  height: 100%;
+}
+
+.push, .footer {
+  height: 40px;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -40px;
+}
+
+footer {
+  background-color: #c0c8ce;
+  color: #688586;
+  text-shadow: 0 1px 0 rgba(#fff,0.75);
+  border-top: 1px solid darken(#688586, 1%);
+
+  p {
+    padding: 10px 10px 10px 10px;
+    margin: 0;
+  }
+}
+
+.brand-name {
+  font-weight: 500;
+}
+
+.brand-project {
+  color: #F89406;
+}
+
+.btn-create-issue {
+  margin-top: 8px !important;
+  margin-right: 16px !important;
+}
+
+.options {
+  margin-bottom: 12px;
+  > div.btn-group {
+    display: inline-block;
+  }
+}
+
+
+div.centered {
+  width: 50%;
+  margin: 0px auto 20px auto;
+
+  @for $i from 1 through 10 {
+    &.centered-#{$i*10} {
+      width: #{$i*10%};
+    }
+  }
+}
+
+.navbar-inverse {
+  box-shadow: 0 4px 4px 0px rgba(0,0,0,0.2);
+  .navbar-inner {
+    @include background-image(linear-gradient(#3a3a3a, #1f1f1f));
+  }
+
+  a.brand {
+    color: #fff;
+  }
+
+  ul.nav > li > a {
+    color: #fff;
+  }
+}
+
+.wrapper {
+  @include background-image(linear-gradient(#f8fafa, #e0e9ea));
+}
+
+.breadcrumb-wrapper {
+  padding-top: 45px;
+}
+
+.breadcrumb {
+  border-radius: 0;
+  background: #c2d7d9;
+  border-bottom: 1px solid #fff;
+  padding: 10px 15px 10px 20px;
+
+  .divider {
+    color: #688586;
+    padding: 0px 5px;
+  }
+
+  a {
+    color: #688586;
+  }
+
+  > li {
+    text-shadow: 0 1px 0 rgba(#fff,0.75);
+  }
+}
+
+.well {
+  background-color: #fff;
+}
+
+.no-padding {
+  padding:0;
+}
+
+.centered {
+  background-color: white;
+  border: 1px solid #E3E3E3;
+  padding: 19px;
+  @include border-radius(4px);
+}
+
+.btn {
+  font-weight: bold;
+}
+
+.sign-in {
+  margin-top: 8px !important;
+}
+
+.centered, .well {
+  border-radius: 0px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+}
+
+#authentication {
+  margin-top: 25px;
+
+  h1 {
+    color: #555;
+    font-weight: 500;
+    font-size: 2.5em;
+    letter-spacing: -0.05em;
+  }
+
+  .sign-in-button {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
