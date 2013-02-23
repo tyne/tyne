@@ -1,0 +1,13 @@
+<% content_for :head_assets do %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+<% end %>
+
+<div class="span12">
+  <div class="well">
+    <h1 class="report-headline">Issue Type Ratio</h1>
+    <p class="report-description">This report displays the issue type ratio.</p>
+
+    <div id='chart'></div>
+    <%= render_chart(@chart, 'chart') %>
+  </div>
+</div>

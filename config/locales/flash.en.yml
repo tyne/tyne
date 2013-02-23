@@ -1,0 +1,10 @@
+en:
+  flash:
+    issues:
+      assign_to_me:
+        notice: "Issue has been assigned to you."
+    sprints:
+      start:
+        notice: "You have successfully started a new sprint."
+      finish:
+        notice: "You have successfully finished a sprint."

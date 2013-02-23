@@ -1,0 +1,6 @@
+@import "compass";
+
+.grid tr th {
+  @include background-image(linear-gradient(#aaa, #cecece));
+  color: #fff;
+}

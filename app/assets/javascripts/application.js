@@ -20,8 +20,13 @@
 //= require twitter/bootstrap/rails/confirm
 //= require rails.validations
 //= require rails.validations.simple_form
-//= require tyne_ui
-//= require tyne_core
 //= require i18n
 //= require i18n/translations
+//= require mustache
+//= require_tree ./support
+//= require_tree ./plugins
 //= require_tree .
+
+$(function() {
+  Cell.initializeAll();
+});

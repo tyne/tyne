@@ -1,0 +1,8 @@
+<div class="Pod" data-cell="Pod" data-cell-features="<%= @features.join(',') %>" data-state="<%= @state %>">
+  <div class="PodTitle <%= @state %>">
+    <span><%= @title %></span>
+  </div>
+  <div class="PodContent" style="<%= @content_style %>">
+    <%= content_tag :p, @content %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h1><%= t("headlines.tyne_core/projects.import") %></h1>
+<p><%= t("descriptions.tyne_core/projects.import") %></p>
+
+<%= simple_form_for(:projects, :url => import_projects_path) do |form| %>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @repositories.each do |repo| %>
+    <tr>
+      <td><%= check_box_tag "name[]", repo.name, true, :id => repo.name %> <label for="<%= repo.name %>"><%= repo.full_name %></label></td>
+      <td>
+        <%= repo.description %>
+      </td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+<%= form.submit %>
+<% end %>

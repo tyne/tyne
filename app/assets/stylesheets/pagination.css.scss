@@ -1,0 +1,24 @@
+.tyne-pagination {
+  form > div {
+    float: left;
+    width: 33%;
+  }
+  .page-information {
+    text-align: right;
+    display: inline;
+    .control-group {
+      display: inline;
+      .controls {
+        display: inline;
+        select {
+          width: 75px;
+          height: 25px;
+        }
+      }
+    }
+
+    span {
+      vertical-align: top;
+    }
+  }
+}

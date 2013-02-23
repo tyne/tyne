@@ -1,0 +1,20 @@
+<% cache ["v1", "projects", "edit", @project] do %>
+  <div class="group">
+    <div class="group-header">Options</div>
+    <div class="group-content">
+      <%= simple_form_for(@project, :validate => true) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description, :hint => t("hints.markdown_enabled") %>
+        <%= f.button :submit, :class => "btn" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-header group-danger"><%= t("misc.danger") %></div>
+    <div class="group-content">
+      <p class="text-error"><%= t("hints.project_delete") %></p>
+      <%= button_to t("confirm.project.caption"), @project, :method => :delete, :class => "btn btn-danger", :confirm => t("confirm.project.message"), :data => { :"confirm-title" => t("confirm.project.title", :name => @project.name), :"confirm-proceed" => t("confirm.project.button"), :"confirm-proceed-class" => "btn-danger" } %>
+    </div>
+  </div>
+<% end %>

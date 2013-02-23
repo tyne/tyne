@@ -1,0 +1,46 @@
+.filter {
+  list-style-type: none;
+  margin: 0;
+  .filter-options {
+    a {
+      visibility: hidden;
+    }
+    &:hover, &.selected {
+      a {
+        visibility: visible;
+      }
+    }
+
+    label {
+      font-weight: normal;
+      cursor: pointer;
+      padding: 0px 5px 0px 5px;
+      width: 150px;
+      line-height: 18px;
+
+      &:hover {
+        background-color: #eee;
+      }
+    }
+
+    &.selected {
+      label {
+        font-weight: bold;
+      }
+    }
+  }
+  .filter-name {
+    color: #999;
+    font-size: smaller;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .filter-controls-hidden {
+    margin: 0px;
+    display: inline-block;
+    .controls {
+      display: none;
+    }
+  }
+}

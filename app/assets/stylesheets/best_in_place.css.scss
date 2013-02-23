@@ -1,0 +1,10 @@
+.best_in_place:not(.editing_in_place) {
+  display: inline-block;
+  padding-right: 20px;
+  background: image-url('icon-sweets/16/edit.png') 100% 50% no-repeat;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #EEE;
+  }
+}

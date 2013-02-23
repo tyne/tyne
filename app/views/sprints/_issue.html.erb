@@ -1,0 +1,16 @@
+<% cache ["v3", "backlog", issue] do %>
+<li class="backlog-issue issue <%= issue.state %> state-<%= issue.issue_type.name.downcase %>" data-id="<%= issue.id %>" data-cell="BacklogItem">
+  <div class="td-first dragger"></div>
+  <div class="td-second">
+    <p class="issue-headline issue-line-1">
+      <span class="issue-type-short">
+        <%= issue_type(issue, true) %>
+      </span>
+
+      <%= issue_id(issue) %>
+      <span class="issue-summary"><%= content_tag :span, issue.summary, :class => "issue-#{issue.state}" %></span>
+      <%= best_in_place issue.becomes(Issue), :estimate, :path => path_to_issue(issue), :inner_class => :estimate, :classes => 'estimates' %>
+    </p>
+  </div>
+</li>
+<% end %>

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TyneHost::Application.load_tasks
+Tyne::Application.load_tasks

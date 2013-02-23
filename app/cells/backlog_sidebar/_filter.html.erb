@@ -1,0 +1,10 @@
+<%= content_tag :div, :data => { :cell => "Filter" }, :class => "Filter" do %>
+  <%= simple_form_for :filter, :html => { :class => 'form-horizontal' } do |f| %>
+    <% @fields.each do |field| %>
+      <% content = render :partial => 'filter_item', :locals => { :field => field, :f => f } %>
+      <%= render_cell :pod, :collapsable, Issue.human_attribute_name(field[0]), :state => :collapsed do |cell| %>
+        <% cell.content = content %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

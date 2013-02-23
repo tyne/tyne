@@ -1,0 +1,6 @@
+<%= content_tag :div, :data => { :cell => "Sorting" }, :class => "Sorting" do %>
+  <%= simple_form_for :sorting do |f| %>
+    <%= f.input :field, :as => :select, :collection => @fields, :label => false, :include_blank => false, :selected => @field %>
+    <%= f.input :order, :as => :select, :collection => @orders, :label => false, :include_blank => false, :selected => @order %>
+  <% end %>
+<% end %>

@@ -1,0 +1,18 @@
+.control-group.error .help-inline {
+  background: #d45252;
+  border-radius: 3px 3px 3px 3px;
+  color: white;
+  padding: 1px 6px;
+}
+
+.control-group.error input[type="text"] {
+  background: #fff url(image-path('invalid.png')) no-repeat 98% center !important;
+}
+
+.control-group.error select {
+  background: #fff url(image-path('invalid.png')) no-repeat 96% center !important;
+}
+
+.control-group.error textarea {
+  background: #fff url(image-path('invalid.png')) no-repeat 99% 8% !important;
+}

@@ -1,0 +1,15 @@
+<div class="group">
+  <div class="group-header">Teams</div>
+  <div class="group-content">
+    <table class="table">
+    <% @project.teams.order("admin_privileges ASC").all.each do |team| %>
+      <tr>
+        <td>
+          <%= link_to "#{team.name} (#{team.members.count})", main_app.team_path(:user => @project.user.username, :key => @project.key, :id => team.id) %>
+          <p><%= team_description_for(team) %><p>
+        </td>
+      <% end %>
+    </tr>
+    </table>
+  </div>
+</div>

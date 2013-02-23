@@ -25,7 +25,7 @@ shared_context 'authenticated' do
   def create_project(name)
     @project_key = 'FOO'
 
-    click_link "New Project"
+    first(:link, "New Project").click
 
     within("#new_project") do
       fill_in 'Key', :with => @project_key
