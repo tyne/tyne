@@ -1,2 +1,4 @@
 #=require application
-#=require_tree ./
+#=require votes_spec
+#=require_tree ./cells
+#=require_tree ./support

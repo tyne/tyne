@@ -1,13 +1,10 @@
-require('/assets/cells/pod');
-
 describe('Pod', function() {
   var instance;
-
-  template('cells_pod.html');
 
   beforeEach(function() {
     jQuery.fx.off = true;
 
+    loadFixtures('cells_pod.html');
     Pod.instances = [];
     instance = Cell.findOrCreateInstance($('[data-cell="Pod"]')[0]);
   });

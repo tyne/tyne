@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   def load_user
     @user = User.find_by_username(params[:user])
 
-    add_breadcrumb @user.username, main_app.overview_path(:user => params[:user])
+    add_breadcrumb @user.username, overview_path(:user => params[:user])
   end
 
   def load_project

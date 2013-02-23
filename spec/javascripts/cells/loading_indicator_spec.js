@@ -1,12 +1,8 @@
-require('/assets/cells/loading_indicator');
-require('/assets/mustache');
-
 describe('LoadingIndicator', function() {
   beforeEach(function() {
+    loadFixtures('cells_loading_indicator.html');
     LoadingIndicator.instances = [];
   });
-
-  template('cells_loading_indicator.html');
 
   describe('#initialize', function() {
     var instance;

@@ -1,7 +1,8 @@
-require('/assets/support/cell.js');
-
 describe('Cell', function() {
-  template('support_cell.html');
+
+  beforeEach(function() {
+    loadFixtures('support_cell.html');
+  });
 
   describe('#constructor', function() {
     var instance;

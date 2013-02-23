@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-bundle exec rspec spec
+bundle exec rspec spec && bundle exec guard-jasmine
 
 exit $?

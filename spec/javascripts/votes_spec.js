@@ -1,13 +1,10 @@
-require('/assets/cells/votes');
-
 describe('Votes', function() {
   var instance;
-
-  template('cells_votes.html');
 
   beforeEach(function() {
     jQuery.fx.off = true;
 
+    loadFixtures('cells_votes.html');
     Votes.instances = [];
     instance = Cell.findOrCreateInstance($('.Votes').get(0));
   });

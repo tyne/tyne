@@ -1,4 +1,6 @@
 Tyne::Application.routes.draw do
+  mount Jasminerice::Engine => "/jasmine"
+
   get '/login', :action => "new", :as => :login, :controller => "sessions"
   get "/auth/:provider/callback", :action => "create", :as => :auth, :controller => "sessions"
   get "/auth/failure", :action => "failure", :as => :failure, :controller => "sessions"

@@ -1,13 +1,10 @@
-require('/assets/cells/notification');
-
 describe('Notification', function() {
   var instance;
-
-  template('cells_notification.html');
 
   beforeEach(function() {
     jQuery.fx.off = true;
 
+    loadFixtures('cells_notification.html');
     Notification.instances = [];
     instance = Cell.findOrCreateInstance($('[data-cell="Notification"]').get(0));
   });

@@ -1,5 +1,3 @@
-require('/assets/support/class_registry.js');
-
 describe('ClassRegistry', function() {
   beforeEach(function() {
     ClassRegistry.storage = {};
