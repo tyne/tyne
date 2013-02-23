@@ -43,9 +43,11 @@ describe SessionsController do
 
     context "user is logged in" do
       before :each do
+        processor = stub
+        AuthProcessor.stub(:new).with(@omniauth) { processor }
         mock_user = stub_model(User, :id => 1)
         subject.session[:user_id] = :bar
-        User.should_receive(:find_or_create).with(@omniauth).and_return(mock_user)
+        processor.should_receive(:find_or_create_user).and_return(mock_user)
       end
 
       it "should redirect to root" do
@@ -58,8 +60,10 @@ describe SessionsController do
     context "user is logged out" do
       before :each do
         mock_user = stub_model(User, :id => 1)
+        processor = stub
         subject.stub(:session).and_return({})
-        User.should_receive(:find_or_create).with(@omniauth).and_return(mock_user)
+        AuthProcessor.stub(:new).with(@omniauth) { processor }
+        processor.should_receive(:find_or_create_user).and_return(mock_user)
       end
 
       it "should redirect to root" do
