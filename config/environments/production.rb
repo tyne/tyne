@@ -72,4 +72,6 @@ Tyne::Application.configure do
     :entitystore  => 'file:tmp/cache/rack/body',
     :allow_reload => false
   }
+
+  config.logger = Logger.new(STDOUT)
 end
