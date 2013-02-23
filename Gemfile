@@ -70,5 +70,7 @@ group :test, :development do
   gem "pry"
   gem "factory_girl_rails"
   gem "guard-jasmine"
-  gem 'jasminerice'
+  gem "jasminerice"
+  gem "yard"
+  gem "simplecov"
 end

@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # Creates or finds a user based on the given user id.
   #
   # @param auth_hash
-  # @return TyneAuth::User
+  # @return User
   def self.find_or_create(auth_hash)
     unless user = find_by_uid(auth_hash["uid"])
       user = create! do |user|

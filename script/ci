@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+bundle exec yard stats --list-undoc
+bundle exec rake db:migrate RAILS_ENV=test
 bundle exec rspec spec && bundle exec guard-jasmine
 
 exit $?

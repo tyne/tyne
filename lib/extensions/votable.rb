@@ -30,7 +30,7 @@ module Extensions
 
     # Checks if the given user already voted for the votable object
     #
-    # @param [TyneAuth::User] user
+    # @param [User] user
     # @return [Boolean]
     def voted?(user)
       votes.where(:user_id => user.id).exists?
@@ -38,7 +38,7 @@ module Extensions
 
     # Votes for the given user using the specified weight
     #
-    # @param [TyneAuth::User] user
+    # @param [User] user
     # @param [Integer] weight
     # @return [Boolean]
     def vote_for(user, weight)
@@ -47,7 +47,7 @@ module Extensions
 
     # Upvotes for the given user
     #
-    # @param [TyneAuth::User] user
+    # @param [User] user
     # @return [Boolean]
     def upvote_for(user)
       vote_for(user, 1)
@@ -55,7 +55,7 @@ module Extensions
 
     # Downvotes for the given user
     #
-    # @param [TyneAuth::User] user
+    # @param [User] user
     # @return [Boolean]
     def downvote_for(user)
       vote_for(user, -1)

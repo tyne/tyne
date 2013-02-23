@@ -2,7 +2,7 @@
 module AvatarHelper
   # Returns the gravatar url for a particular user
   #
-  # @param [TyneAuth::User] user
+  # @param [User] user
   # @param [Hash] options
   def avatar_url(user, options={})
     default_url = "retro"
@@ -14,7 +14,7 @@ module AvatarHelper
 
   # Returns a gravatar image for a particular user
   #
-  # @param [TyneAuth::User] user
+  # @param [User] user
   # @param [Hash] options
   def avatar(user, options={})
     return unless user
