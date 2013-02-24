@@ -35,7 +35,7 @@ class Sprint < ActiveRecord::Base
 
   private
   def set_dates
-    self.start_date = Date.today.to_date
-    self.end_date = 7.days.from_now.to_date
+    self.start_date ||= Date.today.to_date
+    self.end_date ||= 7.days.from_now.to_date
   end
 end

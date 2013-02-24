@@ -8,6 +8,6 @@
     <p class="report-description">This report displays the burn down chart and activity for the current sprint.</p>
 
     <div id='chart'></div>
-    <%= render_chart(@chart, 'chart') %>
+    <%= render_chart(@chart, 'chart') if @chart %>
   </div>
 </div>
