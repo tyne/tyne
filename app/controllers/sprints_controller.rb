@@ -3,7 +3,7 @@ class SprintsController < AdminController
   self.responder = ::ApplicationResponder
   respond_to :html, :json, :pjax
 
-  before_filter :require_login
+  before_filter :require_login, :except => [:current]
   before_filter :load_user
   before_filter :load_project
   before_filter :ensure_can_collaborate, :except => [:current]
