@@ -25,7 +25,7 @@ shared_context 'authenticated' do
   def create_project(name)
     @project_key = 'FOO'
 
-    first(:link, "New Project").click
+    visit new_project_path
 
     within("#new_project") do
       fill_in 'Key', :with => @project_key
@@ -37,12 +37,21 @@ shared_context 'authenticated' do
   end
 
   def create_issue(summary)
-    click_link "Create"
+    visit new_issue_path(:user => @nickname, :key => @project_key)
 
     within("#new_issue") do
       fill_in 'Summary', :with => summary
     end
 
     click_button "Create Issue"
+  end
+
+  def create_sprint
+    visit sprints_path(:user => @nickname, :key => @project_key)
+    find(".planning-new").click
+  end
+
+  def start_sprint
+    click_button "Start"
   end
 end

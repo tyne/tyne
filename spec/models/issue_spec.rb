@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Issue do
   let(:user) { User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo") }
   let(:project) { user.projects.create!(:key => "Foo", :name => "Foo") }
-  let(:issue) { project.issues.create!(:summary => "Foo", :issue_type_id => 1) }
+  let(:issue) { create(:issue, :project => project) }
 
   describe :votable do
     subject { issue }
@@ -78,6 +78,34 @@ describe Issue do
       expect do
         project.issues.create!(:summary => "Foo", :assigned_to_id => user.id, :issue_type_id => 1)
       end.to_not raise_error ActiveRecord::RecordInvalid
+    end
+  end
+
+  describe :activity do
+    let(:sprint) { project.sprints.create!(:name => "Unnamed") }
+
+    before :each do
+      issue.sprint_id = sprint.id
+      issue.save!
+
+      sprint.start(Date.today, Date.today + 7.days)
+    end
+
+    describe :close do
+      it "should create an activity change for closing an issue" do
+        issue.task_is_done
+        activity = sprint.activities.last
+        activity.scope_change.should == issue.estimate * -1
+      end
+    end
+
+    describe :reopen do
+      it "should create an activity change for closing an issue" do
+        issue.task_is_done
+        issue.reopen
+        activity = sprint.activities.last
+        activity.scope_change.should == issue.estimate
+      end
     end
   end
 end

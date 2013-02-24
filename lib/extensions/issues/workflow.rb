@@ -16,12 +16,14 @@ module Extensions
 
       included do
         state_machine :state, :initial => :open do
+          # When closing an issue
           after_transition [:open, :reopened, :wip] => [:done, :invalid] do |issue, transition|
-            issue.becomes(BacklogItem).remove_from_list unless issue.sprint
+            issue.after_close
           end
 
+          # When reopening an issue
           after_transition [:done, :invalid] => [:open, :reopened] do |issue, transition|
-            issue.becomes(BacklogItem).insert_at(1) unless issue.sprint
+            issue.after_reopen
           end
 
           event :start_working do
