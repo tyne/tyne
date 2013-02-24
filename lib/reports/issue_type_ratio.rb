@@ -14,7 +14,7 @@ module Reports
       issue_types = IssueType.all
       issues = @project.backlog_items
 
-      data_table = data_table = GoogleVisualr::DataTable.new
+      data_table = GoogleVisualr::DataTable.new
       data_table.new_column('string', 'Issue Type')
       data_table.new_column('number', 'Numbers')
       data_table.add_rows(issue_types.count)

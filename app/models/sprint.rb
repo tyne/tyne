@@ -5,6 +5,7 @@ class Sprint < ActiveRecord::Base
 
   belongs_to :project
   has_many :issues, :class_name => 'SprintItem', :order => 'sprint_position', :dependent => :nullify
+  has_many :activities, :class_name => 'SprintActivity', :extend => SprintActivity::ScopeExtensions, :autosave => true
 
   validates :name, :start_date, :end_date, :project_id, :presence => true
   validates :active, :uniqueness => { :scope => :project_id }, :if => :active
@@ -18,6 +19,9 @@ class Sprint < ActiveRecord::Base
     self.start_date = start_date
     self.end_date = end_date
     self.active = true
+    self.issues.each do |issue|
+      self.activities.build(:issue_id => issue.id, :scope_change => issue.estimate, :type_of_change => "start")
+    end
     save
   end
 
@@ -31,7 +35,7 @@ class Sprint < ActiveRecord::Base
 
   private
   def set_dates
-    self.start_date = Date.today.to_date
-    self.end_date = 7.days.from_now.to_date
+    self.start_date ||= Date.today.to_date
+    self.end_date ||= 7.days.from_now.to_date
   end
 end

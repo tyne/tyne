@@ -18,3 +18,4 @@ en:
     reports:
       index: "Reports"
       issue_type_ratio: "Issue Type Ratio"
+      burn_down: "Burn Down"

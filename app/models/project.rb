@@ -23,6 +23,10 @@ class Project < ActiveRecord::Base
     sprints.where(:active => true).count > 0
   end
 
+  def current_sprint
+    sprints.find_by_active(true)
+  end
+
   private
   def create_teams
     i18n_scope = "teams.names.defaults"
