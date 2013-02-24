@@ -7,7 +7,12 @@
     <h1 class="report-headline">Burn Down</h1>
     <p class="report-description">This report displays the burn down chart and activity for the current sprint.</p>
 
-    <div id='chart'></div>
-    <%= render_chart(@chart, 'chart') if @chart %>
+    <% if @project.current_sprint %>
+      <%= content_tag :p, "#{@project.current_sprint.start_date.to_formatted_s(:short)} - #{@project.current_sprint.end_date.to_formatted_s(:short)}" %>
+      <div id='chart'></div>
+      <%= render_chart(@chart, 'chart') if @chart %>
+    <% else %>
+      <%= content_tag :p, "There is currently no active sprint." %>
+    <% end %>
   </div>
 </div>

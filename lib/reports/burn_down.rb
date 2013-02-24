@@ -10,15 +10,15 @@ module Reports
       @sprint = @project.current_sprint
       return unless @sprint
 
-      days = (@sprint.end_date - @sprint.start_date).to_i
+      days = (@sprint.end_date - @sprint.start_date).to_i + 1
 
       data_table = GoogleVisualr::DataTable.new
       data_table.new_column('string', "Date")
-      data_table.new_column('number', "Story Points")
-      data_table.new_column('number', "Estimated")
+      data_table.new_column('number', "Remaining")
+      data_table.new_column('number', "Ideal")
       data_table.add_rows(days + 1)
 
-      data_table.set_cell(0, 0, "")
+      data_table.set_cell(0, 0, "Start")
       data_table.set_cell(0, 1, max_value)
       data_table.set_cell(0, 2, max_value)
 
@@ -27,7 +27,7 @@ module Reports
         to_date = @sprint.start_date + index.days
         data_table.set_cell(index + 1, 0, to_date.to_formatted_s(:short))
         data_table.set_cell(index + 1, 1, get_estimate_to_date(to_date))
-        data_table.set_cell(index + 1, 2, predicted)
+        data_table.set_cell(index + 1, 2, round_to_nearest(predicted))
       end
       GoogleVisualr::Interactive::LineChart.new(data_table, @options)
     end
@@ -41,6 +41,11 @@ module Reports
 
     def max_value
       @max_value ||= @sprint.activities.where(:type_of_change => "start").scope_change
+    end
+
+    def round_to_nearest(x)
+      r = (x * 2).round / 2.0
+      r.to_i == r ? r.to_i : r
     end
   end
 end
