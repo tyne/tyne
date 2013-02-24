@@ -44,10 +44,7 @@
 
       <%= best_in_place_if can_edit?, @issue, :summary, :path => path_to_issue(@issue) %>
     </h2>
-
-    <%= render_cell :pod, :collapsable, t('pod.titles.description'), :state => :expanded do |cell| %>
-      <% cell.content = best_in_place_if can_edit?, @issue, :description, :path => path_to_issue(@issue), :type => :textarea, :display_as => :description_markdown %>
-    <% end %>
+    <%= best_in_place_if(can_edit?, @issue, :description, :path => path_to_issue(@issue), :type => :textarea, :display_as => :description_markdown) %>
     <p class="tag-list">
       <%= issue_type(@issue) %>
       <%= issue_priority(@issue) %>
