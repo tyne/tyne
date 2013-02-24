@@ -4,6 +4,8 @@ class Issue < ActiveRecord::Base
   include Extensions::Issues::Workflow
   include Extensions::Votable
 
+  VALID_ESTIMATES = [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100]
+
   audited :associated_with => :project, :allow_mass_assignment => true
 
   belongs_to :reported_by, :class_name => "User"
@@ -18,7 +20,7 @@ class Issue < ActiveRecord::Base
 
   validates :project_id, :summary, :issue_type_id, :number, :presence => true
   validates :number, :uniqueness => { :scope => :project_id }
-  validates :estimate, :inclusion => { :in => [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100] }, :allow_blank => true
+  validates :estimate, :inclusion => { :in => VALID_ESTIMATES }, :allow_blank => true
   validate :security_assigned_to
 
   default_scope includes(:project).includes(:reported_by).includes(:issue_type).includes(:comments).includes(:issue_priority)
@@ -49,6 +51,25 @@ class Issue < ActiveRecord::Base
     @@markdown_renderer.render(description).html_safe
   end
   alias_method :display_as, :description_markdown
+
+  def after_close
+    if sprint
+      change = (self.estimate || 0) * -1
+      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "close", :scope_change => change)
+      self.sprint.save
+    else
+      self.becomes(BacklogItem).remove_from_list
+    end
+  end
+
+  def after_reopen
+    if sprint
+      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "reopen", :scope_change => self.estimate || 0)
+      self.sprint.save
+    else
+      self.becomes(BacklogItem).insert_at(1)
+    end
+  end
 
   private
   def set_defaults

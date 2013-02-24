@@ -58,6 +58,7 @@ Tyne::Application.routes.draw do
     resources :reports, :only => [:index] do
       collection do
         get :issue_type_ratio
+        get :burn_down
       end
     end
   end

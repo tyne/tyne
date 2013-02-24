@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216121641) do
+ActiveRecord::Schema.define(:version => 20130224130203) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -122,6 +122,18 @@ ActiveRecord::Schema.define(:version => 20130216121641) do
 
   add_index "projects", ["key"], :name => "index_projects_on_key"
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "sprint_activities", :force => true do |t|
+    t.integer  "sprint_id"
+    t.integer  "issue_id"
+    t.string   "type_of_change"
+    t.decimal  "scope_change"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "sprint_activities", ["issue_id"], :name => "index_sprint_activities_on_issue_id"
+  add_index "sprint_activities", ["sprint_id"], :name => "index_sprint_activities_on_sprint_id"
 
   create_table "sprints", :force => true do |t|
     t.string   "name"

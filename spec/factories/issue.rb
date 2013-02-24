@@ -5,5 +5,6 @@ FactoryGirl.define do
     issue_type { IssueType.first }
     number 1
     project
+    estimate { Issue::VALID_ESTIMATES[rand(0...Issue::VALID_ESTIMATES.count)] }
   end
 end

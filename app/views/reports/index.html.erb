@@ -1,6 +1,7 @@
 <div class="span12">
   <div class="well">
     <ul>
+      <li><%= link_to "Burn Down", main_app.burn_down_reports_path(:user => @user.username, :key => @project.key) %></li>
       <li><%= link_to "Issue Type Ratio", main_app.issue_type_ratio_reports_path(:user => @user.username, :key => @project.key) %></li>
     </ul>
   </div>

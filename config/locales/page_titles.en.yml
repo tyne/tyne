@@ -22,3 +22,4 @@ en:
     reports:
       index: "%{user}/%{key} - Reports"
       issue_type_ratio: "%{user}/%{key} - Issue Type Ratio"
+      burn_down: "%{user}/%{key} - Burn Down"
