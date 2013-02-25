@@ -39,10 +39,6 @@ module AuditFormatter
       LinkHelper.new(format_context).user_link(user)
     end
 
-    def view_context
-      @view_context ||= ActionView::Base.new
-    end
-
     def create?
       object.action == 'create'
     end
