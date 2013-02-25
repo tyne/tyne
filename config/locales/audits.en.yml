@@ -14,5 +14,6 @@ en:
           reopened_html: "%{user} has reopened issue %{issue}"
           done_html: "%{user} has closed issue %{issue}"
           invalid_html: "%{user} has marked %{issue} as invalid"
+          open_html: "%{user} has stopped working on %{issue}"
     comment:
       create_html: "%{user} commented on %{issue}"

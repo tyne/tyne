@@ -4,7 +4,7 @@
   </td>
   <td class="ActivityDescription">
     <span class="activity-date"><%= time_ago_in_words(audit.created_at) %> ago</span>
-    <% cache ["v3", "dashboard", "audit", audit] do %>
+    <% cache ["v4", "dashboard", "audit", audit] do %>
       <span class="activity-message">
         <%= audit.formatted %>
       </span>
