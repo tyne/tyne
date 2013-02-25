@@ -1,8 +1,8 @@
 module Reports
   # Burn Down Chart Report
   class BurnDown
-    def initialize(project)
-      @project = project
+    def initialize(sprint)
+      @sprint = sprint
 
       @options = { :width => "100%", :height => 500, :title => 'Burn Down', :is3D => false, :pointSize => 5}
     end
@@ -11,7 +11,6 @@ module Reports
     #
     # @return [GoogleVisualr::Interactive::LineChart] line chart
     def to_chart
-      @sprint = @project.current_sprint
       return unless @sprint
 
       days = (@sprint.end_date - @sprint.start_date).to_i + 1

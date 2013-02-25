@@ -25,7 +25,7 @@ class ReportsController < ApplicationController
   def burn_down
     add_breadcrumb :burn_down
 
-    report = Reports::BurnDown.new(@project)
+    report = Reports::BurnDown.new(@project.current_sprint)
     @chart = report.to_chart
   end
 
