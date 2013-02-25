@@ -24,7 +24,7 @@ describe ReportsController do
       end
     end
 
-    describe :index do
+    describe :issue_type_ratio do
       before :each do
         get :issue_type_ratio, :user => user.username, :key => project.key
       end
@@ -35,6 +35,21 @@ describe ReportsController do
 
       it "should assign a pie chart" do
         assigns(:chart).should be_a GoogleVisualr::Interactive::PieChart
+      end
+    end
+
+    describe :burn_down do
+      before do
+        project.sprints.create!(:name => "Foo").start(Date.today, 7.days.from_now)
+        get :burn_down, :user => user.username, :key => project.key
+      end
+
+      it "render the correct template" do
+        response.should render_template 'reports/burn_down'
+      end
+
+      it "should assign a pie chart" do
+        assigns(:chart).should be_a GoogleVisualr::Interactive::LineChart
       end
     end
   end
