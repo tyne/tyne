@@ -1,0 +1,25 @@
+foo:
+  summary: Foo
+  reported_by: tobscher
+  project: tyne
+  issue_type_id: 1
+  number: 1
+  estimate: 1
+  sprint: alpha
+
+bar:
+  summary: Bar
+  reported_by: tobscher
+  project: tyne
+  issue_type_id: 1
+  number: 2
+  estimate: 3
+  sprint: alpha
+
+baz:
+  summary: Bar
+  reported_by: tobscher
+  project: tyne
+  issue_type_id: 1
+  number: 3
+  estimate: 5
