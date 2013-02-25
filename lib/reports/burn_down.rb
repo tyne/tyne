@@ -1,4 +1,5 @@
 module Reports
+  # Burn Down Chart Report
   class BurnDown
     def initialize(project)
       @project = project
@@ -6,6 +7,9 @@ module Reports
       @options = { :width => "100%", :height => 500, :title => 'Burn Down', :is3D => false, :pointSize => 5}
     end
 
+    # Translates sprint activity into google chart data.
+    #
+    # @return [GoogleVisualr::Interactive::LineChart] line chart
     def to_chart
       @sprint = @project.current_sprint
       return unless @sprint
@@ -44,8 +48,7 @@ module Reports
     end
 
     def round_to_nearest(x)
-      r = (x * 2).round / 2.0
-      r.to_i == r ? r.to_i : r
+      x.round(1)
     end
   end
 end

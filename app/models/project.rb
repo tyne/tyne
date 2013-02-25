@@ -23,8 +23,16 @@ class Project < ActiveRecord::Base
     sprints.where(:active => true).count > 0
   end
 
+  # Returns the current sprint if there is any running.
+  #
+  # @return [Sprint] current sprint
   def current_sprint
     sprints.find_by_active(true)
+  end
+
+  # Returns the full name of the project including the username (e.g. Foo/Bar)
+  def full_name
+    "#{self.user.username}/#{self.key}"
   end
 
   private

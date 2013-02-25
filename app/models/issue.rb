@@ -4,6 +4,7 @@ class Issue < ActiveRecord::Base
   include Extensions::Issues::Workflow
   include Extensions::Votable
 
+  # Array of all valid estimation options.
   VALID_ESTIMATES = [0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100]
 
   audited :associated_with => :project, :allow_mass_assignment => true
@@ -52,6 +53,8 @@ class Issue < ActiveRecord::Base
   end
   alias_method :display_as, :description_markdown
 
+  # Removes the issue from the backlog if not part of a sprint.
+  # Logs sprint activity if part of a sprint.
   def after_close
     if sprint
       change = (self.estimate || 0) * -1
@@ -62,6 +65,8 @@ class Issue < ActiveRecord::Base
     end
   end
 
+  # Adds issue to the backlog if not part of a sprint.
+  # Logs sprint activity if part of a sprint.
   def after_reopen
     if sprint
       self.sprint.activities.build(:issue_id => self.id, :type_of_change => "reopen", :scope_change => self.estimate || 0)
