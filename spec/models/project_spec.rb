@@ -28,4 +28,12 @@ describe Project do
       project.any_running?.should be_false
     end
   end
+
+  describe :full_name do
+    it "should return the key prefixed by the username" do
+      subject.user = stub_model(User, :username => "Foo")
+      subject.key = "Bar"
+      subject.full_name.should == "Foo/Bar"
+    end
+  end
 end
