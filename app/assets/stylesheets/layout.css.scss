@@ -70,8 +70,22 @@ div.centered {
     color: #fff;
   }
 
-  ul.nav > li > a {
-    color: #fff;
+  ul.nav > li {
+    height: 44px;
+
+    border-left: 1px solid #333;
+    border-right: 1px solid #111;
+
+    &:first-child { border-left: none }
+    &:last-child { border-right: none }
+
+    &:hover {
+      background-color: black;
+    }
+
+    > a {
+      color: #fff;
+    }
   }
 }
 
