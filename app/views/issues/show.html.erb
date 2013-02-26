@@ -37,7 +37,7 @@
     </div>
 
     <div class="well">
-    <h2>
+    <h2 class="issue-summary">
       <%= render_cell :votes, :show, @issue,
                       :upvote_path   => upvote_issue_path(:user => @issue.project.user.username, :key => @issue.project.key, :id => @issue.number),
                       :downvote_path => downvote_issue_path(:user => @issue.project.user.username, :key => @issue.project.key, :id => @issue.number) if current_user %>
