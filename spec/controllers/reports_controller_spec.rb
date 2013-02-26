@@ -1,13 +1,11 @@
 require 'spec_helper'
 
 describe ReportsController do
-  let(:user) do
-    User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo")
-  end
+  fixtures :users, :projects, :sprints
 
-  let(:project) do
-    user.projects.create!(:key => "Foo", :name => "Foo")
-  end
+  let(:user) { users(:tobscher) }
+  let(:project) { projects(:tyne) }
+  let(:sprint) { sprints(:alpha) }
 
   context :logged_in do
     before :each do
@@ -40,7 +38,7 @@ describe ReportsController do
 
     describe :burn_down do
       before do
-        project.sprints.create!(:name => "Foo").start(Date.today, 7.days.from_now)
+        sprint.start(Date.today, Date.today + 7.days)
         get :burn_down, :user => user.username, :key => project.key
       end
 

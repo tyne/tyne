@@ -74,7 +74,7 @@ class SprintsController < AdminController
     @sprint = @project.sprints.find(params[:id])
     @sprint.finish
 
-    respond_with(@sprint, :location => main_app.sprints_path(:user => @project.user.username, :key => @project.key))
+    respond_with(@sprint, :location => sprints_path(:user => @project.user.username, :key => @project.key))
   end
 
   # Displays the agile board

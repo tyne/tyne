@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe CommentAuditFormatter do
+  fixtures :issues
+
   before :each do
     Rails.application.config.stub(:assets_dir).and_return('/')
   end
 
   it "should format an comment audit" do
-    issue = create(:issue)
+    issue = issues(:foo)
     comment = issue.comments.create(:message => "Foo") do |c|
       c.user = issue.project.user
     end

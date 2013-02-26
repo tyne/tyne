@@ -1,3 +1,4 @@
 owners:
   name: Owners
   project: tyne
+  admin_privileges: true

@@ -1,21 +1,12 @@
 require 'spec_helper'
 
 describe SprintsController do
-  let(:user) do
-    User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo")
-  end
+  fixtures :sprints, :users, :projects, :issues
 
-  let(:project) do
-    user.projects.create!(:key => "Foo", :name => "Foo")
-  end
-
-  let(:issue) do
-    project.issues.create!(:summary => "Foo", :issue_type_id => 1)
-  end
-
-  let(:sprint) do
-    project.sprints.create!(:name => "Foo")
-  end
+  let(:user) { users(:tobscher) }
+  let(:project) { projects(:tyne) }
+  let(:issue) { issues(:foo) }
+  let(:sprint) { sprints(:alpha) }
 
   context :logged_in do
     before :each do

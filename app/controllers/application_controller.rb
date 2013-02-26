@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_admin_area?
 
   def require_owner
-    redirect_to main_app.root_path unless is_owner?
+    redirect_to root_path unless is_owner?
   end
 
   def is_owner?

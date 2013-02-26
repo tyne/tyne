@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe TeamsController do
+  fixtures :projects, :users, :teams, :team_members
+
   its (:is_admin_area?) { should be_true }
 
   context :not_logged_in do
@@ -11,10 +13,8 @@ describe TeamsController do
   end
 
   context :logged_in do
-    let(:user) do
-      user = User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo")
-    end
-    let(:project) { user.projects.create!(:key => "FOO", :name => "Foo") }
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:tyne) }
 
     before :each do
       controller.stub(:current_user).and_return(user)
@@ -22,7 +22,7 @@ describe TeamsController do
 
     describe :index do
       before :each do
-        get :show, :user => user.username, :key => project.key, :id => 1
+        get :show, :user => user.username, :key => project.key, :id => project.teams.first.id
       end
 
       it "render the correct view" do
@@ -33,8 +33,8 @@ describe TeamsController do
     describe :suggest_user do
       before :each do
         User.create!(:name => "Bar", :username => "Bar", :uid => "bar", :token => "bar")
-        controller.stub(:require_owner).and_return(true)
-        get :suggest_user, :user => user.username, :key => project.key, :id => 1, :term => "Ba", :format => :json
+        controller.stub(:require_owner)
+        get :suggest_user, :user => user.username, :key => project.key, :id => project.teams.first.id, :term => "Ba", :format => :json
       end
 
       it "should return user that match with the term" do

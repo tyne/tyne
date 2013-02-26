@@ -20,9 +20,9 @@ describe ProjectsController do
   end
 
   context :logged_in do
-    let(:user) do
-      user = User.create!(:name => "Foo", :uid => "foo", :token => "foo", :username => "Foo")
-    end
+    fixtures :users, :projects
+
+    let(:user) { users(:tobscher) }
 
     before :each do
       controller.stub(:current_user).and_return(user)
@@ -61,9 +61,7 @@ describe ProjectsController do
     end
 
     describe :update do
-      let!(:existing) do
-        user.projects.create!(:key => "FOO", :name => "Foo")
-      end
+      let!(:existing) { projects(:tyne) }
 
       context :success do
         it "should update the record" do

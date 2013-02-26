@@ -9,9 +9,9 @@ describe DashboardsController do
   end
 
   context :logged_in do
-    let(:user) do
-      user = User.create!(:name => "Foo", :uid => "foo", :token => "foo")
-    end
+    fixtures :users
+
+    let(:user) { users(:tobscher) }
 
     before :each do
       controller.stub(:current_user).and_return(user)
