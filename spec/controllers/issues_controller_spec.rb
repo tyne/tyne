@@ -1,18 +1,12 @@
 require 'spec_helper'
 
 describe IssuesController do
+  fixtures :projects, :issues, :users, :teams, :team_members
+
   context :logged_in do
-    let(:user) do
-      User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo")
-    end
-
-    let(:project) do
-      user.projects.create!(:key => "Foo", :name => "Foo")
-    end
-
-    let(:issue) do
-      Issue.create!(:summary => "Foo", :project_id => project.id, :issue_type_id => 1)
-    end
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:tyne) }
+    let(:issue) { issues(:foo) }
 
     before :each do
       controller.stub(:current_user).and_return(user)
