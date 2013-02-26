@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe CommentsController do
-  fixtures :projects, :users, :issues
-
   let(:user) { users(:tobscher) }
   let(:project) { projects(:tyne) }
   let(:issue) { issues(:foo) }

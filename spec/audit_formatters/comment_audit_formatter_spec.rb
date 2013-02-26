@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe CommentAuditFormatter do
-  fixtures :issues
-
   before :each do
     Rails.application.config.stub(:assets_dir).and_return('/')
   end

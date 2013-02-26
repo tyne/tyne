@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe IssuesController do
-  fixtures :projects, :issues, :users, :teams, :team_members
-
   context :logged_in do
     let(:user) { users(:tobscher) }
     let(:project) { projects(:tyne) }

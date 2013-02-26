@@ -9,8 +9,6 @@ describe DashboardsController do
   end
 
   context :logged_in do
-    fixtures :users
-
     let(:user) { users(:tobscher) }
 
     before :each do

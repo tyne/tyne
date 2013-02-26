@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe TeamsController do
-  fixtures :projects, :users, :teams, :team_members
-
   its (:is_admin_area?) { should be_true }
 
   context :not_logged_in do

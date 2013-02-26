@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe SprintsController do
-  fixtures :sprints, :users, :projects, :issues
-
   let(:user) { users(:tobscher) }
   let(:project) { projects(:tyne) }
   let(:issue) { issues(:foo) }

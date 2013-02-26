@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe ReportsController do
-  fixtures :users, :projects, :sprints
-
   let(:user) { users(:tobscher) }
   let(:project) { projects(:tyne) }
   let(:sprint) { sprints(:alpha) }

@@ -20,8 +20,6 @@ describe ProjectsController do
   end
 
   context :logged_in do
-    fixtures :users, :projects
-
     let(:user) { users(:tobscher) }
 
     before :each do
@@ -61,7 +59,7 @@ describe ProjectsController do
     end
 
     describe :update do
-      let!(:existing) { projects(:tyne) }
+      let(:existing) { projects(:tyne) }
 
       context :success do
         it "should update the record" do

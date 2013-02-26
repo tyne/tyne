@@ -48,5 +48,7 @@ RSpec.configure do |config|
   config.before(:suite) do
     require Rails.root.join("db/seeds")
   end
+
+  config.global_fixtures = :all
 end
 Rails.logger.level = 4
