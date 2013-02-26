@@ -108,4 +108,10 @@ describe Issue do
       end
     end
   end
+
+  describe :github_client do
+    it "should return an instance of octokit" do
+      user.github_client.should be_a Octokit::Client
+    end
+  end
 end

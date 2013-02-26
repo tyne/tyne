@@ -6,11 +6,6 @@ module ApplicationHelper
     result.html_safe
   end
 
-  # Returns the currently selected project name with the username
-  def project_name
-    content_tag :span, "#{@project.full_name}", :class => "brand-project" if @project
-  end
-
   # Builds a localised page title.
   def page_title
     options = {}
