@@ -16,7 +16,7 @@ end
 
 gem 'sass-rails',   '~> 3.2.3'
 gem 'compass-rails'
-gem "jquery-rails", '~> 2.1.0'
+gem "jquery-rails", '~> 2.2.0'
 gem 'jquery-cookie-rails'
 
 gem "simple_form"
