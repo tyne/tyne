@@ -1,4 +1,4 @@
 <%= content_tag :ul, :data => { :cell => "Search" }, :class => "Search" do %>
   <li><%= link_to "Open Issues", "#", :class => @klass, :data => { :filter => "#{@predefined[:open].to_json}" } %></li>
-  <li><%= link_to "My Open Issues", "#", :data => { :filter => "#{@predefined[:my_open].to_json}" } %></li>
+  <li><%= link_to "My Open Issues", "#", :data => { :filter => "#{@predefined[:my_open].to_json}" } if @predefined[:my_open] %></li>
 <% end %>

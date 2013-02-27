@@ -7,7 +7,8 @@ class BacklogSidebarCell < Cell::Rails
     @klass = default_filter ? "selected" : ""
     @predefined = {}
     @predefined[:open] = { :state => [:open, :reopened] }
-    @predefined[:my_open] = { :state => [:open, :reopened], :assigned_to_id => [controller.current_user.id] }
+    @predefined[:my_open] = { :state => [:open, :reopened], :assigned_to_id => [controller.current_user.id] } if controller.current_user
+
     render
   end
 
