@@ -1,4 +1,6 @@
+# View helper to build filter panel for the backlog
 module FilterHelper
+  # Creates a filter option to exclude the filter
   def filter_option_all(form_builder, field)
     options = {}
     options[:label] = "All"
@@ -14,6 +16,7 @@ module FilterHelper
     content_tag :li, form_builder.input(field, options), :class => klass.join(' ')
   end
 
+  # Creates a particular filter option
   def filter_option(form_builder, field, option)
     selected = matches_filter_option(field, option[1])
     options = {}
