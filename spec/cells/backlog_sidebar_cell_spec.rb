@@ -5,6 +5,7 @@ describe BacklogSidebarCell do
 
   describe :search do
     it "should render the view" do
+      subject.stub_chain(:controller, :current_user, :id)
       subject.should_receive(:render)
       subject.search
     end
