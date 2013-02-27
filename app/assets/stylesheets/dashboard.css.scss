@@ -29,6 +29,8 @@ ul.nav-list {
   li {
     border-bottom: 1px dashed #ddd;
 
+    &:last-child { border-bottom: none; }
+
     a {
       padding: 0;
       margin: 0;
