@@ -4,6 +4,9 @@ class BacklogSidebarCell < Cell::Rails
 
   # Displays a pod with predefined search options
   def search
+    @predefined = {}
+    @predefined[:open] = { :state => [:open, :reopened] }
+    @predefined[:my_open] = { :state => [:open, :reopened], :assigned_to_id => [controller.current_user.id] }
     render
   end
 

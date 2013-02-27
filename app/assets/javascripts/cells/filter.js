@@ -24,7 +24,7 @@
       option.addClass("selected");
       link.removeClass("icon-plus").addClass("icon-remove");
 
-      Backlog.instances[0].refresh(true);
+      _this.refresh();
     });
 
     this.$target.on("click", ".filter-add", function(ev) {
@@ -55,7 +55,7 @@
         filterOption.addClass("selected");
       };
 
-      Backlog.instances[0].refresh(true);
+      _this.refresh();
     });
   };
 
@@ -89,6 +89,11 @@
         target.find('input[id*="_all"]').closest(".filter-options").addClass("selected");
       }
     });
+  };
+
+  Filter.prototype.refresh = function() {
+    Search.instances[0].resetState();
+    Backlog.instances[0].refresh(true);
   };
 
   Filter.prototype.options = function() {

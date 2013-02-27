@@ -31,8 +31,12 @@ class IssueAuditFormatter < AuditFormatter::Base
     options = { :user => user_link, :issue => issue_link, :project => project_link }
 
     if assignee_changed?
-      options[:assignee] = User.find(object.audited_changes["assigned_to_id"].last).username
-      return t("#{lookup}.assigned_to_id_html", options).html_safe
+      new_assignee = object.audited_changes["assigned_to_id"].last
+
+      if new_assignee
+        options[:assignee] = User.find(new_assignee).username
+        return t("#{lookup}.assigned_to_id_html", options).html_safe
+      end
     end
 
     return t("#{lookup}.state.#{object.audited_changes["state"].last}_html", options).html_safe if workflow_state_changed?
