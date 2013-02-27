@@ -3,7 +3,8 @@ class BacklogSidebarCell < Cell::Rails
   helper FilterHelper
 
   # Displays a pod with predefined search options
-  def search
+  def search(default_filter = false)
+    @klass = default_filter ? "selected" : ""
     @predefined = {}
     @predefined[:open] = { :state => [:open, :reopened] }
     @predefined[:my_open] = { :state => [:open, :reopened], :assigned_to_id => [controller.current_user.id] }

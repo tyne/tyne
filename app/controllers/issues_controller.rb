@@ -130,6 +130,7 @@ class IssuesController < ApplicationController
   end
 
   def default_filter
+    @default_filter = true
     params[:filter] ||= {}
     params[:filter][:state] = ["open", "reopened"]
   end
