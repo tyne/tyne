@@ -1,10 +1,7 @@
 <div class="span3">
   <div class="well">
     <% cache ["v11", "issues", "backlog", "sidebar", session[:sorting]] do %>
-      <%= render_cell :backlog_sidebar, :search %>
       <%= render_cell :backlog_sidebar, :filter, @project %>
-      <%= render_cell :backlog_sidebar, :sorting %>
-      <%= render_cell :backlog_sidebar, :grouping %>
     <% end %>
   </div>
 </div>
@@ -17,6 +14,9 @@
       <div class="btn-group" data-toggle="buttons-radio" data-behaviour="issue-view">
         <button type="button" class="btn btn-small" data-view="minimal" title="<%= t("actions.list_view") %>"><i class="icon-minus"></i></button>
         <button type="button" class="btn btn-small active" data-view="detailed" title="<%= t("actions.detail_view") %>"><i class="icon-tasks"></i></button>
+      </div>
+      <div class="pull-right">
+        <%= render_cell :backlog_sidebar, :sorting %>
       </div>
     </div>
 

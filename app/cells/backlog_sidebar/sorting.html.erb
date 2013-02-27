@@ -1,3 +1,1 @@
-<%= render_cell :pod, :collapsable, 'Sort by', :state => :collapsed do |cell| %>
-  <% cell.content = render :partial => "sorting", :locals => { :fields => @fields, :order => @order } %>
-<% end %>
+<%= render :partial => "sorting", :locals => { :fields => @fields, :order => @order } %>
