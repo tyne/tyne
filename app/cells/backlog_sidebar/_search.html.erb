@@ -1,4 +1,4 @@
-<%= content_tag :div, :data => { :cell => "Search" }, :class => "Search" do %>
-  <%= simple_form_for :search do |f| %>
-  <% end %>
+<%= content_tag :ul, :data => { :cell => "Search" }, :class => "Search" do %>
+  <li><%= link_to "Open Issues", "#", :class => "selected" %></li>
+  <li><%= link_to "My Open Issues", "#" %></li>
 <% end %>

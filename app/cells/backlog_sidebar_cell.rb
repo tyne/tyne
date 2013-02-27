@@ -1,5 +1,7 @@
 # Cell for backlog sidebar
 class BacklogSidebarCell < Cell::Rails
+  helper FilterHelper
+
   # Displays a pod with predefined search options
   def search
     render

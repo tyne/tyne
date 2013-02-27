@@ -17,6 +17,7 @@ class IssuesController < ApplicationController
   # The backlog can be sorted by passing a sorting parameter.
   def index
     reflection = @project.issues
+    default_filter unless params[:filter]
     reflection = apply_filter(reflection)
     reflection = apply_sorting(reflection)
     reflection = apply_pagination(reflection)
@@ -126,5 +127,10 @@ class IssuesController < ApplicationController
 
   def ensure_can_edit
     redirect_to main_app.root_path unless can_edit?
+  end
+
+  def default_filter
+    params[:filter] ||= {}
+    params[:filter][:state] = ["open", "reopened"]
   end
 end

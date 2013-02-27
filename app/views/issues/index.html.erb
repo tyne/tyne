@@ -1,6 +1,7 @@
 <div class="span3">
   <div class="well">
     <% cache ["v11", "issues", "backlog", "sidebar", session[:sorting]] do %>
+      <%= render_cell :backlog_sidebar, :search %>
       <%= render_cell :backlog_sidebar, :filter, @project %>
     <% end %>
   </div>
