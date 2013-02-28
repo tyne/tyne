@@ -17,9 +17,9 @@
           link = option.find("a");
 
       filter.find(".icon-remove").removeClass("icon-remove").addClass("icon-plus");
-      filter.find(":input").not(input).removeAttr("checked");
+      filter.find(":input").not(input).prop("checked", false);
       filter.find(".selected").removeClass("selected");
-      input.attr("checked", "checked");
+      input.prop("checked", true);
 
       option.addClass("selected");
       link.removeClass("icon-plus").addClass("icon-remove");
@@ -39,7 +39,7 @@
 
       if (selected) {
         // Remove filter
-        input.removeAttr("checked");
+        input.prop("checked", false);
         target.removeClass("icon-remove").addClass("icon-plus");
         filterOption.removeClass("selected");
 
@@ -50,7 +50,7 @@
       } else {
         // Add filter
         all.removeClass("selected");
-        input.attr("checked", "checked");
+        input.prop("checked", true);
         target.removeClass("icon-plus").addClass("icon-remove");
         filterOption.addClass("selected");
       };
@@ -71,7 +71,7 @@
 
       target.find(".selected").removeClass("selected");
       target.find(".icon-remove").addClass("icon-plus");
-      target.find(":checked").removeAttr("checked");
+      target.find(":checked").prop("checked", false);
 
       if (data.filter && data.filter[field]) {
         // Select entry
@@ -80,7 +80,7 @@
         $.each(value, function(innerIndex, innerElement) {
           var identifier = prefix + "_" + field + "_" + innerElement,
               element = target.find("#" + identifier);
-          element.attr("checked", "checked");
+          element.prop("checked", true);
           element.closest(".filter-options").addClass("selected");
           element.closest(".filter-options").find("a").removeClass("icon-plus").addClass("icon-remove");
         });
@@ -102,6 +102,7 @@
     for (var k in filter) {
       if (!filter[k]) delete filter[k];
     }
+
     return filter;
   };
 })(jQuery);

@@ -22,7 +22,7 @@ module FilterHelper
     options = {}
     options[:label] = option[0]
     options[:required] = false
-    options[:input_html] = { :id => "filter_#{field}_#{option[1]}", :type => :checkbox, :value => option[1] }
+    options[:input_html] = { :id => "filter_#{field}_#{option[1]}", :type => :checkbox, :value => option[1], :multiple => true }
     options[:input_html][:checked] = selected
     options[:label_html] = { :for => "filter_#{field}_#{option[1]}" }
     options[:wrapper_html] = { :class => "filter-controls-hidden" }
