@@ -10,6 +10,10 @@ table.overview {
     width: 30%;
   }
 
+  .user-joined {
+    color: #888888;
+  }
+
   .portrait {
     border: 10px solid #EEEEEE;
     @include border-radius(8px);

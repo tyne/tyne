@@ -1,4 +1,4 @@
-<% cache ['v3', @user, 'overview', @user.projects.cache_key] do %>
+<% cache ['v4', @user, 'overview', @user.projects.cache_key] do %>
   <div class="well centered">
   <table class="overview">
     <tr>
@@ -6,6 +6,7 @@
         <p class="user">
           <%= image_tag avatar_url(@user, :width => 128), :class => 'portrait', :width => 128 %>
         </p>
+        <p class="user-joined">Joined: <%= @user.created_at.to_date.to_formatted_s %></p>
     </td>
     <td>
       <div class="overview-details">
