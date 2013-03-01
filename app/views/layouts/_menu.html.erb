@@ -1,5 +1,5 @@
 <% if @project && @project.key %>
-  <%= cache ["v1", "menu", current_user, @project, is_collaborator?] do %>
+  <%= cache ["v2", "menu", current_user, @project, is_collaborator?] do %>
     <ul class="nav">
         <%= content_tag(:li, link_to("Backlog", main_app.issues_path(:user => @project.user.username, :key => @project.key))) %>
         <%= content_tag(:li, link_to("Planning", main_app.sprints_path(:user => @project.user.username, :key => @project.key))) if is_collaborator? %>
