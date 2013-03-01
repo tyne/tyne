@@ -29,6 +29,7 @@ class IssuesController < ApplicationController
   def new
     add_breadcrumb :new
 
+    @create_another = session[:create_another]
     @issue = @project.issues.build
   end
 
@@ -37,6 +38,7 @@ class IssuesController < ApplicationController
     add_breadcrumb :new
 
     redirect_to_path = params[:issue].delete(:redirect_to)
+    session[:create_another] = !!redirect_to_path
 
     @issue = @project.backlog_items.build(params[:issue])
     @issue.reported_by = current_user
