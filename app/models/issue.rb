@@ -53,30 +53,43 @@ class Issue < ActiveRecord::Base
   end
   alias_method :display_as, :description_markdown
 
-  # Removes the issue from the backlog if not part of a sprint.
-  # Logs sprint activity if part of a sprint.
+  # Callback fired after ticked closed
   def after_close
     if sprint
-      change = (self.estimate || 0) * -1
-      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "close", :scope_change => change)
-      self.sprint.save
+      log_sprint_activity('close', 0 - estimated_remaining)
     else
-      self.becomes(BacklogItem).remove_from_list
+      remove_from_backlog
     end
   end
 
-  # Adds issue to the backlog if not part of a sprint.
-  # Logs sprint activity if part of a sprint.
+  # Callback fired afer ticket reopened
   def after_reopen
     if sprint
-      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "reopen", :scope_change => self.estimate || 0)
-      self.sprint.save
+      log_sprint_activity('reopen', estimated_remaining)
     else
-      self.becomes(BacklogItem).insert_at(1)
+      add_to_backlog
     end
   end
 
   private
+
+  def remove_from_backlog
+    becomes(BacklogItem).remove_from_list
+  end
+
+  def add_to_backlog
+    becomes(BacklogItem).insert_at(1)
+  end
+
+  def estimated_remaining
+    estimate || 0
+  end
+
+  def log_sprint_activity(type, change)
+    sprint.log_activity(self, type, change)
+    sprint.save
+  end
+
   def set_defaults
     self.issue_type_id ||= IssueType.first.id if attributes.include?("issue_type_id")
     self.issue_priority_id ||= get_medium_priority if attributes.include?("issue_priority_id")
