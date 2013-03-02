@@ -19,10 +19,16 @@ class Sprint < ActiveRecord::Base
     self.start_date = start_date
     self.end_date = end_date
     self.active = true
-    self.issues.each do |issue|
-      self.activities.build(:issue_id => issue.id, :scope_change => issue.estimate, :type_of_change => "start")
+    issues.each do |issue|
+      log_activity(issue, 'start', issue.estimate)
     end
     save
+  end
+
+  def log_activity(issue, type, change)
+    activities.build(:issue_id => issue.id,
+                     :type_of_change => type,
+                     :scope_change => change)
   end
 
   # Finishes the sprint.
