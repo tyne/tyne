@@ -58,8 +58,7 @@ class Issue < ActiveRecord::Base
   def after_close
     if sprint
       change = (self.estimate || 0) * -1
-      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "close", :scope_change => change)
-      self.sprint.save
+      log_sprint_activity('close', change)
     else
       self.becomes(BacklogItem).remove_from_list
     end
@@ -69,14 +68,19 @@ class Issue < ActiveRecord::Base
   # Logs sprint activity if part of a sprint.
   def after_reopen
     if sprint
-      self.sprint.activities.build(:issue_id => self.id, :type_of_change => "reopen", :scope_change => self.estimate || 0)
-      self.sprint.save
+      log_sprint_activity('reopen', (estimate || 0))
     else
       self.becomes(BacklogItem).insert_at(1)
     end
   end
 
   private
+
+  def log_sprint_activity(type, change)
+    sprint.log_activity(self, type, change)
+    sprint.save
+  end
+
   def set_defaults
     self.issue_type_id ||= IssueType.first.id if attributes.include?("issue_type_id")
     self.issue_priority_id ||= get_medium_priority if attributes.include?("issue_priority_id")
