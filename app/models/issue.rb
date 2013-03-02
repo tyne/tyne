@@ -53,28 +53,37 @@ class Issue < ActiveRecord::Base
   end
   alias_method :display_as, :description_markdown
 
-  # Removes the issue from the backlog if not part of a sprint.
-  # Logs sprint activity if part of a sprint.
+  # Callback fired after ticked closed
   def after_close
     if sprint
-      change = (self.estimate || 0) * -1
-      log_sprint_activity('close', change)
+      log_sprint_activity('close', 0 - estimated_remaining)
     else
-      self.becomes(BacklogItem).remove_from_list
+      remove_from_backlog
     end
   end
 
-  # Adds issue to the backlog if not part of a sprint.
-  # Logs sprint activity if part of a sprint.
+  # Callback fired afer ticket reopened
   def after_reopen
     if sprint
-      log_sprint_activity('reopen', (estimate || 0))
+      log_sprint_activity('reopen', estimated_remaining)
     else
-      self.becomes(BacklogItem).insert_at(1)
+      add_to_backlog
     end
   end
 
   private
+
+  def remove_from_backlog
+    becomes(BacklogItem).remove_from_list
+  end
+
+  def add_to_backlog
+    becomes(BacklogItem).insert_at(1)
+  end
+
+  def estimated_remaining
+    estimate || 0
+  end
 
   def log_sprint_activity(type, change)
     sprint.log_activity(self, type, change)
