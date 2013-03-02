@@ -15,14 +15,10 @@
       success: function(responseText, status, xhr) {
         _this.$target.parent().find(".comments").append(responseText);
         _this.$target.populate({});
-        _this.$target.find('input[name="commit"]').removeAttr("disabled");
+        _this.$target.find('input[name="commit"]').prop("disabled", false);
         Notification.show('success', I18n.t("flash.actions.create.notice", {resource_name: "Comment"}));
       }
     };
-
-    _this.$target.on("submit", function() {
-      _this.$target.find('input[name="commit"]').attr("disabled", "disabled");
-    });
 
     _this.$target.ajaxForm(options);
   };
