@@ -25,6 +25,7 @@ class Sprint < ActiveRecord::Base
     save
   end
 
+  # Creates a log event to indicate a scope change (e.g. sprint started, issue closed).
   def log_activity(issue, type, change)
     activities.build(:issue_id => issue.id,
                      :type_of_change => type,
