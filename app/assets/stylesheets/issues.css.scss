@@ -82,7 +82,7 @@
 
       .issue-key {
         display: inline-block;
-        width: 60px;
+        min-width: 60px;
       }
 
       .issue-closed, .issue-done, .issue-invalid {
