@@ -49,7 +49,8 @@ class Issue < ActiveRecord::Base
   # Returns the description converted into markdown.
   def description_markdown
     @@markdown_renderer ||= Redcarpet::Markdown.new(MdEmoji::Render, :autolink => true, :space_after_headers => true, :no_intra_emphasis => true)
-    @@markdown_renderer.render(description).html_safe
+    preprocessed = MarkdownPreprocessors::IssueAutoLink.new.process(description, project)
+    @@markdown_renderer.render(preprocessed).html_safe
   end
   alias_method :display_as, :description_markdown
 
