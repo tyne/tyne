@@ -1,10 +1,19 @@
 module MarkdownPreprocessors
+  # Create links between issues.
+  #
+  # #1      => [#1](issue/path)
+  # #FOO-1  => [#FOO-1](issue/path)
   class IssueAutoLink
     include Rails.application.routes.url_helpers
 
+    # Matcher for issue links inside a project like #1 and #2
     INTERNAL_MATCHER = /#(\d+)/
+
+    # Matcher for project wide issue links such as #FOO-1
     PROJECT_WIDE_MATCHER = /#([a-zA-Z_-]+)\-(\d+)/
 
+    # Processes the given markup.
+    # Matched text gets converted into hyperlinks.
     def process(text, project)
       text.gsub! PROJECT_WIDE_MATCHER do |match|
         key = $1
