@@ -25,6 +25,8 @@ module ApplicationHelper
   # @param [String] markup
   def markup_to_html(markup)
     @markdown ||= Redcarpet::Markdown.new(MdEmoji::Render, :autolink => true, :space_after_headers => true, :no_intra_emphasis => true)
+
+    markup = MarkdownPreprocessors::IssueAutoLink.new.process(markup, @project)
     @markdown.render(markup).html_safe
   end
 

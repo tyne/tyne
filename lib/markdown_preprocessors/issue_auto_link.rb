@@ -6,26 +6,29 @@ module MarkdownPreprocessors
     PROJECT_WIDE_MATCHER = /#([a-zA-Z_-]+)\-(\d+)/
 
     def process(text, project)
-      text.gsub PROJECT_WIDE_MATCHER do |match|
+      text.gsub! PROJECT_WIDE_MATCHER do |match|
         key = $1
         number = $2
 
         project = Project.find_by_key(key)
 
-        return match unless project
-        return match unless issue_exists?(project, number)
-
-        url = link_path(project, number)
-        return "[##{number}](#{url})"
+        if project && issue_exists?(project, number)
+          url = link_path(project, number)
+          "[##{key}-#{number}](#{url})"
+        else
+          match
+        end
       end
 
       text.gsub INTERNAL_MATCHER do |match|
         number = $1
 
-        return match unless issue_exists?(project, number)
-
-        url = link_path(project, number)
-        return "[##{number}](#{url})"
+        if issue_exists?(project, number)
+          url = link_path(project, number)
+          "[##{number}](#{url})"
+        else
+          match
+        end
       end
     end
 
