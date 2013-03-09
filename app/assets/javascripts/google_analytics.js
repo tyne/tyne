@@ -1,5 +1,6 @@
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-38189731-1']);
+_gaq.push(['_setDomainName', 'tyne-tickets.org']);
 _gaq.push(['_trackPageview']);
 
 (function() {
