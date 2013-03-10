@@ -23,7 +23,11 @@ class ProjectsController < ApplicationController
   def create
     add_breadcrumb :new
 
+    privacy = params[:project].delete(:privacy)
+
     @project = current_user.projects.new(params[:project])
+    @project.privacy = privacy
+
     @project.save
     respond_with(@project, :location => main_app.backlog_path(:user => current_user.username, :key => @project.key))
   end
