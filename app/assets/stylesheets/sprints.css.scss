@@ -123,8 +123,13 @@
     }
 
     p {
-      padding: 2px;
+      padding: 2px 25px 2px 2px;
       margin: 0px;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      -ms-text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
 }
