@@ -71,5 +71,5 @@ group :test, :development do
   gem "guard-jasmine"
   gem "jasminerice"
   gem "yard"
-  gem "simplecov"
+  gem 'coveralls', :require => false
 end
