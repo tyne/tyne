@@ -2,7 +2,10 @@
 
 <ul class="nav pull-right">
   <li>
-    <%= link_to "New Project", new_project_path, :class => "new-project-link" %>
+    <%= link_to "New Issue", new_issue_path(:user => @project.user.username, :key => @project.key), :class => "new-issue-link" if @project && @project.persisted? %>
+  </li>
+  <li>
+  <%= link_to content_tag(:span, "", :class => 'icon-plus'), new_project_path, :class => "new-project-link tooltipped-bottom", :title => "Create a new project", :data => { :toggle => 'tooltip' } %>
   </li>
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user_dropdown">
