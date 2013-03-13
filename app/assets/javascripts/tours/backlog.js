@@ -11,7 +11,7 @@
     });
 
     tour.addStep({
-      element: "#sidebar",
+      element: ".backlog-sidebar",
       title: "Tyne - Backlog",
       content: "Use the sidebar to search, filter or sort your backlog.",
       placement: 'right'
