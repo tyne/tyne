@@ -2,7 +2,7 @@
   var DashboardTour = Cell.create('DashboardTour');
 
   DashboardTour.prototype.initialize = function() {
-    var tour = new Tour({name: "Dashboard", useLocalStore: true});
+    var tour = new Tour({name: "Dashboard"});
     tour.addStep({
       element: ".new-project-link",
       title: "Tyne - Dashboard",

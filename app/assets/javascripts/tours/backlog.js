@@ -2,7 +2,7 @@
   var BacklogTour = Cell.create('BacklogTour');
 
   BacklogTour.prototype.initialize = function() {
-    var tour = new Tour({name: "Backlog", useLocalStorage: true});
+    var tour = new Tour({name: "Backlog"});
     tour.addStep({
       element: ".new-issue-link",
       title: "Tyne - Backlog",
