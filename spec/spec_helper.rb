@@ -1,6 +1,12 @@
 require 'rubygems'
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear!
+Coveralls.wear!("rails")
+
+SimpleCov.start do
+  add_filter "/spec/"
+  add_filter "/vendor/gems/"
+end
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
