@@ -10,6 +10,10 @@ Tyne is a webbased issue tracking application with the following features:
 * Issue tracking (includes sorting, filtering, basic workflow, etc.)
 * Basic role management
 * Agile sprint planning
+* Scrum board
+* Commenting system
+* Voting system
+* Charts (Burn Down Chart, etc.)
 
 Do you want to check the current status of the project? We have deployed a demo to http://www.tyne-tickets.org
 
@@ -78,6 +82,9 @@ git submodule init
 git submodule update
 ```
 
+## Changelog
+
+Click [here](https://github.com/tyne/tyne/blob/master/CHANGELOG.md) to view the changelog.
 
 ## Maintainers
 
