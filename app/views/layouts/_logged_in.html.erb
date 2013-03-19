@@ -13,7 +13,8 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><%= link_to "Logout", main_app.logout_path, :method => :delete %></li>
+      <li><%= link_to "Account settings", edit_account_settings_path(:user => current_user.username) %></li>
+      <li><%= link_to "Logout", logout_path, :method => :delete %></li>
     </ul>
   </li>
 </ul>

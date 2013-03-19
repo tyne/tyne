@@ -115,10 +115,9 @@ ActiveRecord::Schema.define(:version => 20130319200745) do
     t.string   "name"
     t.string   "key"
     t.text     "description"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
-    t.boolean  "privacy",     :default => false
   end
 
   add_index "projects", ["key"], :name => "index_projects_on_key"

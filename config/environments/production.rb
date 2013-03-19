@@ -52,7 +52,7 @@ Tyne::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable threaded mode
   # config.threadsafe!
@@ -73,5 +73,20 @@ Tyne::Application.configure do
     :allow_reload => false
   }
 
+  config.action_mailer.default_url_options = {
+    :host => "www.tyne-tickets.org"
+  }
+
   config.logger = Logger.new(STDOUT)
+
+  ActionMailer::Base.default(:from => "donotreply@tyne-tickets.org")
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'tyne-tickets.org',
+    :authentication => :plain,
+    :user_name => ENV['SMTP_USERNAME'],
+    :password => ENV['SMTP_PASSWORD']
+  }
 end
