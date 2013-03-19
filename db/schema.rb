@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224130203) do
+ActiveRecord::Schema.define(:version => 20130319200745) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -115,9 +115,10 @@ ActiveRecord::Schema.define(:version => 20130224130203) do
     t.string   "name"
     t.string   "key"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.integer  "user_id"
+    t.boolean  "privacy",     :default => false
   end
 
   add_index "projects", ["key"], :name => "index_projects_on_key"
@@ -168,9 +169,10 @@ ActiveRecord::Schema.define(:version => 20130224130203) do
     t.string   "username"
     t.string   "email"
     t.string   "token"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "gravatar_id"
+    t.string   "notification_email"
   end
 
   add_index "users", ["uid"], :name => "index_users_on_uid"
