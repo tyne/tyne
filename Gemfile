@@ -69,6 +69,8 @@ group :test, :development do
   gem "pry"
   gem "factory_girl_rails"
   gem "guard-jasmine"
+  gem "guard-rspec"
+  gem 'rb-fsevent', '~> 0.9'
   gem "jasminerice"
   gem "yard"
   gem 'coveralls', :require => false

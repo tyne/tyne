@@ -6,7 +6,7 @@ describe TeamMembersController do
   context :not_logged_in do
     it "should not allow any actions" do
       post :create, :user => "Foo", :key => "Bar", :team_id => 1, :team_member => {}
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => team_team_members_path(:user => "Foo", :key => "Bar", :team_id => 1))
     end
   end
 

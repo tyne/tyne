@@ -6,16 +6,16 @@ describe ProjectsController do
   context :not_logged_in do
     it "should not allow any actions" do
       post :create
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => projects_path)
 
       delete :destroy, :id => 1
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => projects_path)
 
       get :github
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => projects_path)
 
       post :import
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => projects_path)
     end
   end
 

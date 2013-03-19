@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
   private
   def require_login
     unless current_user
-      redirect_to(main_app.login_path)
+      redirect_to(login_path(:redirect_url => request.path))
     end
   end
 
   def add_breadcrumb_root
-    add_breadcrumb "Dashboard", main_app.root_path if current_user
+    add_breadcrumb "Dashboard", root_path if current_user
   end
 
   def load_user
@@ -30,13 +30,13 @@ class ApplicationController < ActionController::Base
   def load_project
     @project = Project.joins(:user).where(:key => params[:key]).where(:users => {:username => params[:user]  }).first
 
-    add_breadcrumb @project.name, main_app.backlog_path(:user => params[:user], :key => params[:key])
+    add_breadcrumb @project.name, backlog_path(:user => params[:user], :key => params[:key])
   end
 
   def load_issue
     @issue = @project.issues.find_by_number(params[:id])
 
-    add_breadcrumb @issue.key, main_app.issue_path(:user => params[:user], :key => params[:key], :id => params[:id])
+    add_breadcrumb @issue.key, issue_path(:user => params[:user], :key => params[:key], :id => params[:id])
   end
 
   def is_admin_area?
@@ -63,6 +63,6 @@ class ApplicationController < ActionController::Base
   helper_method :is_collaborator?
 
   def ensure_can_collaborate
-    redirect_to main_app.root_path unless is_collaborator?
+    redirect_to root_path unless is_collaborator?
   end
 end
