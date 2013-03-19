@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   # It redirects to the root page
   def create
     auth_hash = request.env['omniauth.auth']
-    params_hash = request.env['omniauth.params']
 
     user = AuthProcessor.new(auth_hash).find_or_create_user
     session[:user_id] = user.id
@@ -30,6 +29,7 @@ class SessionsController < ApplicationController
 
   private
   def redirect_url_for_login
+    params_hash = (request.env['omniauth.params'] || {})
     params_hash["redirect_url"] || root_path
   end
 end
