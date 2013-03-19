@@ -61,6 +61,7 @@ class Issue < ActiveRecord::Base
     else
       remove_from_backlog
     end
+    IssueMailer.issue_closed(self).deliver
   end
 
   # Callback fired afer ticket reopened
@@ -70,6 +71,7 @@ class Issue < ActiveRecord::Base
     else
       add_to_backlog
     end
+    IssueMailer.issue_reopened(self).deliver
   end
 
   private
