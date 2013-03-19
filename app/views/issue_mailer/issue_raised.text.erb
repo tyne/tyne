@@ -1,0 +1,3 @@
+<%= @issue.reported_by.name %> has raised issue <%= @issue.key %>.
+
+Follow the link for more details: <%= issue_url(:user => @issue.project.user.username, :key => @issue.project.key, :id => @issue.number) %>
