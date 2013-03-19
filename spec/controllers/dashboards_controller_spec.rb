@@ -3,8 +3,8 @@ require 'spec_helper'
 describe DashboardsController do
   context :not_logged_in do
     it "should not allow any actions" do
-      get :index, :use_route => :tyne_core
-      response.should redirect_to login_path
+      get :index
+      response.should redirect_to login_path(:redirect_url => dashboards_path)
     end
   end
 
@@ -18,7 +18,7 @@ describe DashboardsController do
 
     describe :index do
       before :each do
-        get :index, :use_route => :tyne_core
+        get :index
       end
 
       it "should assign the list of the user's projects" do

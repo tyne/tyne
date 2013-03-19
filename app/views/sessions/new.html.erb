@@ -5,6 +5,6 @@
     We will create an account for you as you sign in with Github.
   </p>
   <div class="sign-in-button">
-    <%= link_to t("authentication.sign_in.github"), "/auth/github", :class => "btn btn-large btn-success" %>
+    <%= link_to t("authentication.sign_in.github"), "/auth/github?redirect_url=#{params[:redirect_url]}", :class => "btn btn-large btn-success" %>
   </div>
 </div>

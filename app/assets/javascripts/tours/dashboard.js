@@ -11,7 +11,7 @@
     });
 
     tour.addStep({
-      element: "#sidebar",
+      element: ".dashboard-sidebar",
       title: "Tyne - Dashboard",
       content: "Your new project will be visible in your sidebar after you have created it.",
       placement: 'right'
