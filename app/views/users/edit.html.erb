@@ -1,6 +1,6 @@
 <% cache ["v1", "users", "edit", current_user] do %>
   <div class="centered">
-    <%= simple_form_for(@user, :as => :account, :validate => true, :url => account_settings_path(:user => @user.username)) do |f| %>
+    <%= simple_form_for(@account, :as => :account, :validate => true, :url => account_settings_path(:user => @user.username)) do |f| %>
     <table>
       <tr>
         <td><%= f.input :name %></td>

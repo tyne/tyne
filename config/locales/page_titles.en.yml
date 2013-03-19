@@ -9,6 +9,7 @@ en:
       edit: "%{user}/%{key}-%{number} - Edit"
     users:
       overview: "%{user}"
+      edit: "%{user} - Account Settings"
     projects:
       new: "New Project"
       admin: "%{user}/%{key} - Admin"
