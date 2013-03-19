@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.update_attributes(params[:account])
+
     respond_with(@user, :location => edit_account_settings_path(:user => @user.username))
   end
 end
