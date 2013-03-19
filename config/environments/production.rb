@@ -79,7 +79,8 @@ Tyne::Application.configure do
 
   config.logger = Logger.new(STDOUT)
 
-  ActionMailer::Base.default(:from => "donotreply@tyne-tickets.org")
+  ActionMailer::Base.default(:from => "notifications@tyne-tickets.org", :sender => "notifications@tyne-tickets.org")
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",

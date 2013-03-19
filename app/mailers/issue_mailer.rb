@@ -1,5 +1,7 @@
 # Mailer for issues
 class IssueMailer < ActionMailer::Base
+  default :from => "'Tyne' <notifications@tyne-tickets.org>"
+
   # Sends a notification to all contributors
   # that a new issue has been raised.
   def self.send_issue_raised(issue)
