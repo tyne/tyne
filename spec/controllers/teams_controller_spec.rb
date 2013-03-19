@@ -6,7 +6,7 @@ describe TeamsController do
   context :not_logged_in do
     it "should not allow any actions" do
       get :show, :user => "Foo", :key => "Bar", :id => 1
-      response.should redirect_to login_path
+      response.should redirect_to login_path(:redirect_url => team_path(:user => "Foo", :key => "Bar", :id => 1))
     end
   end
 
