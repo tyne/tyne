@@ -75,3 +75,5 @@ group :test, :development do
   gem "yard"
   gem 'coveralls', :require => false
 end
+
+gem "rvm-capistrano"
