@@ -14,7 +14,7 @@ role :app, "198.211.115.73"                          # This may be the same as y
 role :db,  "198.211.115.73", :primary => true # This is where Rails migrations will run
 
 set :rails_env, 'production'
-set :branch, 'master'
+set :branch, 'capistrano'
 
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -36,8 +36,8 @@ namespace :deploy do
   end
 
   task :assets do
-    run "cd #{release_path} && bundle exec rake i18n:js:export"
-    run "cd #{release_path} && bundle exec rake assets:precompile"
+    run "cd #{release_path} && bundle exec rake i18n:js:export RAILS_ENV=production"
+    run "cd #{release_path} && source $HOME/.bash_profile && bundle exec rake assets:precompile RAILS_ENV=production"
   end
 end
 
@@ -46,3 +46,5 @@ namespace :rvm do
     run "rvm rvmrc trust #{release_path}"
   end
 end
+
+after 'deploy:finalize_update', 'deploy:assets'
