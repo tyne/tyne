@@ -20,3 +20,5 @@ app/assets/javascripts/i18n/*
 coverage
 /bin
 .ruby-version
+config/database.yml
+config/tyne.yml
