@@ -82,7 +82,7 @@ Tyne::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => APP_CONFIG.smtp.address,
-    :port => 25,
+    :port => 80,
     :domain => APP_CONFIG.smtp.domain,
     :authentication => :plain,
     :user_name => APP_CONFIG.smtp.username,
