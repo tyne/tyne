@@ -19,6 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
-  database: tyne
-  username: app
+  adapter: your-adapter
+  database: your-db-name
+  username: your-username
+  password: your-password

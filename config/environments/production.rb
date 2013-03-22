@@ -79,15 +79,15 @@ Tyne::Application.configure do
 
   config.logger = Logger.new(STDOUT)
 
-  ActionMailer::Base.default(:from => "notifications@tyne-tickets.org", :sender => "notifications@tyne-tickets.org")
+  ActionMailer::Base.default(:from => APP_CONFIG.smtp.from, :sender => APP_CONFIG.smtp.from)
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => "smtpout.europe.secureserver.net",
+    :address => APP_CONFIG.smtp.address,
     :port => 25,
-    :domain => 'tyne-tickets.org',
+    :domain => APP_CONFIG.smtp.domain,
     :authentication => :plain,
-    :user_name => ENV['SMTP_USERNAME'],
-    :password => ENV['SMTP_PASSWORD']
+    :user_name => APP_CONFIG.smtp.username,
+    :password => APP_CONFIG.smtp.password
   }
 end
