@@ -43,7 +43,7 @@ class IssuesController < ApplicationController
     @issue = @project.backlog_items.build(params[:issue])
     @issue.reported_by = current_user
     if @issue.save
-      IssueMailer.send_issue_raised(@issue)
+      EmailIssueRaisedWorker.perform_async(@issue.id)
     end
 
     respond_with(@issue, :location => redirect_to_path || show_path)
