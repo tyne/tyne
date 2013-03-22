@@ -77,8 +77,6 @@ Tyne::Application.configure do
     :host => "www.tyne-tickets.org"
   }
 
-  config.logger = Logger.new(STDOUT)
-
   ActionMailer::Base.default(:from => APP_CONFIG.smtp.from, :sender => APP_CONFIG.smtp.from)
 
   config.action_mailer.delivery_method = :smtp
