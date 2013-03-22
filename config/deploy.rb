@@ -35,6 +35,10 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 
+  task :after_hook do
+    run "cd #{release_path} && /etc/tyne/after_hook"
+  end
+
   task :assets do
     run "cd #{release_path} && bundle exec rake i18n:js:export RAILS_ENV=production"
     run "cd #{release_path} && source $HOME/.bash_profile && bundle exec rake assets:precompile RAILS_ENV=production"
@@ -47,4 +51,5 @@ namespace :rvm do
   end
 end
 
+after 'bundle:install', 'deploy:after_hook'
 after 'deploy:finalize_update', 'deploy:assets'
