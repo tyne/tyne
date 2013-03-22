@@ -7,6 +7,8 @@ before_install:
   - git submodule update --init --recursive
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
+  - "cp config/tyne.yml.template config/tyne.yml"
+  - "cp config/database.yml.template config/database.yml"
 env:
   global:
     - secure: "QTFjYT0NgWnrMTVzxJOPR1jXkF8gLZuv2vlz64L5zXIzgEr6sP6wfP3odMFs\nigVwVi4CHt6FiT5LXgp6O9SeTpv+rpQ4Fp+VaMB5WQb4enHt7KXcg/WxhkBb\nd/eFctRyew//6ASLh25tIy0JyabxlStNxm1Ke0xqSxZ8png4qj8="
