@@ -50,6 +50,12 @@ Callback URL: http://localhost:3000/auth/github/callback
 
 Start your rails server via ```rails s```
 
+## Production
+
+Create another developer application with the correct url/callback URL as described earlier.
+
+Tyne is configured to serve assets from a different provider (e.g. Amazon S3, Google Storage Cloud, etc.). This is done via the gem [asset_sync](https://github.com/rumblelabs/asset_sync). Please check their documentation on how to configure it.
+
 ## Testing
 
 You can run the following command to run the whole test script: ```script/ci```
