@@ -27,7 +27,6 @@ set :deploy_to, "/home/#{user}/#{application}"
 set :rvm_ruby_string, "1.9.3@tyne"
 
 after "deploy:restart", "deploy:cleanup"
-after "deploy", "rvm:trust_rvmrc"
 
 namespace :deploy do
   task :start do ; end
