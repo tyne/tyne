@@ -15,7 +15,7 @@ role :app, "198.211.115.73"                          # This may be the same as y
 role :db,  "198.211.115.73", :primary => true # This is where Rails migrations will run
 
 set :rails_env, 'production'
-set :branch, 'capistrano'
+set :branch, 'sidekiq'
 
 set :deploy_via, :remote_cache
 set :use_sudo, false
