@@ -88,6 +88,4 @@ Tyne::Application.configure do
     :user_name => APP_CONFIG.smtp.username,
     :password => APP_CONFIG.smtp.password
   }
-
-  puts config.action_mailer.smtp_settings
 end
