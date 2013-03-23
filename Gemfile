@@ -20,7 +20,7 @@ gem "jquery-rails", '~> 2.2.0'
 gem 'jquery-cookie-rails'
 
 gem "simple_form"
-gem 'client_side_validations', :git => "git@github.com:bcardarella/client_side_validations.git", :branch => "3-2-stable"
+gem 'client_side_validations', :git => "https://github.com/bcardarella/client_side_validations.git", :branch => "3-2-stable"
 gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"

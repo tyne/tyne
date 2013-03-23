@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:bcardarella/client_side_validations.git
+  remote: https://github.com/bcardarella/client_side_validations.git
   revision: 62b32180cce377bcf029daf18e749d03022718ec
   branch: 3-2-stable
   specs:
