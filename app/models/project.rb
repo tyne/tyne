@@ -19,6 +19,10 @@ class Project < ActiveRecord::Base
 
   before_create :create_teams
 
+  scope :most_active, ->(limit) { public.order("updated_at DESC").limit(limit) }
+  scope :privacy_public, -> { where(:privacy => false) }
+  scope :privacy_private, -> { where(:privacy => true) }
+
   def any_running?
     sprints.where(:active => true).count > 0
   end

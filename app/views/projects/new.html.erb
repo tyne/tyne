@@ -12,6 +12,27 @@
       <tr>
         <td colspan="2"><%= f.input :description, :hint => t("hints.markdown_enabled"), :input_html => {:class => 'growable'} %></td>
       </tr>
+      <tr>
+        <td colspan="2">
+          <div class="privacy privacy-public">
+            <%= f.radio_button :privacy, "false" %>
+            <div class="privacy-icon">
+              <%= image_tag "icon-sweets/24/public.png" %>
+            </div>
+            <%= f.label :privacy_false, "Public" %>
+            <%= content_tag :p, "Anyone can see public projects but you decide who can contribute.", :class => "help-block" %>
+          </div>
+
+          <div class="privacy privacy-private">
+            <%= f.radio_button :privacy, "true" %>
+            <div class="privacy-icon">
+              <%= image_tag "icon-sweets/24/private.png" %>
+            </div>
+            <%= f.label :privacy_true, "Private" %>
+            <%= content_tag :p, "You can decide who can see and contribute to your project.", :class => "help-block" %>
+          </div>
+        </td>
+      </tr>
     </table>
     <%= f.button :submit, :class => "btn btn-success" %>
   <% end %>

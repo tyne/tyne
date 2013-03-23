@@ -19,6 +19,28 @@ describe ProjectsController do
     end
   end
 
+  context :private_project do
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:bluffr) }
+
+    before :each do
+      controller.stub(:current_user).and_return(user)
+    end
+
+    describe :privacy do
+      it "should respond with 404 if user has no access to a private project" do
+        put :update, :user => user.username, :key => project.key, :id => project.id, :project => {}
+        response.status.should == 404
+
+        delete :destroy, :user => user.username, :key => project.key, :id => project.id
+        response.status.should == 404
+
+        get :admin, :user => user.username, :key => project.key, :id => project.id
+        response.status.should == 404
+      end
+    end
+  end
+
   context :logged_in do
     let(:user) { users(:tobscher) }
 
@@ -77,9 +99,8 @@ describe ProjectsController do
             p.user_id = 1337
           end
 
-          expect do
-            put :update, :id => project.id, :project => { :key => "BAZ" }
-          end.to raise_error
+          put :update, :id => project.id, :project => { :key => "BAZ" }
+          response.status.should == 404
 
           Project.find_by_id(project.id).key.should == "BAR"
         end
@@ -115,9 +136,8 @@ describe ProjectsController do
           p.user_id = 1337
         end
 
-        expect do
-          delete :destroy, :id => 1337, :format => :json
-        end.to raise_error
+        delete :destroy, :id => 1337, :format => :json
+        response.status.should == 404
 
         Project.find_by_id(project.id).should be_present
       end

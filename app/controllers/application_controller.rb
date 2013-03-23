@@ -35,6 +35,7 @@ class ApplicationController < ActionController::Base
     @project = @user.projects.find(:first, :conditions => ["lower(key) = ?", params[:key].downcase])
 
     if @project
+      ensure_can_collaborate if @project.privacy
       add_breadcrumb @project.name, backlog_path(:user => params[:user], :key => params[:key])
     else
       render_404
@@ -71,7 +72,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_collaborator?
 
   def ensure_can_collaborate
-    redirect_to root_path unless is_collaborator?
+    render_404 unless is_collaborator?
   end
 
   def render_404

@@ -1,6 +1,53 @@
 require 'spec_helper'
 
 describe IssuesController do
+  context :private_project do
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:bluffr) }
+    let(:issue) { issues(:qux) }
+
+    before :each do
+      controller.stub(:current_user).and_return(user)
+    end
+
+    describe :privacy do
+      it "should respond with 404 if user has no access to a private project" do
+        get :index, :user => user.username, :key => project.key
+        response.status.should == 404
+
+        get :new, :user => user.username, :key => project.key
+        response.status.should == 404
+
+        post :create, :user => user.username, :key => project.key, :issue => {}
+        response.status.should == 404
+
+        get :workflow, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        get :edit, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        put :update, :user => user.username, :key => project.key, :id => issue.id, :issue => {}
+        response.status.should == 404
+
+        get :show, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        post :upvote, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        post :downvote, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        post :assign_to_me, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+
+        put :reorder, :user => user.username, :key => project.key, :id => issue.id
+        response.status.should == 404
+      end
+    end
+  end
+
   context :logged_in do
     let(:user) { users(:tobscher) }
     let(:project) { projects(:tyne) }
