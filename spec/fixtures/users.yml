@@ -3,3 +3,9 @@ tobscher:
   username: "Tobscher"
   uid: "1337"
   token: "1337"
+
+mlessnau:
+  name: "Michael Lessnau"
+  username: "mlessnau"
+  uid: "1234"
+  token: "1234"

@@ -23,3 +23,11 @@ baz:
   issue_type_id: 1
   number: 3
   estimate: 5
+
+qux:
+  summary: qux
+  reported_by: mlessnau
+  project: bluffr
+  issue_type_id: 1
+  number: 1
+  estimate: 5

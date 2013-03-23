@@ -29,19 +29,19 @@ class ProjectsController < ApplicationController
     @project.privacy = privacy
 
     @project.save
-    respond_with(@project, :location => main_app.backlog_path(:user => current_user.username, :key => @project.key))
+    respond_with(@project, :location => backlog_path(:user => current_user.username, :key => @project.key))
   end
 
   # Upates an existing project.
   def update
     @project.update_attributes(params[:project])
-    respond_with(@project, :location => main_app.admin_project_path(:user => @project.user.username, :key => @project.key))
+    respond_with(@project, :location => admin_project_path(:user => @project.user.username, :key => @project.key))
   end
 
   # Destroys an existing project.
   def destroy
     @project.destroy
-    respond_with(@project, :location => main_app.root_path)
+    respond_with(@project, :location => root_path)
   end
 
   # Displays the list of all available github projects.
@@ -71,7 +71,9 @@ class ProjectsController < ApplicationController
 
   private
   def load_owned_project
-    @project = current_user.owned_projects.find(params[:id])
+    @project = current_user.owned_projects.find_by_id(params[:id])
+
+    render_404 unless @project
   end
 
   def prepare_breadcrumb
