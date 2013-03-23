@@ -26,6 +26,8 @@ set :deploy_to, "/home/#{user}/#{application}"
 
 set :rvm_ruby_string, "1.9.3@tyne"
 
+set :warmup_pages, ["http://app.tyne-tickets.org/login"]
+
 after "deploy:restart", "deploy:cleanup"
 
 namespace :deploy do
@@ -43,6 +45,12 @@ namespace :deploy do
     run "cd #{release_path} && bundle exec rake i18n:js:export RAILS_ENV=production"
     run "cd #{release_path} && source $HOME/.bash_profile && bundle exec rake assets:precompile RAILS_ENV=production"
   end
+
+  task :warmup do
+    warmup_pages.each do |page|
+      run "curl #{page} > /dev/null"
+    end
+  end
 end
 
 namespace :rvm do
@@ -53,3 +61,4 @@ end
 
 after 'bundle:install', 'deploy:after_hook'
 after 'deploy:finalize_update', 'deploy:assets'
+after 'deploy:restart', 'deploy:warmup'
