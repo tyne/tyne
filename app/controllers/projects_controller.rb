@@ -4,9 +4,9 @@ class ProjectsController < ApplicationController
   respond_to :html, :json
   helper :teams
 
-  before_filter :require_login
   before_filter :load_user, :only => [:admin]
   before_filter :load_project, :only => [:admin]
+  before_filter :require_login
   before_filter :prepare_breadcrumb, :only => [:admin]
   before_filter :load_owned_project, :only => [:update, :destroy]
   before_filter :require_owner, :only => [:update, :destroy, :admin]

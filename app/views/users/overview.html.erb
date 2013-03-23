@@ -1,4 +1,4 @@
-<% cache ['v4', @user, 'overview', @user.projects.cache_key] do %>
+<% cache ['v4', @user, 'overview', @projects.cache_key] do %>
   <div class="well centered">
   <table class="overview">
     <tr>
@@ -15,7 +15,7 @@
       </div>
       <%= content_tag :h5, t("overview.public_projects") %>
       <table class="table overview-project">
-        <% @user.projects.order("name").each do |project| %>
+        <% @projects.order("name").each do |project| %>
           <tr>
             <td>
               <%= link_to(project.name, main_app.backlog_path(:user => @user.username, :key => project.key)) %>

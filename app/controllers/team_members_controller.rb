@@ -3,9 +3,9 @@ class TeamMembersController < AdminController
   self.responder = ::ApplicationResponder
   respond_to :html, :json
 
-  before_filter :require_login
   before_filter :load_user
   before_filter :load_project
+  before_filter :require_login
   before_filter :require_owner
 
   # Adds a team member to a team.
