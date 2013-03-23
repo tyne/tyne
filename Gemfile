@@ -52,6 +52,9 @@ gem "asset_sync"
 gem "omniauth"
 gem "omniauth-github"
 gem "octokit"
+gem "rvm-capistrano"
+gem "sidekiq"
+gem "foreman"
 
 group :production do
  gem 'pg'

@@ -1,10 +1,10 @@
-<% cache ["v1", "projects", "edit", @project] do %>
+<% cache ["v2", "projects", "edit", @project] do %>
   <div class="group">
     <div class="group-header">Options</div>
     <div class="group-content">
       <%= simple_form_for(@project, :validate => true) do |f| %>
         <%= f.input :name %>
-        <%= f.input :description, :hint => t("hints.markdown_enabled") %>
+        <%= f.input :description, :hint => t("hints.markdown_enabled"), :input_html => {:class => 'growable'} %>
         <%= f.button :submit, :class => "btn" %>
       <% end %>
     </div>

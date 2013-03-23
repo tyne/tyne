@@ -42,7 +42,7 @@ Tyne::Application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store, 'localhost:11211'
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -52,7 +52,7 @@ Tyne::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable threaded mode
   # config.threadsafe!
@@ -73,5 +73,19 @@ Tyne::Application.configure do
     :allow_reload => false
   }
 
-  config.logger = Logger.new(STDOUT)
+  config.action_mailer.default_url_options = {
+    :host => "www.tyne-tickets.org"
+  }
+
+  ActionMailer::Base.default(:from => APP_CONFIG.smtp.from, :sender => APP_CONFIG.smtp.from)
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => APP_CONFIG.smtp.address,
+    :port => 80,
+    :domain => APP_CONFIG.smtp.domain,
+    :authentication => :plain,
+    :user_name => APP_CONFIG.smtp.username,
+    :password => APP_CONFIG.smtp.password
+  }
 end

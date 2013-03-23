@@ -22,15 +22,23 @@ class ApplicationController < ActionController::Base
   end
 
   def load_user
-    @user = User.find_by_username(params[:user])
+    @user = User.find(:first, :conditions => [ "lower(username) = ?", params[:user].downcase])
 
-    add_breadcrumb @user.username, overview_path(:user => params[:user])
+    if @user
+      add_breadcrumb @user.username, overview_path(:user => params[:user])
+    else
+      render_404
+    end
   end
 
   def load_project
-    @project = Project.joins(:user).where(:key => params[:key]).where(:users => {:username => params[:user]  }).first
+    @project = @user.projects.find(:first, :conditions => ["lower(key) = ?", params[:key].downcase])
 
-    add_breadcrumb @project.name, backlog_path(:user => params[:user], :key => params[:key])
+    if @project
+      add_breadcrumb @project.name, backlog_path(:user => params[:user], :key => params[:key])
+    else
+      render_404
+    end
   end
 
   def load_issue
@@ -64,5 +72,9 @@ class ApplicationController < ActionController::Base
 
   def ensure_can_collaborate
     redirect_to root_path unless is_collaborator?
+  end
+
+  def render_404
+    render :file => "#{Rails.root}/public/404", :formats => [:html], :status => 404, :layout => false
   end
 end

@@ -1,4 +1,4 @@
-<% cache ["v2", "projects", "new", current_user] do %>
+<% cache ["v3", "projects", "new", current_user] do %>
   <div class="centered">
   <%= simple_form_for(@project, :validate => true) do |f| %>
     <table>
@@ -10,7 +10,7 @@
         <td colspan="2"><%= t("hints.project_key") %></td>
       </tr>
       <tr>
-        <td colspan="2"><%= f.input :description, :hint => t("hints.markdown_enabled"), :as => :string %></td>
+        <td colspan="2"><%= f.input :description, :hint => t("hints.markdown_enabled"), :input_html => {:class => 'growable'} %></td>
       </tr>
       <tr>
         <td colspan="2">

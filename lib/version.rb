@@ -1,1 +1,2 @@
-VERSION = '0.5.1'
+# App version
+VERSION = '0.6.2'

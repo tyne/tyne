@@ -10,4 +10,18 @@ class UsersController < ApplicationController
   def overview
 
   end
+
+  # Displays the account settings page where the user
+  # can edit its details.
+  def edit
+    @account = current_user
+  end
+
+  # Updates the current_user's details.
+  def update
+    @user = current_user
+    @user.update_attributes(params[:account])
+
+    respond_with(@user, :location => edit_account_settings_path(:user => @user.username))
+  end
 end

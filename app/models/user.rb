@@ -1,7 +1,7 @@
 # Represents an user
 class User < ActiveRecord::Base
   validates :name, :uid, :token, :presence => true
-  attr_accessible :name, :username, :uid, :email, :token, :gravatar_id
+  attr_accessible :name, :username, :uid, :email, :token, :gravatar_id, :notification_email
 
   has_many :organization_memberships
   has_many :organizations, :through => :organization_memberships

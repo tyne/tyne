@@ -28,18 +28,15 @@ bundle install
 
 ### Database configuration
 
-Enter your database details: ```config/database.yml```
+Copy `config/database.yml.template` to `config/database.yml` and
+enter your database details.
 
 Run the following command: ```bundle exec rake db:setup```
 
-### OmniAuth configuration
+### Additional configuration (e.g. OmniAuth, SMTP server)
 
-In order to use OmniAuth via Github you need to set up some environment keys. Add the following to your ```.bash_profile``` or ```.bashrc```.
-
-```bash
-export GITHUB_KEY=your_key
-export GITHUB_SECRET=your_secret
-```
+Copy `config/tyne.yml.template` to `config/tyne.yml` and
+enter the required details.
 
 You will need to register a new developer application in order to get those details. Simply go to https://github.com/settings/applications and register a new application with the following details:
 
@@ -51,7 +48,19 @@ Callback URL: http://localhost:3000/auth/github/callback
 
 ### Start the server
 
-Start your rails server via ```rails s```
+#### Prerequisites
+
+* Redis
+
+#### Command
+
+Start the server and the worker via ```bundle exec foreman start```
+
+## Production
+
+Create another developer application with the correct url/callback URL as described earlier.
+
+Tyne is configured to serve assets from a different provider (e.g. Amazon S3, Google Storage Cloud, etc.). This is done via the gem [asset_sync](https://github.com/rumblelabs/asset_sync). Please check their documentation on how to configure it.
 
 ## Testing
 

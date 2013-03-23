@@ -141,9 +141,13 @@ h2.issue-summary {
 }
 
 .create-another-issue {
-  label {
-    display: inline-block;
+  display: inline;
+  vertical-align: middle;
+
+  input[type=checkbox] {
+    margin: 0px;
+    float: none;
   }
 
-  margin-bottom: 10px;
+  label { display: inline; }
 }

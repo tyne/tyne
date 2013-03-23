@@ -18,6 +18,8 @@ Tyne::Application.routes.draw do
   resources :dashboards
 
   get '/:user', :controller => 'users', :action => :overview, :as => :overview
+  get '/:user/account_settings', :controller => 'users', :action => :edit, :as => :edit_account_settings
+  put '/:user/account_settings', :controller => 'users', :action => :update, :as => :account_settings
   get '/:user/:key', :controller => 'issues', :action => 'index', :as => :backlog
   scope '/:user/:key' do
     get :admin, :controller => 'projects', :action => :admin, :as => :admin_project
