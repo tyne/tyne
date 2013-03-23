@@ -1,5 +1,6 @@
 require "rvm/capistrano"
 require "bundler/capistrano"
+require 'sidekiq/capistrano'
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -14,7 +15,7 @@ role :app, "198.211.115.73"                          # This may be the same as y
 role :db,  "198.211.115.73", :primary => true # This is where Rails migrations will run
 
 set :rails_env, 'production'
-set :branch, 'capistrano'
+set :branch, 'sidekiq'
 
 set :deploy_via, :remote_cache
 set :use_sudo, false
@@ -26,7 +27,6 @@ set :deploy_to, "/home/#{user}/#{application}"
 set :rvm_ruby_string, "1.9.3@tyne"
 
 after "deploy:restart", "deploy:cleanup"
-after "deploy", "rvm:trust_rvmrc"
 
 namespace :deploy do
   task :start do ; end
