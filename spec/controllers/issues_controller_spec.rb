@@ -11,6 +11,18 @@ describe IssuesController do
     end
 
     describe :index do
+      it "should ignore the case of the project name" do
+        get :index, :user => user.username, :key => project.key.downcase
+
+        response.should render_template("issues/index")
+      end
+
+      it "should respond with 404 if project does not exist" do
+        get :index, :user => user.username, :key => "nonexistingproject"
+
+        response.status.should == 404
+      end
+
       it "should return issues of the project" do
         user.reported_issues.create!(:summary => "FOO", :description => "Foo", :issue_type_id => 1) do |issue|
           issue.project_id = project.id

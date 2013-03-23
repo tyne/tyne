@@ -4,6 +4,7 @@ class TeamMembersController < AdminController
   respond_to :html, :json
 
   before_filter :require_login
+  before_filter :load_user
   before_filter :load_project
   before_filter :require_owner
 

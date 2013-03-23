@@ -7,6 +7,23 @@ describe UsersController do
     controller.stub(:current_user).and_return(user)
   end
 
+  describe :overview do
+    it "should render the user page" do
+      get :overview, :user => user.username
+      response.should render_template("users/overview")
+    end
+
+    it "should ignore the case of the username" do
+      get :overview, :user => user.username.upcase
+      response.should render_template("users/overview")
+    end
+
+    it "should respond with 404 if the user does not exist" do
+      get :overview, :user => "nonexistinguser"
+      response.status.should == 404
+    end
+  end
+
   describe :edit do
     before :each do
       get :edit, :user => user.username
