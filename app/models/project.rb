@@ -19,7 +19,7 @@ class Project < ActiveRecord::Base
 
   before_create :create_teams
 
-  scope :most_active, ->(limit) { public.order("updated_at DESC").limit(limit) }
+  scope :most_active, ->(limit) { privacy_public.order("updated_at DESC").limit(limit) }
   scope :privacy_public, -> { where(:privacy => false) }
   scope :privacy_private, -> { where(:privacy => true) }
 
