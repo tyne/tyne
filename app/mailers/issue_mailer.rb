@@ -4,16 +4,16 @@ class IssueMailer < ActionMailer::Base
 
   # Sends a notification to all contributors
   # that a new issue has been raised.
-  def self.send_issue_raised(issue)
+  def self.send_issue_raised(issue_id)
     issue.project.workers.each do |worker|
-      issue_raised(issue, worker).deliver
+      delay.issue_raised(issue_id, worker.id)
     end
   end
 
   # Sends a notification that a new issue has been raised.
-  def issue_raised(issue, worker)
-    @issue = issue
-    @worker = worker
+  def issue_raised(issue_id, worker_id)
+    @issue = Issue.find_by_id(issue_id)
+    @worker = TeamMember.find_by_id(worker.id)
     to = worker.user.notification_email
 
     mail(:to => to, :subject => "[Raised] #{issue.key} - #{issue.summary}") if to

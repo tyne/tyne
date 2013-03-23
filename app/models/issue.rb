@@ -61,7 +61,7 @@ class Issue < ActiveRecord::Base
     else
       remove_from_backlog
     end
-    EmailIssueClosedWorker.perform_async(self.id)
+    IssueMailer.delay.issue_closed(self.id)
   end
 
   # Callback fired afer ticket reopened
@@ -71,7 +71,7 @@ class Issue < ActiveRecord::Base
     else
       add_to_backlog
     end
-    EmailIssueReopenedWorker.perform_async(self.id)
+    IssueMailer.delay.issue_reopened(self.id)
   end
 
   private
