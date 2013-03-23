@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2
+
+* Growable Textareas enabled (projects, issues)
+
 ## v0.6.1
 
 * Asynchronous delivery of emails
