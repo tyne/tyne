@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   respond_to :html, :json
 
   before_filter :load_user
+  before_filter :require_login, :only => [:edit, :update]
 
   # Displays an overview page with user information and the list
   # of public projects.
   def overview
-
+    @projects = @user.projects.privacy_public
   end
 
   # Displays the account settings page where the user
