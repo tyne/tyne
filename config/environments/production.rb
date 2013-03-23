@@ -74,7 +74,7 @@ Tyne::Application.configure do
   }
 
   config.action_mailer.default_url_options = {
-    :host => "www.tyne-tickets.org"
+    :host => "app.tyne-tickets.org"
   }
 
   ActionMailer::Base.default(:from => APP_CONFIG.smtp.from, :sender => APP_CONFIG.smtp.from)
