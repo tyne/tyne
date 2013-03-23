@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.6.0
+## v0.6.1
+
+* Asynchronous delivery of emails
+
+## v0.6.0
 
 * Sends email notifications for certain events (issue raised, closed, reopened)
 
