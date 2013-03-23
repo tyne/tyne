@@ -48,7 +48,13 @@ Callback URL: http://localhost:3000/auth/github/callback
 
 ### Start the server
 
-Start your rails server via ```rails s```
+#### Prerequisites
+
+* Redis
+
+#### Command
+
+Start the server and the worker via ```bundle exec foreman start```
 
 ## Production
 
