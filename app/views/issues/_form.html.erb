@@ -1,9 +1,7 @@
 <%= simple_form_for(issue, :url => url, :validate => true) do |f| %>
   <table>
     <tr>
-      <td colspan="2">
-        <%= f.input :summary %>
-      </td>
+      <td colspan="2"><%= f.input :summary %></td>
     </tr>
     <tr>
       <td class="half"><%= f.association :issue_type, :prompt => false %></td>
@@ -14,18 +12,16 @@
       <td class="half"><%= f.input :estimate %></td>
     </tr>
     <tr>
-      <td colspan="2"><%= f.input :description, :hint => "Markdown enabled" %></td>
+      <td colspan="2"><%= f.input :description, :hint => "Markdown enabled", :input_html => {:class => 'growable'} %></td>
     </tr>
-    <% if issue.new_record? %>
-    <tr>
-      <td colspan="2">
-        <div class="create-another-issue checkbox">
-          <%= f.input_field :redirect_to, :value => main_app.new_issue_path, :type => :checkbox, :id => :redirect_to, :checked => @create_another %>
-          <%= f.label "Create another", :for => :redirect_to %>
-        </div>
-      </td>
-    </tr>
-    <% end %>
   </table>
+
   <%= f.button :submit, :class => "btn" %>
+
+  <% if issue.new_record? %>
+    <div class="create-another-issue checkbox">
+      <%= f.input_field :redirect_to, :value => main_app.new_issue_path, :type => :checkbox, :id => :redirect_to, :checked => @create_another %>
+      <%= f.label "Create another", :for => :redirect_to %>
+    </div>
+  <% end %>
 <% end %>
