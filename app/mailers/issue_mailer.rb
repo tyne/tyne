@@ -14,8 +14,8 @@ class IssueMailer < ActionMailer::Base
   # Sends a notification that a new issue has been raised.
   def issue_raised(issue_id, worker_id)
     @issue = Issue.find_by_id(issue_id)
-    @worker = TeamMember.find_by_id(worker.id)
-    to = worker.user.notification_email
+    @worker = TeamMember.find_by_id(worker_id)
+    to = @worker.user.notification_email
 
     mail(:to => to, :subject => "[Raised] #{@issue.key} - #{@issue.summary}") if to
   end
