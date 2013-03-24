@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.1
+
+* Polishes report list view
+
 ## v0.7.0
 
 * Adds support for private projects
