@@ -1,37 +1,36 @@
 require 'spec_helper'
 
-describe :projects do
+describe :issues do
   include_context 'authenticated'
 
-  it "should create a new issue" do
+  before:each do
     login
 
     create_project('Foo')
     create_issue('Bar')
+  end
 
-    page.should have_content 'Bar'
-
+  after :each do
     logout
   end
 
-  it "should update an issue" do
-    expected = "Lorem ipsum dolor sit"
+  subject { page }
 
-    login
+  it { should have_content 'Bar' }
 
-    create_project 'Foo'
-    create_issue 'Bar'
+  context 'when updating an issue' do
+    let(:new_description) { 'Lorem ipsum dolor sit' }
 
-    click_link "Edit"
+    before :each do
+      click_link "Edit"
 
-    within ".edit_issue" do
-      fill_in 'Description', :with => expected
+      within ".edit_issue" do
+        fill_in 'Description', :with => new_description
+      end
+
+      click_button "Update Issue"
     end
 
-    click_button "Update Issue"
-
-    page.should have_content(expected)
-
-    logout
+    it { should have_content(new_description) }
   end
 end
