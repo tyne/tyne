@@ -17,13 +17,13 @@
 </div>
 
 <div class="span9">
-  <div class="well" data-cell="DashboardTour">
-  <div class="activities-anchor"></div>
-  <table class="Activities">
-    <tbody>
-      <%= render :partial => "audit", :collection => @audits %>
-      <%= content_tag :p, t("misc.no_recent_activity") if @audits.count == 0 %>
-    </tbody>
-  </table>
+  <div class="well" data-cell="Tutorial" data-tutorial-id="dashboard">
+    <div class="activities-anchor"></div>
+    <table class="Activities">
+      <tbody>
+        <%= render :partial => "audit", :collection => @audits %>
+        <%= content_tag :p, t("misc.no_recent_activity") if @audits.count == 0 %>
+      </tbody>
+    </table>
   </div>
 </div>
