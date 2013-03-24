@@ -1,8 +1,17 @@
 <div class="span12">
-  <div class="well">
+  <div class="well reports">
     <ul>
-      <li><%= link_to "Burn Down", main_app.burn_down_reports_path(:user => @user.username, :key => @project.key) %></li>
-      <li><%= link_to "Issue Type Ratio", main_app.issue_type_ratio_reports_path(:user => @user.username, :key => @project.key) %></li>
+      <li>
+        <h2>Burn Down Chart</h2>
+        <p>Displays a graph that represents your work left to do versus time for the current sprint.</p>
+        <%= link_to "View Burn Down Chart", burn_down_reports_path(:user => @user.username, :key => @project.key) %>
+      </li>
+      <li>
+        <h2>Issue Type Ratio</h2>
+        <p>Displays a pie chart the represents the ratio of your issue types.</p>
+        <%= link_to "View Issue Type Ratio Report", issue_type_ratio_reports_path(:user => @user.username, :key => @project.key) %>
+      </li>
     </ul>
+    <br />
   </div>
 </div>

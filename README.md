@@ -6,7 +6,7 @@
 
 Tyne is a webbased issue tracking application with the following features:
 * Github authentication
-* Project management
+* Project management (public and private projects)
 * Issue tracking (includes sorting, filtering, basic workflow, etc.)
 * Basic role management
 * Agile sprint planning
@@ -14,6 +14,7 @@ Tyne is a webbased issue tracking application with the following features:
 * Commenting system
 * Voting system
 * Charts (Burn Down Chart, etc.)
+* E-Mail notifications
 
 Do you want to check the current status of the project? We have deployed a demo to http://www.tyne-tickets.org
 

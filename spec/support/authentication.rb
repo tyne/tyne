@@ -22,7 +22,7 @@ shared_context 'authenticated' do
     click_link "Logout"
   end
 
-  def create_project(name)
+  def create_project(name, options={})
     @project_key = 'FOO'
 
     visit new_project_path
@@ -31,6 +31,7 @@ shared_context 'authenticated' do
       fill_in 'Key', :with => @project_key
       fill_in 'Name', :with => name
       fill_in 'Description', :with => name
+      choose 'Private' if options[:private]
     end
 
     click_button 'Create Project'

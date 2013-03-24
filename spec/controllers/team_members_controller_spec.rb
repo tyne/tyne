@@ -3,10 +3,29 @@ require 'spec_helper'
 describe TeamMembersController do
   its (:is_admin_area?) { should be_true }
 
+  context :private_project do
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:bluffr) }
+
+    before :each do
+      controller.stub(:current_user).and_return(user)
+    end
+
+    describe :privacy do
+      it "should respond with 404 if user has no access to a private project" do
+        post :create, :user => user.username, :key => project.key, :team_id => 1337
+        response.status.should == 404
+
+        delete :destroy, :user => user.username, :key => project.key, :team_id => 1337, :id => 1337
+        response.status.should == 404
+      end
+    end
+  end
+
   context :not_logged_in do
     it "should not allow any actions" do
       post :create, :user => "Foo", :key => "Bar", :team_id => 1, :team_member => {}
-      response.should redirect_to login_path(:redirect_url => team_team_members_path(:user => "Foo", :key => "Bar", :team_id => 1))
+      response.status.should == 404
     end
   end
 

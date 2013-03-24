@@ -7,9 +7,9 @@ class IssuesController < ApplicationController
   self.responder = ::ApplicationResponder
   respond_to :html, :json
 
-  before_filter :require_login, :only => [:new, :create, :edit, :update, :workflow, :upvote, :downvote, :assign_to_me]
   before_filter :load_user
   before_filter :load_project
+  before_filter :require_login, :only => [:new, :create, :edit, :update, :workflow, :upvote, :downvote, :assign_to_me]
   before_filter :load_issue, :only => [:workflow, :edit, :update, :show, :upvote, :downvote, :assign_to_me]
   before_filter :ensure_can_edit, :only => [:workflow, :edit, :update, :assign_to_me]
 

@@ -2,3 +2,9 @@ tyne:
   key: TYNE
   name: Tyne
   user: tobscher
+
+bluffr:
+  key: BLUFFR
+  name: Bluffr
+  user: mlessnau
+  privacy: true

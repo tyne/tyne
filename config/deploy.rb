@@ -60,5 +60,6 @@ namespace :rvm do
 end
 
 after 'bundle:install', 'deploy:after_hook'
+after 'deploy:after_hook', 'deploy:migrate'
 after 'deploy:finalize_update', 'deploy:assets'
 after 'deploy:restart', 'deploy:warmup'

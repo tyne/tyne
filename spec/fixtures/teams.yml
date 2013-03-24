@@ -2,3 +2,8 @@ owners:
   name: Owners
   project: tyne
   admin_privileges: true
+
+owners_bluffr:
+  name: Owners
+  project: bluffr
+  admin_privileges: true

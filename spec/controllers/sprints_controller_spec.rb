@@ -1,12 +1,49 @@
 require 'spec_helper'
 
 describe SprintsController do
-  let(:user) { users(:tobscher) }
-  let(:project) { projects(:tyne) }
-  let(:issue) { issues(:foo) }
-  let(:sprint) { sprints(:alpha) }
+  context :private_project do
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:bluffr) }
+
+    before :each do
+      controller.stub(:current_user).and_return(user)
+    end
+
+    describe :privacy do
+      it "should respond with 404 if user has no access to a private project" do
+        get :index, :user => user.username, :key => project.key
+        response.status.should == 404
+
+        post :create, :user => user.username, :key => project.key, :sprint => {}
+        response.status.should == 404
+
+        put :update, :user => user.username, :key => project.key, :id => 1337, :sprint => {}
+        response.status.should == 404
+
+        delete :destroy, :user => user.username, :key => project.key, :id => 1337
+        response.status.should == 404
+
+        post :reorder, :user => user.username, :key => project.key, :id => 1337
+        response.status.should == 404
+
+        put :start, :user => user.username, :key => project.key, :id => 1337
+        response.status.should == 404
+
+        put :finish, :user => user.username, :key => project.key, :id => 1337
+        response.status.should == 404
+
+        get :current, :user => user.username, :key => project.key
+        response.status.should == 404
+      end
+    end
+  end
 
   context :logged_in do
+    let(:user) { users(:tobscher) }
+    let(:project) { projects(:tyne) }
+    let(:issue) { issues(:foo) }
+    let(:sprint) { sprints(:alpha) }
+
     before :each do
       controller.stub(:current_user).and_return(user)
     end
