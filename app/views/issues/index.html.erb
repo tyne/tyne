@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <%= content_tag :div, '', :data => { :cell => 'BacklogTour' } if @project.user == current_user  %>
+    <%= content_tag :div, '', :data => {:cell => 'Tutorial', 'tutorial-id' => 'backlog'} if @project.user == current_user  %>
     <div class="issue-list issue-detailed">
       <table>
         <%= render @issues %>
