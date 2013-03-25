@@ -13,10 +13,20 @@
 //= require mustache
 //= require_tree ./support
 //= require_tree ./plugins
+//= require_tree ./extensions
 //= require_tree .
 
 $(function() {
   Cell.initializeAll();
 
+  // bootstrap related
+  $("a[rel=popover]").popover();
+  $(".tooltipped-bottom").tooltip({placement: 'bottom'});
+  $("a[rel=tooltip]").tooltip();
+
+  // activate best-in-place
+  $(".best_in_place").best_in_place();
+
+  // support growable textareas
   $('textarea.growable').jtextarea();
 });
