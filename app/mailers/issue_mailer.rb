@@ -7,7 +7,7 @@ class IssueMailer < ActionMailer::Base
   def self.send_issue_raised(issue_id)
     issue = Issue.find_by_id(issue_id)
     issue.project.workers.each do |worker|
-      delay.issue_raised(issue_id, worker.id)
+      delay.issue_raised(issue_id, worker.id) unless is_reporter?(worker, issue)
     end
   end
 
@@ -41,5 +41,10 @@ class IssueMailer < ActionMailer::Base
       to = @issue.assigned_to.notification_email
       mail(:to => to, :subject => "[Reopened] #{@issue.key} - #{@issue.summary}") if to
     end
+  end
+
+  private
+  def is_reporter?(worker, issue)
+    worker.user_id == issue.reported_by.id
   end
 end
