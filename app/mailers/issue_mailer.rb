@@ -44,7 +44,7 @@ class IssueMailer < ActionMailer::Base
   end
 
   private
-  def is_reporter?(worker, issue)
+  def self.is_reporter?(worker, issue)
     worker.user_id == issue.reported_by.id
   end
 end
