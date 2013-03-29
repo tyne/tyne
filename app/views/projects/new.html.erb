@@ -3,7 +3,7 @@
   <%= simple_form_for(@project, :validate => true) do |f| %>
     <table>
       <tr>
-        <td class="half"><%= f.input :name %></td>
+        <td class="half"><%= f.input :name, :autofocus => true %></td>
         <td><%= f.input :key %></td>
       </tr>
       <tr>
