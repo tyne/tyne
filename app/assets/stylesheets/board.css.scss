@@ -14,7 +14,14 @@
     border-bottom: 1px dashed #ddd;
   }
 
+  .board-drag-information {
+    color: #CCC;
+    padding: 20px;
+    text-align: center;
+  }
+
   .work-items {
+    min-height: 50px;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -24,7 +31,7 @@
     .work-item {
       border-top: 1px solid #CCC;
       &:hover {
-        // cursor: move;
+        cursor: move;
       }
 
       table {
@@ -38,6 +45,7 @@
       .dragger {
         height: 50px;
         width: 8px;
+        background: image-url('drag.png') 3px 2px repeat-y;
       }
 
       &.state-bug {
@@ -75,4 +83,10 @@
       }
     }
   }
+}
+
+.board-placeholder-element {
+  height: 27px;
+  background-color: lighten(#44A143, 52%);
+  border-bottom: 1px solid #CCC;
 }

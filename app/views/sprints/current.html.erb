@@ -12,27 +12,36 @@
     <div class="span4">
       <div class="well">
         <h3>To Do</h3>
-        <ul class="work-items">
+        <ul class="work-items sortable connected">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.to_do %>
         </ul>
+        <div class="board-drag-information">
+          You can drag issus into this area to perform a workflow transition.
+        </div>
       </div>
     </div>
 
     <div class="span4">
       <div class="well">
         <h3>In Progress</h3>
-        <ul class="work-items">
+        <ul class="work-items sortable connected">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.in_progress %>
         </ul>
+        <div class="board-drag-information">
+          You can drag issus into this area to perform a workflow transition.
+        </div>
       </div>
     </div>
 
     <div class="span4">
       <div class="well">
         <h3>Done</h3>
-        <ul class="work-items">
+        <ul class="work-items sortable connected">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.closed %>
-        <ul>
+        </ul>
+        <div class="board-drag-information">
+          You can drag issus into this area to perform a workflow transition.
+        </div>
       </div>
     </div>
     </div>
