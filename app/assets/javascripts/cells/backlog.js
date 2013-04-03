@@ -20,6 +20,7 @@
         Sorting.instances[0].resetState(event.state);
         Filter.instances[0].resetState(event.state);
         Pagination.instances[0].resetState(event.state);
+        SearchForm.instances[0].resetState(event.state);
       }
     });
   };
@@ -30,6 +31,7 @@
     var sorting = Sorting.instances[0];
     var filter = Filter.instances[0];
     var pagination = Pagination.instances[0];
+    var searchForm = SearchForm.instances[0];
 
     LoadingIndicator.addTo(".issue-list");
 
@@ -37,7 +39,8 @@
       var data = {
         sorting: sorting.options(),
         filter: filter.options(),
-        pagination: pagination.options()
+        pagination: pagination.options(),
+        query: searchForm.options()
       }
     }
 
@@ -64,13 +67,15 @@
   $(function() {
     var sorting = Sorting.instances[0];
     var filter = Filter.instances[0];
+    var searchForm = SearchForm.instances[0];
     var url = document.URL;
     var params = $.String.deparam((url.split('?')[1] || ''));
 
     if (filter) filter.resetState(params);
     if (sorting) sorting.resetState(params);
+    if (searchForm) searchForm.resetState(params);
 
-    if (filter && sorting) {
+    if (filter && sorting && searchForm) {
       history.replaceState({ sorting: params.sorting, filter: params.filter, tag: "tyne" });
     }
   });

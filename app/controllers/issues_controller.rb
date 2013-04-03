@@ -3,6 +3,7 @@ class IssuesController < ApplicationController
   include Extensions::ActionController::Filter
   include Extensions::ActionController::Pagination
   include Extensions::ActionController::Sorting
+  include Extensions::ActionController::Query
 
   self.responder = ::ApplicationResponder
   respond_to :html, :json
@@ -19,6 +20,7 @@ class IssuesController < ApplicationController
     reflection = @project.issues
     default_filter unless params[:filter]
     reflection = apply_filter(reflection)
+    reflection = apply_query(reflection)
     reflection = apply_sorting(reflection)
     reflection = apply_pagination(reflection)
 
