@@ -11,7 +11,7 @@
     letter-spacing: -0.05em;
     color: #777;
     text-align: center;
-    border-bottom: 1px dashed #ddd;
+    margin-bottom: 0px;
   }
 
   .board-drag-information {
@@ -21,6 +21,7 @@
   }
 
   .work-items {
+    border-top: 1px dashed #ddd;
     min-height: 50px;
     list-style-type: none;
     padding: 0;
@@ -86,7 +87,7 @@
 }
 
 .board-placeholder-element {
-  height: 27px;
+  height: 52px;
   background-color: lighten(#44A143, 52%);
   border-bottom: 1px solid #CCC;
 }

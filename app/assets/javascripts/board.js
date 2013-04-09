@@ -1,13 +1,10 @@
 $(function() {
   var Board = {
     initialize: function() {
-      $( ".sortable" ).sortable();
-
-      $( ".work-item" ).draggable({
-        revert: "invalid",
-        revertDuration: 0,
-        connectToSortable: ".sortable"
-      });
+      $( ".sortable" ).sortable({
+        connectWith: ".sortable",
+        placeholder: "board-placeholder-element"
+      }).disableSelection();
     }
   }
 
