@@ -1,0 +1,5 @@
+<div class="search-form" data-cell="SearchForm">
+  <%= simple_form_for :search, html: {novalidate: true} do |f| %>
+    <%= f.input :term, :label => false, :input_html => { :class => "input-medium search-query", :placeholder => "Type to search", :value => @term } %>
+  <% end %>
+</div>

@@ -17,6 +17,9 @@
       <div class="pull-right">
         <%= render_cell :backlog_sidebar, :sorting %>
       </div>
+      <div class="pull-right">
+        <%= render_cell :backlog_sidebar, :query %>
+      </div>
     </div>
 
     <%= content_tag :div, '', :data => {:cell => 'Tutorial', 'tutorial-id' => 'backlog'} if @project.user == current_user  %>

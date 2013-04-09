@@ -44,4 +44,11 @@ class BacklogSidebarCell < Cell::Rails
   def grouping
     render
   end
+
+  # Displays a search field
+  def query
+    @term = params[:query]
+
+    render
+  end
 end

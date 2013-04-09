@@ -3,6 +3,7 @@ class IssuesController < ApplicationController
   include Extensions::ActionController::Filter
   include Extensions::ActionController::Pagination
   include Extensions::ActionController::Sorting
+  include Extensions::ActionController::Query
 
   self.responder = ::ApplicationResponder
   respond_to :html, :json
@@ -19,6 +20,7 @@ class IssuesController < ApplicationController
     reflection = @project.issues
     default_filter unless params[:filter]
     reflection = apply_filter(reflection)
+    reflection = apply_query(reflection)
     reflection = apply_sorting(reflection)
     reflection = apply_pagination(reflection)
 
@@ -29,8 +31,17 @@ class IssuesController < ApplicationController
   def new
     add_breadcrumb :new
 
-    @create_another = session[:create_another]
+    @create_another = session[:create_another_issue]
+
     @issue = @project.issues.build
+
+    if session[:create_another_issue_from]
+      issue_template = @project.issues.find(session[:create_another_issue_from])
+
+      @issue.issue_type = issue_template.issue_type
+      @issue.issue_priority = issue_template.issue_priority
+      @issue.assigned_to = issue_template.assigned_to
+    end
   end
 
   # Creates a new issue
@@ -38,12 +49,18 @@ class IssuesController < ApplicationController
     add_breadcrumb :new
 
     redirect_to_path = params[:issue].delete(:redirect_to)
-    session[:create_another] = !!redirect_to_path
+
+    create_another_issue = !!redirect_to_path
+    session[:create_another_issue] = create_another_issue
 
     @issue = @project.backlog_items.build(params[:issue])
     @issue.reported_by = current_user
+
     if @issue.save
       IssueMailer.send_issue_raised(@issue.id)
+      session[:create_another_issue_from] = @issue.id if create_another_issue
+    else
+      session.delete(:create_another_issue_from)
     end
 
     respond_with(@issue, :location => redirect_to_path || show_path)
@@ -119,6 +136,7 @@ class IssuesController < ApplicationController
   end
 
   private
+
   def show_path
     main_app.issue_path(:user => @project.user.username, :key => @project.key, :id => @issue.number)
   end

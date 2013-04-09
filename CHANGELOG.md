@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.2
+
+* Improves fast creation of issues
+* Adds ability to filter list of issues in the backlog
+* Fixes a bug where the reporter of an issue got an email notification
+
 ## v0.7.1
 
 * Polishes report list view
