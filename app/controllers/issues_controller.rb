@@ -69,7 +69,10 @@ class IssuesController < ApplicationController
   # Performs a workflow transition
   def workflow
     @issue.send(params[:transition]) if @issue.state_transitions.any? { |x| x.event == params[:transition].to_sym }
-    redirect_to show_path
+
+    respond_with @issue do |format|
+      format.html { redirect_to show_path }
+    end
   end
 
   # Displays the edit page for an issue.

@@ -1,4 +1,4 @@
-<li class="work-item state-<%= work_item.issue_type.name.downcase %>" data-state="<%= work_item.state %>">
+<li class="work-item state-<%= work_item.issue_type.name.downcase %>" data-state="<%= work_item.state %>" data-workflow-path="<%= workflow_issue_path(:user => @sprint.project.user.username, :key => @sprint.project.name, :id => work_item.number, :format => :json) %>">
   <div class="work-item-content">
     <table>
       <tr>

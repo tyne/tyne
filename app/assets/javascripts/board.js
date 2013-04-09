@@ -30,9 +30,21 @@ $(function() {
         receive: function(event, ui) {
           var previousState = $(ui.item).data("state");
           var targetState = $(event.target).data("state");
+          var transitionPath = $(ui.item).data("workflow-path");
+          var transitionName = TransitionHelper.getTransition(previousState, targetState);
 
-          var transition = TransitionHelper.getTransition(previousState, targetState);
-          alert(transition);
+          if (typeof transitionName === 'undefined') return;
+
+          var options = {
+            data: {
+              transition: transitionName
+            },
+            success: function(data, textStatus, jqXHR) {
+              $(ui.item).data("state", data.state);
+            }
+          };
+
+          $.ajax(transitionPath, options);
         }
       }).disableSelection();
     }
