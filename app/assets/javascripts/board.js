@@ -33,7 +33,7 @@ $(function() {
           var transitionPath = $(ui.item).data("workflow-path");
           var transitionName = TransitionHelper.getTransition(previousState, targetState);
 
-          if (typeof transitionName === 'undefined') return;
+          if (typeof transitionName === 'undefined') $(ui.sender).sortable("cancel");
 
           var options = {
             data: {
