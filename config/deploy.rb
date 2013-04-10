@@ -10,9 +10,9 @@ set :repository,  "git@github.com:tyne/tyne.git"
 
 set :scm, :git
 
-role :web, "198.211.115.73"                          # Your HTTP server, Apache/etc
-role :app, "198.211.115.73"                          # This may be the same as your `Web` server
-role :db,  "198.211.115.73", :primary => true # This is where Rails migrations will run
+role :web, "tyne-tickets.org"
+role :app, "tyne-tickets.org"
+role :db,  "tyne-tickets.org", :primary => true
 
 set :rails_env, 'production'
 set :branch, 'master'
