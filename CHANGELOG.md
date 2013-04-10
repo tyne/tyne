@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.3
+
+* Adds ability to drag and drop issues on the agile board (which will perform a workflow transition)
+* Adds link to Github
+
 ## v0.7.2
 
 * Improves fast creation of issues
