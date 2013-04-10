@@ -25,6 +25,15 @@ footer {
   p {
     padding: 10px 10px 10px 10px;
     margin: 0;
+
+    a {
+      color: #688586;
+      text-decoration: underline;
+
+      &:hover {
+        color: #688586;
+      }
+    }
   }
 }
 
