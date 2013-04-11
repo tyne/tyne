@@ -1,9 +1,9 @@
 <% if @sprint %>
   <div class="options">
-    <%= link_to "Finish", finish_sprint_path(:user => @sprint.project.user.username, :key => @sprint.project.key, :id => @sprint.id), :class => "btn btn-small", :confirm => "Are you sure you wish to finish your sprint?", :method => :put, :data => { :"confirm-title" => "Finish sprint #{@sprint.name}", :"confirm-proceed" => "Finish", :"confirm-proceed-class" => "btn-success" } %>
+    <%= link_to("Finish", finish_sprint_path(:user => @sprint.project.user.username, :key => @sprint.project.key, :id => @sprint.id), :class => "btn btn-small", :confirm => "Are you sure you wish to finish your sprint?", :method => :put, :data => { :"confirm-title" => "Finish sprint #{@sprint.name}", :"confirm-proceed" => "Finish", :"confirm-proceed-class" => "btn-success" }) if is_collaborator? %>
     <div class="pull-right">
-      <%= content_tag :span, "#{@project.current_sprint.start_date.to_formatted_s(:short)} - #{@project.current_sprint.end_date.to_formatted_s(:short)}" %> | 
-      <%= link_to "View Burn Down", burn_down_reports_path(:user => @sprint.project.user.username, :key => @sprint.project.key) %>
+      <%= content_tag :span, "#{@project.current_sprint.start_date.to_formatted_s(:short)} - #{@project.current_sprint.end_date.to_formatted_s(:short)}" %> 
+      <%= link_to("View Burn Down", burn_down_reports_path(:user => @sprint.project.user.username, :key => @sprint.project.key) if is_collaborator? %>
     </div>
   </div>
 
