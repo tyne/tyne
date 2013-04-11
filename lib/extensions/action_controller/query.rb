@@ -12,7 +12,7 @@ module Extensions
 
         q = "%#{params[:query]}%"
 
-        reflection = reflection.where("summary like ? OR description like ? OR CAST(number as TEXT) like ?", q, q, q)
+        reflection = reflection.where("issues.summary like ? OR issues.description like ? OR CAST(issues.number as TEXT) like ?", q, q, q)
 
         reflection
       end
