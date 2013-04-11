@@ -23,4 +23,26 @@ module SprintsHelper
 
     button_tag "Start", options
   end
+
+  # Renders a button to finish the sprint. The action requires a confirmation.
+  def finish_button
+    finish_url = finish_sprint_path(:user => @sprint.project.user.username, :key => @sprint.project.key, :id => @sprint.id)
+    data = {
+      :"confirm-title" => "Finish sprint #{@sprint.name}",
+      :"confirm-proceed" => "Finish",
+      :"confirm-proceed-class" => "btn-success"
+    }
+    options = {
+      :class => "btn btn-small",
+      :confirm => "Are you sure you wish to finish your sprint?",
+      :method => :put,
+      :data => data
+    }
+    link_to("Finish", finish_url, options)
+  end
+
+  # Renders a link to the burn down chart
+  def burn_down_link
+    link_to("View Burn Down", burn_down_reports_path(:user => @sprint.project.user.username, :key => @sprint.project.key))
+  end
 end
