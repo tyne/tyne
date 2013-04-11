@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div class="board">
+  <div class="board" data-collab="<%= is_collaborator? %>">
     <div class="row-fluid">
     <div class="span4">
       <div class="well">
@@ -15,9 +15,7 @@
         <ul class="work-items sortable connected" data-state="todo">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.to_do %>
         </ul>
-        <div class="board-drag-information">
-          You can drag issues into the area above to perform a workflow transition.
-        </div>
+        <%= render :partial => "drag_information" if is_collaborator? %>
       </div>
     </div>
 
@@ -27,9 +25,7 @@
         <ul class="work-items sortable connected" data-state="progress">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.in_progress %>
         </ul>
-        <div class="board-drag-information">
-          You can drag issues into the area above to perform a workflow transition.
-        </div>
+        <%= render :partial => "drag_information" if is_collaborator? %>
       </div>
     </div>
 
@@ -39,9 +35,7 @@
         <ul class="work-items sortable connected" data-state="done">
           <%= render :partial => 'sprints/work_item', :collection => @sprint.issues.closed %>
         </ul>
-        <div class="board-drag-information">
-          You can drag issues into the this area to perform a workflow transition.
-        </div>
+        <%= render :partial => "drag_information" if is_collaborator? %>
       </div>
     </div>
     </div>

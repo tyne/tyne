@@ -31,9 +31,6 @@
 
     .work-item {
       border-top: 1px solid #CCC;
-      &:hover {
-        cursor: move;
-      }
 
       table {
         width: 100%;
@@ -46,7 +43,6 @@
       .dragger {
         height: 50px;
         width: 8px;
-        background: image-url('drag.png') 3px 2px repeat-y;
       }
 
       &.state-bug {
@@ -83,6 +79,16 @@
         }
       }
     }
+  }
+}
+
+.board[data-collab="true"] .work-item {
+  &:hover {
+    cursor: move;
+  }
+
+  .dragger {
+    background: image-url('drag.png') 3px 2px repeat-y;
   }
 }
 

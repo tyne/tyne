@@ -24,7 +24,7 @@ $(function() {
 
   var Board = {
     initialize: function() {
-      $( ".sortable" ).sortable({
+      $('.board[data-collab="true"] .sortable').sortable({
         connectWith: ".sortable",
         placeholder: "board-placeholder-element",
         receive: function(event, ui) {
