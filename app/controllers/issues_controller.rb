@@ -33,36 +33,25 @@ class IssuesController < ApplicationController
   def new
     add_breadcrumb :new
 
-    @create_another = session[:create_another_issue]
-
     @issue = @project.issues.build
 
-    if session[:create_another_issue_from]
-      issue_template = @project.issues.find(session[:create_another_issue_from])
-
-      @issue.issue_type = issue_template.issue_type
-      @issue.issue_priority = issue_template.issue_priority
-      @issue.assigned_to = issue_template.assigned_to
-    end
+    @template = params[:template]
+    @issue.apply_template(@template) if @template
   end
 
   # Creates a new issue
   def create
     add_breadcrumb :new
 
-    redirect_to_path = params[:issue].delete(:redirect_to)
-
-    create_another_issue = !!redirect_to_path
-    session[:create_another_issue] = create_another_issue
+    create_another = !!params[:issue].delete(:create_another)
 
     @issue = @project.backlog_items.build(params[:issue])
     @issue.reported_by = current_user
 
     if @issue.save
       IssueMailer.send_issue_raised(@issue.id)
-      session[:create_another_issue_from] = @issue.id if create_another_issue
-    else
-      session.delete(:create_another_issue_from)
+
+      redirect_to_path = new_issue_path(:user => @project.user.username, :key => @project.key, :template => @issue.number) if create_another
     end
 
     respond_with(@issue, :location => redirect_to_path || show_path)

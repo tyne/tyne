@@ -20,8 +20,8 @@
 
   <% if issue.new_record? %>
     <div class="create-another-issue checkbox">
-      <%= f.input_field :redirect_to, :value => main_app.new_issue_path, :type => :checkbox, :id => :redirect_to, :checked => @create_another %>
-      <%= f.label "Create another", :for => :redirect_to %>
+      <%= f.input_field :create_another, :value => true, :type => :checkbox, :id => :create_another, :checked => @template %>
+      <%= f.label "Create another", :for => :create_another %>
     </div>
   <% end %>
 <% end %>
