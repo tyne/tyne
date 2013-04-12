@@ -18,7 +18,9 @@ class IssuesController < ApplicationController
   # The backlog can be sorted by passing a sorting parameter.
   def index
     reflection = @project.issues
-    default_filter unless params[:filter]
+
+    default_filter if default_applicable?
+
     reflection = apply_filter(reflection)
     reflection = apply_query(reflection)
     reflection = apply_sorting(reflection)
@@ -158,5 +160,13 @@ class IssuesController < ApplicationController
     @default_filter = true
     params[:filter] ||= {}
     params[:filter][:state] = ["open", "reopened"]
+  end
+
+  def default_applicable?
+    return false unless formats.include?(:html)
+
+    [:filter, :sorting, :paginationi, :query].each do |option|
+      return false if params[option].present?
+    end
   end
 end

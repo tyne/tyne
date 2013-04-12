@@ -6,7 +6,7 @@ module Extensions
 
       private
       def apply_query(reflection)
-        return reflection unless params[:query]
+        return reflection if params[:query].blank?
 
         persist_query_information!
 
