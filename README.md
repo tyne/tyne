@@ -1,6 +1,6 @@
 # tyne
 
-[![travis-ci](https://api.travis-ci.org/tyne/tyne.png)](http://travis-ci.org/#!/tyne/tyne) [![Dependency Status](https://gemnasium.com/tyne/tyne.png)](https://gemnasium.com/tyne/tyne) [![Code Climate](https://codeclimate.com/github/tyne/tyne.png)](https://codeclimate.com/github/tyne/tyne) [![Coverage Status](https://coveralls.io/repos/tyne/tyne/badge.png?branch=master)](https://coveralls.io/r/tyne/tyne)
+[![travis-ci](https://api.travis-ci.org/tyne/tyne.png?branch=master)](http://travis-ci.org/#!/tyne/tyne) [![Dependency Status](https://gemnasium.com/tyne/tyne.png)](https://gemnasium.com/tyne/tyne) [![Code Climate](https://codeclimate.com/github/tyne/tyne.png)](https://codeclimate.com/github/tyne/tyne) [![Coverage Status](https://coveralls.io/repos/tyne/tyne/badge.png?branch=master)](https://coveralls.io/r/tyne/tyne)
 
 ## Description
 
