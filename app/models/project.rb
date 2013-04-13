@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
   has_many :workers, :class_name => "TeamMember", :through => :teams, :source => :members
   has_many :owners, :class_name => "TeamMember", :through => :teams, :conditions => { :teams => { :admin_privileges => true } }, :source => :members
   has_many :sprints, :dependent => :destroy
+  has_many :labels
 
   before_create :create_teams
 

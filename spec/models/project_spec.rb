@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe Project do
   it { should have_many :teams }
+  it { should have_many :labels }
 
   it "should have an owner and a contributor team" do
     user = stub_model(User)

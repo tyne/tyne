@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Issue do
+  it { should have_and_belong_to_many :labels }
+
   let(:user) { User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo") }
   let(:project) { user.projects.create!(:key => "Foo", :name => "Foo") }
   let(:issue) { create(:issue, :project => project) }

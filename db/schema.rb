@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319200745) do
+ActiveRecord::Schema.define(:version => 20130413101651) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -93,6 +93,18 @@ ActiveRecord::Schema.define(:version => 20130319200745) do
   add_index "issues", ["project_id"], :name => "index_issues_on_project_id"
   add_index "issues", ["reported_by_id"], :name => "index_issues_on_reported_by_id"
   add_index "issues", ["sprint_id"], :name => "index_issues_on_sprint_id"
+
+  create_table "issues_labels", :force => true do |t|
+    t.integer "issue_id"
+    t.integer "label_id"
+  end
+
+  create_table "labels", :force => true do |t|
+    t.string   "name"
+    t.integer  "project_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "organization_memberships", :force => true do |t|
     t.integer  "organization_id"
