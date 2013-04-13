@@ -74,6 +74,17 @@ class Issue < ActiveRecord::Base
     IssueMailer.delay.issue_reopened(self.id)
   end
 
+  # Applies issue details from an existing issue
+  # @param [Integer] issue number
+  def apply_template(template)
+    issue_template = self.project.issues.find_by_number(template)
+    return unless issue_template
+
+    self.issue_type = issue_template.issue_type
+    self.issue_priority = issue_template.issue_priority
+    self.assigned_to = issue_template.assigned_to
+  end
+
   private
 
   def remove_from_backlog

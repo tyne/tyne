@@ -98,21 +98,21 @@ describe IssuesController do
         user.reported_issues.create!(:summary => "FOO", :description => "Foo", :issue_type_id => 1) do |issue|
           issue.project_id = project.id
         end
-        assigns(:issues).should == project.issues.order("created_at DESC").where(:state => ["open", "reopened"]).limit(25).offset(0)
+        assigns(:issues).should == project.issues.order("created_at DESC").limit(25).offset(0)
 
         # Fallback for field
         get :index, :user => user.username, :key => project.key, :sorting => { :field => 'foo', :order => 'asc' }
-        assigns(:issues).should == project.issues.order("id ASC").where(:state => ["open", "reopened"]).limit(25).offset(0)
+        assigns(:issues).should == project.issues.order("id ASC").limit(25).offset(0)
 
         # Fallback for order
         get :index, :user => user.username, :key => project.key, :sorting => { :field => 'created_at', :order => 'foo' }
-        assigns(:issues).should == project.issues.order("created_at ASC").where(:state => ["open", "reopened"]).limit(25).offset(0)
+        assigns(:issues).should == project.issues.order("created_at ASC").limit(25).offset(0)
 
         # Custom sorting
         get :index, :user => user.username, :key => project.key, :sorting => { :field => 'issue_type', :order => 'ASC' }
-        assigns(:issues).should == project.issues.joins(:issue_type).where(:state => ["open", "reopened"]).order("issue_types.name ASC").limit(25).offset(0)
+        assigns(:issues).should == project.issues.joins(:issue_type).order("issue_types.name ASC").limit(25).offset(0)
 
-        # Session
+        # Session sorting with defaults
         get :index, :user => user.username, :key => project.key
         assigns(:issues).should == project.issues.joins(:issue_type).where(:state => ["open", "reopened"]).order("issue_types.name ASC").limit(25).offset(0)
       end
