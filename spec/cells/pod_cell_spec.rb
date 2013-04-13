@@ -65,11 +65,6 @@ describe PodCell do
         it 'should have .PodTitle selector' do
           subject.should have_selector('.Pod .PodTitle span', :text => 'My Title')
         end
-
-        it 'should have .PodContent selector' do
-          pending
-          subject.should have_selector('.Pod .PodContent', :text => 'My Content')
-        end
       end
     end
   end
