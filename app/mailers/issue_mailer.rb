@@ -23,28 +23,27 @@ class IssueMailer < ActionMailer::Base
   # Sends a notification to the reporter of the issue
   # that the issue has been closed.
   def issue_closed(issue_id)
-    @issue = Issue.find_by_id(issue_id)
-
-    # Send to reporter
-    if @issue.reported_by
-      to = @issue.reported_by.notification_email
-      mail(:to => to, :subject => "[Closed] #{@issue.key} - #{@issue.summary}") if to
-    end
+    issue_state_changed("Closed", issue_id, :reported_by)
   end
 
   # Sends a notification to the assignee
   # that the issue has been reopened.
   def issue_reopened(issue_id)
-    @issue = Issue.find_by_id(issue_id)
-    # Send to to assignee
-    if @issue.assigned_to
-      to = @issue.assigned_to.notification_email
-      mail(:to => to, :subject => "[Reopened] #{@issue.key} - #{@issue.summary}") if to
-    end
+    issue_state_changed("Reopened", issue_id, :assigned_to)
   end
 
   private
   def self.is_reporter?(worker, issue)
     worker.user_id == issue.reported_by.id
+  end
+
+  def issue_state_changed(state, issue_id, to)
+    @issue = Issue.find_by_id(issue_id)
+
+    # Send to reporter
+    if @issue.respond_to?(to) && issue.public_send(to)
+      to = @issue.public_send(to).notification_email
+      mail(:to => to, :subject => "[#{state}] #{@issue.key} - #{@issue.summary}") if to
+    end
   end
 end
