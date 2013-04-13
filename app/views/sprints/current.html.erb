@@ -2,7 +2,7 @@
   <div class="options">
     <%= finish_button if is_collaborator? %>
     <div class="pull-right">
-      <%= content_tag :span, "#{@project.current_sprint.start_date.to_formatted_s(:short)} - #{@project.current_sprint.end_date.to_formatted_s(:short)}" %>
+      <%= content_tag :span, "#{@sprint.start_date.to_formatted_s(:short)} - #{@sprint.end_date.to_formatted_s(:short)}" %>
       <% if is_collaborator? %>
       | <%= burn_down_link %>
       <% end %>
