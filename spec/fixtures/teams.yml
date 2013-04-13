@@ -3,6 +3,11 @@ owners:
   project: tyne
   admin_privileges: true
 
+contributors:
+  name: Contributors
+  project: tyne
+  admin_privileges: false
+
 owners_bluffr:
   name: Owners
   project: bluffr

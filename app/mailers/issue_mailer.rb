@@ -41,7 +41,7 @@ class IssueMailer < ActionMailer::Base
     @issue = Issue.find_by_id(issue_id)
 
     # Send to reporter
-    if @issue.respond_to?(to) && issue.public_send(to)
+    if @issue.respond_to?(to) && @issue.public_send(to)
       to = @issue.public_send(to).notification_email
       mail(:to => to, :subject => "[#{state}] #{@issue.key} - #{@issue.summary}") if to
     end

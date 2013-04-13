@@ -3,9 +3,11 @@ tobscher:
   username: "Tobscher"
   uid: "1337"
   token: "1337"
+  notification_email: "me@example.com"
 
 mlessnau:
   name: "Michael Lessnau"
   username: "mlessnau"
   uid: "1234"
   token: "1234"
+  notification_email: "me@example.com"
