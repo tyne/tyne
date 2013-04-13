@@ -18,6 +18,31 @@ describe Issue do
     end
   end
 
+  describe :apply_template do
+    it "copies the details from an existing issue" do
+      subject.project = issue.project
+      subject.apply_template(issue.number)
+
+      subject.issue_type.should == issue.issue_type
+      subject.issue_priority.should == issue.issue_priority
+      subject.assigned_to.should == issue.assigned_to
+    end
+
+    it "does not apply if issue has no project" do
+      subject.project = nil
+      subject.apply_template(issue.number)
+
+      subject.assigned_to.should be_nil
+    end
+
+    it "does not apply if template does not exist" do
+      subject.project = issue.project
+      subject.apply_template(9999)
+
+      subject.assigned_to.should be_nil
+    end
+  end
+
   describe :available_transitions do
     context "for a new ticket" do
       it "should return the current state without an action" do

@@ -77,8 +77,8 @@ class Issue < ActiveRecord::Base
   # Applies issue details from an existing issue
   # @param [Integer] issue number
   def apply_template(template)
-    issue_template = self.project.issues.find_by_number(template)
-    return unless issue_template
+    return unless self.project
+    return unless (issue_template = self.project.issues.find_by_number(template))
 
     self.issue_type = issue_template.issue_type
     self.issue_priority = issue_template.issue_priority
