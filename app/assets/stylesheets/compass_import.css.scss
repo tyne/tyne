@@ -1,6 +1,8 @@
 @import "compass";
 @import "compass/css3/user-interface";
 
+@import "_variables";
+
 @import "bootstrap_and_overrides";
 @import "mousetrap";
 
@@ -30,6 +32,7 @@
 @import "pagination";
 @import "projects";
 @import "reports";
+@import "ribbon";
 @import "search";
 @import "search_form";
 @import "sorting";

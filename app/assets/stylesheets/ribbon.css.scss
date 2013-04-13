@@ -1,0 +1,184 @@
+.relative {
+  position: relative;
+}
+
+.ribbon {
+  width: 30px;
+  height: 50px;
+  margin: 0px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 20px
+}
+
+.ribbon .container {
+  position: relative;
+  width: 30px;
+  height: 50px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ribbon .base {
+  height: 30px;
+  width: 30px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.ribbon .base:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 22px;
+  left: 3px;
+  height: 43px;
+}
+
+.ribbon .base:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 22px;
+  left: 2px;
+  height: 43px;
+}
+
+.ribbon .left_corner {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 7px;
+  left: -15px;
+  z-index: 1;
+
+  @include rotate(45deg);
+}
+
+.ribbon .right_corner {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  right: -20px;
+  z-index: 1;
+
+  @include rotate(45deg);
+}
+
+.bug .ribbon {
+  .container {
+    border-left: 1px solid darken($bugColor, 5%);
+    border-right: 1px solid darken($bugColor, 5%);
+  }
+
+  .base {
+    @include background-image(linear-gradient(left top, $bugColor, $bugColor));
+    &:after {
+      border-left: 1px dashed darken($bugColor, 20%);
+      border-right: 1px dashed darken($bugColor, 20%);
+    }
+    &:before {
+      border-left: 1px dashed lighten($bugColor, 10%);
+      border-right: 1px dashed lighten($bugColor, 10%);
+    }
+  }
+
+  .left_corner, .right_corner {
+    background: $bugColor;
+  }
+}
+
+.enhancement .ribbon {
+  .container {
+    border-left: 1px solid darken($enhancementColor, 5%);
+    border-right: 1px solid darken($enhancementColor, 5%);
+  }
+
+  .base {
+    @include background-image(linear-gradient(left top, $enhancementColor, $enhancementColor));
+    &:after {
+      border-left: 1px dashed darken($enhancementColor, 20%);
+      border-right: 1px dashed darken($enhancementColor, 20%);
+    }
+    &:before {
+      border-left: 1px dashed lighten($enhancementColor, 10%);
+      border-right: 1px dashed lighten($enhancementColor, 10%);
+    }
+  }
+
+  .left_corner, .right_corner {
+    background: $enhancementColor;
+  }
+}
+
+.feature .ribbon {
+  .container {
+    border-left: 1px solid darken($featureColor, 5%);
+    border-right: 1px solid darken($featureColor, 5%);
+  }
+
+  .base {
+    @include background-image(linear-gradient(left top, $featureColor, $featureColor));
+    &:after {
+      border-left: 1px dashed darken($featureColor, 20%);
+      border-right: 1px dashed darken($featureColor, 20%);
+    }
+    &:before {
+      border-left: 1px dashed lighten($featureColor, 10%);
+      border-right: 1px dashed lighten($featureColor, 10%);
+    }
+  }
+
+  .left_corner, .right_corner {
+    background: $featureColor;
+  }
+}
+
+.story .ribbon {
+  .container {
+    border-left: 1px solid darken($storyColor, 5%);
+    border-right: 1px solid darken($storyColor, 5%);
+  }
+
+  .base {
+    @include background-image(linear-gradient(left top, $storyColor, $storyColor));
+    &:after {
+      border-left: 1px dashed darken($storyColor, 20%);
+      border-right: 1px dashed darken($storyColor, 20%);
+    }
+    &:before {
+      border-left: 1px dashed lighten($storyColor, 10%);
+      border-right: 1px dashed lighten($storyColor, 10%);
+    }
+  }
+
+  .left_corner, .right_corner {
+    background: $storyColor;
+  }
+}
+
+.task .ribbon {
+  .container {
+    border-left: 1px solid darken($taskColor, 5%);
+    border-right: 1px solid darken($taskColor, 5%);
+  }
+
+  .base {
+    @include background-image(linear-gradient(left top, $taskColor, $taskColor));
+    &:after {
+      border-left: 1px dashed darken($taskColor, 20%);
+      border-right: 1px dashed darken($taskColor, 20%);
+    }
+    &:before {
+      border-left: 1px dashed lighten($taskColor, 10%);
+      border-right: 1px dashed lighten($taskColor, 10%);
+    }
+  }
+
+  .left_corner, .right_corner {
+    background: $taskColor;
+  }
+}

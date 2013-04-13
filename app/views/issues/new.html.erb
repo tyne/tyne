@@ -1,5 +1,6 @@
 <% cache ["v8", "issue", "new", @project] do %>
-  <div class="centered">
-    <%= render :partial => 'form', :locals => { :issue => @issue, :url => main_app.issues_path } %>
+  <div class="centered relative <%= @issue.issue_type.name.downcase %>">
+    <%= render :partial => 'ribbon' %>
+    <%= render :partial => 'form', :locals => { :issue => @issue, :url => issues_path } %>
   </div>
 <% end %>

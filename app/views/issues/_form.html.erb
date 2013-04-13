@@ -1,7 +1,7 @@
 <%= simple_form_for(issue, :url => url, :validate => true) do |f| %>
   <table>
     <tr>
-      <td colspan="2"><%= f.input :summary, :autofocus => true %></td>
+      <td colspan="2"><%= f.input :summary, :autofocus => true, :label => false, :placeholder => "Enter your issues summary", :wrapper_html => { :class => "issue-summary-wrapper" } %></td>
     </tr>
     <tr>
       <td class="half"><%= f.association :issue_type, :prompt => false %></td>
