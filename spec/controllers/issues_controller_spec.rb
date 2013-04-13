@@ -117,6 +117,14 @@ describe IssuesController do
         assigns(:issues).should == project.issues.joins(:issue_type).where(:state => ["open", "reopened"]).order("issue_types.name ASC").limit(25).offset(0)
       end
 
+      it "applies a query string when given" do
+        get :index, :user => user.username, :key => project.key, :query => "Ba"
+
+        assigns(:issues).should_not include issues(:foo)
+        assigns(:issues).should include issues(:bar)
+        assigns(:issues).should include issues(:baz)
+      end
+
       it "render the correct view" do
         get :index, :user => user.username, :key => project.key
 
