@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
 
   # Creates a new comment for an issue
   def create
-    @issue = @project.issues.find_by_number(params[:issue_id])
+    load_issue
     @comment = @issue.comments.build(params[:comment]) do |c|
       c.user = current_user
     end
@@ -17,5 +17,10 @@ class CommentsController < ApplicationController
     respond_with(@comment) do |format|
       format.pjax { render @comment }
     end
+  end
+
+  private
+  def load_issue
+    @issue = @project.issues.find_by_number(params[:issue_id])
   end
 end

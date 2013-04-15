@@ -84,13 +84,6 @@ class IssuesController < ApplicationController
     respond_with(@issue)
   end
 
-  # Renders a dialog partial
-  def dialog
-    @issue = Issue.new
-
-    render 'dialog'
-  end
-
   # Votes the issue up
   def upvote
     @issue.upvote_for(current_user)
@@ -132,7 +125,7 @@ class IssuesController < ApplicationController
   private
 
   def show_path
-    main_app.issue_path(:user => @project.user.username, :key => @project.key, :id => @issue.number)
+    issue_path(:user => @project.user.username, :key => @project.key, :id => @issue.number)
   end
 
   def can_edit?
@@ -142,7 +135,7 @@ class IssuesController < ApplicationController
   helper_method :can_edit?
 
   def ensure_can_edit
-    redirect_to main_app.root_path unless can_edit?
+    redirect_to root_path unless can_edit?
   end
 
   def default_filter

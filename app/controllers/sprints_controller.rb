@@ -66,7 +66,7 @@ class SprintsController < AdminController
     @sprint = @project.sprints.find(params[:id])
     @sprint.start(params[:sprint][:start_date], params[:sprint][:end_date])
 
-    respond_with(@sprint, :location => main_app.current_sprints_path(:user => @project.user.username, :key => @project.key))
+    respond_with(@sprint, :location => current_sprints_path(:user => @project.user.username, :key => @project.key))
   end
 
   # Finishes a sprint.

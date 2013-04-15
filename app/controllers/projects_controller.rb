@@ -44,22 +44,6 @@ class ProjectsController < ApplicationController
     respond_with(@project, :location => root_path)
   end
 
-  # Displays the list of all available github projects.
-  def github
-    github = current_user.github_client
-    @repositories = github.repositories
-  end
-
-  # Imports the selected github repos.
-  def import
-    projects = params[:name]
-    projects.each do |project|
-      current_user.projects.create!(:key => project.upcase, :name => project)
-    end
-
-    redirect_to projects_path
-  end
-
   # Renders a view to administer a project (Edit, Delete, Teams).
   def admin
     respond_with(@project)
@@ -77,6 +61,6 @@ class ProjectsController < ApplicationController
   end
 
   def prepare_breadcrumb
-    add_breadcrumb :admin, main_app.admin_project_path(:user => params[:user], :key => params[:key])
+    add_breadcrumb :admin, admin_project_path(:user => params[:user], :key => params[:key])
   end
 end

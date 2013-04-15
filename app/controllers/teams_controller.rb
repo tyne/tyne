@@ -36,7 +36,7 @@ class TeamsController < AdminController
   end
 
   def prepare_breadcrumb
-    add_breadcrumb :admin, main_app.admin_project_path(:user => params[:user], :key => params[:key], :anchor => "teams")
-    add_breadcrumb @team.name, main_app.admin_project_path(:user => params[:user], :key => params[:key])
+    add_breadcrumb :admin, admin_project_path(:user => params[:user], :key => params[:key], :anchor => "teams")
+    add_breadcrumb @team.name, admin_project_path(:user => params[:user], :key => params[:key])
   end
 end

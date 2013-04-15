@@ -10,12 +10,6 @@ describe ProjectsController do
 
       delete :destroy, :id => 1
       response.should redirect_to login_path(:redirect_url => projects_path)
-
-      get :github
-      response.should redirect_to login_path(:redirect_url => projects_path)
-
-      post :import
-      response.should redirect_to login_path(:redirect_url => projects_path)
     end
   end
 
@@ -140,36 +134,6 @@ describe ProjectsController do
         response.status.should == 404
 
         Project.find_by_id(project.id).should be_present
-      end
-    end
-
-    describe :github do
-      before :each do
-        user.stub_chain(:github_client, :repositories).and_return(:foo)
-        get :github
-      end
-
-      it "should assign a list of all github repos" do
-        assigns(:repositories).should == :foo
-      end
-
-      it "should render the correct view" do
-        response.should render_template "projects/github"
-      end
-    end
-
-    describe :import do
-      before :each do
-        post :import, :name => ["Foo", "Bar"]
-      end
-
-      it "should create a project for each selected github repo" do
-        Project.find_by_name("Foo").user_id.should == user.id
-        Project.find_by_name("Bar").user_id.should == user.id
-      end
-
-      it "should redirect back to the index page" do
-        response.should redirect_to :action => :index
       end
     end
 

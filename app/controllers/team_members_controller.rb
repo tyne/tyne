@@ -14,7 +14,7 @@ class TeamMembersController < AdminController
     @team_member = @team.members.build(params[:team_member])
     @team_member.save
 
-    respond_with(@team_member, :location => main_app.team_path(:user => current_user.username, :key => @project.key, :id => @team.id))
+    respond_with(@team_member, :location => team_path(:user => current_user.username, :key => @project.key, :id => @team.id))
   end
 
   # Removes a team member from a team. The current user cannot remove itself
@@ -23,17 +23,17 @@ class TeamMembersController < AdminController
     @team = @project.teams.find_by_id(params[:team_id])
     @team_member = @team.members.find_by_id(params[:id])
 
-    if check_if_is_losing_admin_rights(@team_member)
+    if is_losing_admin_rights?(@team_member)
       @team_member.errors.add(:base, :losing_admin_rights)
     else
       @team_member.destroy
     end
 
-    respond_with(@team_member, :location => main_app.team_path(:user => current_user.username, :key => @project.key, :id => @team.id), :flash_now => false)
+    respond_with(@team_member, :location => team_path(:user => current_user.username, :key => @project.key, :id => @team.id), :flash_now => false)
   end
 
   private
-  def check_if_is_losing_admin_rights(team_member)
+  def is_losing_admin_rights?(team_member)
     team_member.user == current_user && team_member.is_admin?
   end
 end
