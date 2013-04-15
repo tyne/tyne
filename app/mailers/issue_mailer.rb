@@ -6,15 +6,19 @@ class IssueMailer < ActionMailer::Base
   # that a new issue has been raised.
   def self.send_issue_raised(issue_id)
     issue = Issue.find_by_id(issue_id)
-    issue.project.workers.each do |worker|
-      delay.issue_raised(issue_id, worker.id) unless is_reporter?(worker, issue)
+    issue.project.workers.each do |team_member|
+      delay.issue_raised(issue_id, team_member.id) unless is_reporter?(team_member, issue)
     end
   end
 
   # Sends a notification that a new issue has been raised.
-  def issue_raised(issue_id, worker_id)
+  def issue_raised(issue_id, team_member_id)
     @issue = Issue.find_by_id(issue_id)
-    @worker = TeamMember.find_by_id(worker_id)
+    @worker = TeamMember.find_by_id(team_member_id)
+
+    return unless @issue
+    return unless @worker
+
     to = @worker.user.notification_email
 
     mail(:to => to, :subject => "[Raised] #{@issue.key} - #{@issue.summary}") if to
@@ -41,7 +45,7 @@ class IssueMailer < ActionMailer::Base
     @issue = Issue.find_by_id(issue_id)
 
     # Send to reporter
-    if @issue.respond_to?(to) && issue.public_send(to)
+    if @issue.respond_to?(to) && @issue.public_send(to)
       to = @issue.public_send(to).notification_email
       mail(:to => to, :subject => "[#{state}] #{@issue.key} - #{@issue.summary}") if to
     end

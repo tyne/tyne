@@ -2,7 +2,7 @@ foo:
   summary: Foo
   reported_by: tobscher
   project: tyne
-  issue_type_id: 1
+  issue_type: bug
   number: 1
   estimate: 1
   sprint: alpha
@@ -11,7 +11,7 @@ bar:
   summary: Bar
   reported_by: tobscher
   project: tyne
-  issue_type_id: 1
+  issue_type: bug
   number: 2
   estimate: 3
   sprint: alpha
@@ -20,7 +20,7 @@ baz:
   summary: Bar
   reported_by: tobscher
   project: tyne
-  issue_type_id: 1
+  issue_type: bug
   number: 3
   estimate: 5
 
@@ -28,6 +28,6 @@ qux:
   summary: qux
   reported_by: mlessnau
   project: bluffr
-  issue_type_id: 1
+  issue_type: bug
   number: 1
   estimate: 5

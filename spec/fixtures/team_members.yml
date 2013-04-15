@@ -2,6 +2,10 @@ team_member_one:
   team: owners
   user: tobscher
 
+contributor_one:
+  team: contributors
+  user: mlessnau
+
 team_member_two:
   team: owners_bluffr
   user: mlessnau
