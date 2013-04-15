@@ -10,8 +10,7 @@ class ReportsController < ApplicationController
   before_filter :add_report_breadcrumb
 
   # Displays the list of all available reports (e.g. Issue Type Ratio)
-  def index
-  end
+  def index; end
 
   # Displays the issue type ratio report
   def issue_type_ratio
