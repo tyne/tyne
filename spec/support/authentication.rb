@@ -41,7 +41,7 @@ shared_context 'authenticated' do
     visit new_issue_path(:user => @nickname, :key => @project_key)
 
     within("#new_issue") do
-      fill_in 'Summary', :with => summary
+      fill_in 'issue_summary', :with => summary
     end
 
     click_button "Create Issue"
