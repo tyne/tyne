@@ -34,6 +34,7 @@ class IssuesController < ApplicationController
     add_breadcrumb :new
 
     @issue = @project.issues.build
+    @label = @project.labels.build
 
     @template = params[:template]
     @issue.apply_template(@template) if @template

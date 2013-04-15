@@ -216,16 +216,6 @@ describe IssuesController do
       end
     end
 
-    describe :dialog do
-      before :each do
-        get :dialog, :user => user.username, :key => project.key, :format => :pjax
-      end
-
-      it "should render the correct view" do
-        response.should render_template "issues/dialog"
-      end
-    end
-
     describe :reorder do
       it "should reorder the issue in the sprint" do
         put :reorder, :user => user.username, :key => project.key, :issue_id => issue.id, :position => 1

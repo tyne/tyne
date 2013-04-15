@@ -1,6 +1,6 @@
 (function () {
   $(":submit").closest("form").submit(function () {
-    $(':submit').prop('disabled', true);
+    $(this).find(':submit').prop('disabled', true);
   });
 
   window.ClientSideValidations.callbacks.form.fail = function (form, eventData) {

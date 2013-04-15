@@ -1,0 +1,4 @@
+<%= simple_form_for(@label, :validate => true, :url => project_labels_path(:user => @user.username, :key => @project.key, :project_id => @project.id, :format => :pjax), :html => { :class => "form-inline" }) do |f| %>
+  <%= f.input :name, :placeholder => "Type to enter label", :label => false %>
+  <%= f.button :submit, :class => "btn" %>
+<% end %>

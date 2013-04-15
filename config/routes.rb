@@ -8,11 +8,7 @@ Tyne::Application.routes.draw do
   get "/logout", :action => "destroy", :as => :logout, :controller => "sessions"
 
   resources :projects do
-    collection do
-      get :github
-      post :import
-      get :dialog
-    end
+    resources :labels
   end
 
   resources :dashboards
