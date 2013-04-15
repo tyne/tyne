@@ -1,0 +1,5 @@
+<div class="labels" data-cell="Labels">
+  <h1>Manage Labels</h1>
+  <%= render :partial => "label", :collection => @issue.project.labels %>
+  <%= render :partial => "label_form" %>
+</div>
