@@ -121,6 +121,13 @@
     right: 25px;
     font-size: small;
   }
+
+  .comments-present {
+    color: #333;
+    background-color: #FCFCE9;
+    font-weight: bold;
+    @include border-radius(2px);
+  }
 }
 
 .Sorting {
