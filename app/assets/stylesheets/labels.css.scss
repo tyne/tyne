@@ -33,6 +33,8 @@
         color: #333;
         @include user-select(none);
         @include border-radius(4px);
+        display: inline-block;
+        width: 80%;
       }
     }
   }

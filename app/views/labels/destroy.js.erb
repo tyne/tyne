@@ -1,0 +1,3 @@
+$('.labels ul li label[data-id="<%= @label.id %>"]').closest("li").remove();
+
+Notification.show('success', I18n.t("flash.actions.destroy.notice", {resource_name: "Label"}));
