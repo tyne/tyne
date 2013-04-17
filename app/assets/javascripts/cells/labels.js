@@ -23,5 +23,12 @@
     };
 
     _this.$form.ajaxForm(options);
+
+    _this.$target.on("click", "label", function() {
+      var label = $(this);
+      var listItem =  label.closest("li");
+
+      listItem.toggleClass("selected");
+    });
   };
 })(jQuery);

@@ -3,4 +3,37 @@
     margin: 0;
     font-size: 14px;
   }
+
+  form {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+
+    li {
+      &:hover {
+        label {
+          background-color: #fafafa;
+        }
+      }
+
+      &.selected {
+        label {
+          color: white;
+          background-color: #e1972f;
+        }
+      }
+
+      label {
+        padding-left: 3px;
+        font-weight: normal;
+        color: #333;
+        @include user-select(none);
+        @include border-radius(4px);
+      }
+    }
+  }
 }
