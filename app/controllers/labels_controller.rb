@@ -14,7 +14,7 @@ class LabelsController < ApplicationController
     @label.save
 
     respond_with(@label) do |format|
-      format.pjax { render @label }
+      format.pjax { render @label, :locals => { :issue => nil } }
     end
   end
 end

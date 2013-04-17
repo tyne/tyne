@@ -32,19 +32,29 @@
     });
   };
 
-  var LabelledForms = ["new_issue", "edit_issue"];
+  var LabelledForms = [".new_issue", ".edit_issue"];
 
   ClientSideValidations.callbacks.form.pass = function(form, eventData) {
-    if (LabelledForms.indexOf(form.attr("id")) == -1) return;
+    if (!form.is(LabelledForms.join(", "))) return;
 
     var labels = Labels.instances[0];
-    labels.$target.find("li.selected label").each(function(index, value) {
+    labels.$target.find("li label").each(function(index, value) {
       var id = $(value).data("id");
+      var originalId = $(value).data("present");
+      var existing = !!originalId;
+      var selected = $(value).closest("li").is(".selected");
+      var destroy = existing && !selected;
+
+      if (!existing && !selected) return;
 
       // Create hidden inputs
       var baseName = "issue[issue_labels_attributes][" + index + "]";
-      var idInput = $("<input>").attr("name", baseName + "[label_id]").attr("type", "hidden").val(id);
+      var idInput = $("<input>").attr("name", baseName + "[id]").attr("type", "hidden").val(originalId);
+      var labelIdInput = $("<input>").attr("name", baseName + "[label_id]").attr("type", "hidden").val(id);
+      var destroyInput = $("<input>").attr("name", baseName + "[_destroy]").attr("type", "hidden").val(destroy ? "1" : "0");
       form.append(idInput);
+      form.append(labelIdInput);
+      form.append(destroyInput);
     });
   };
 })(jQuery);

@@ -96,4 +96,17 @@ module IssuesHelper
 
     content_tag :span, value, :class => classes.join(' '), :title => title
   end
+
+  def labelled?(label, issue)
+    return false unless issue
+
+    label.issues.include?(issue)
+  end
+
+  def labelled_id(label, issue)
+    return unless issue
+
+    labelled = label.issue_labels.find_by_issue_id(issue.id)
+    labelled.id if labelled
+  end
 end

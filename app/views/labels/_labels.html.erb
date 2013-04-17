@@ -1,7 +1,7 @@
 <div class="labels" data-cell="Labels">
   <h1>Manage Labels</h1>
     <ul class="labels-list">
-      <%= render :partial => "labels/label", :collection => @issue.project.labels, :formats => [:pjax] %>
+      <%= render :partial => "labels/label", :collection => @issue.project.labels, :formats => [:pjax], :locals => { :issue => @issue } %>
     </ul>
   <%= render :partial => "labels/label_form", :locals => { :label => @label } %>
 </div>

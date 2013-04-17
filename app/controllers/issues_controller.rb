@@ -69,6 +69,7 @@ class IssuesController < ApplicationController
 
   # Displays the edit page for an issue.
   def edit
+    @label = @project.labels.build
     respond_with(@issue)
   end
 
