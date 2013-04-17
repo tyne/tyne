@@ -1,6 +1,7 @@
 class Label < ActiveRecord::Base
   belongs_to :project
-  has_and_belongs_to_many :issues
+  has_many :issue_labels
+  has_many :issues, :through => :issue_labels
 
   attr_accessible :name
 

@@ -8,7 +8,7 @@
 <div class="span9">
   <div data-cell="Backlog">
     <div class="options">
-      <%= link_to t("actions.create"), main_app.new_issue_path, :class => "btn btn-small new-issue-link" if current_user %>
+      <%= link_to t("actions.create"), new_issue_path, :class => "btn btn-small new-issue-link" if current_user %>
       <%= link_to content_tag(:i, '', :class => "icon-refresh"), main_app.issues_path(:format => :pjax), :class => "btn btn-small btn-refresh", :title => t("actions.refresh") %>
       <div class="btn-group" data-toggle="buttons-radio" data-behaviour="issue-view">
         <button type="button" class="btn btn-small" data-view="minimal" title="<%= t("actions.list_view") %>"><i class="icon-minus"></i></button>

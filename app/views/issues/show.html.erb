@@ -49,6 +49,10 @@
       <%= issue_type(@issue) %>
       <%= issue_priority(@issue) %>
       <%= issue_label(Issue.human_attribute_name(:estimate), @issue.estimate) if @issue.estimate %>
+
+      <% @issue.labels.each do |label| %>
+        <%= issue_label("", label.name) %>
+      <% end %>
     </p>
 
       <%= render :partial => "tabs", :locals => { :issue => @issue } %>

@@ -88,7 +88,11 @@ module IssuesHelper
   # Renders an issue label with additional classes.
   def issue_label(name, value, classes=[])
     classes << "tag" unless classes.include? "tag"
-    title = "#{name}: #{value}"
+    title = if name.present?
+              "#{name}: #{value}"
+            else
+              value
+            end
 
     content_tag :span, value, :class => classes.join(' '), :title => title
   end

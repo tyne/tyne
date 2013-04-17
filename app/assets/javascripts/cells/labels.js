@@ -31,4 +31,20 @@
       listItem.toggleClass("selected");
     });
   };
+
+  var LabelledForms = ["new_issue", "edit_issue"];
+
+  ClientSideValidations.callbacks.form.pass = function(form, eventData) {
+    if (LabelledForms.indexOf(form.attr("id")) == -1) return;
+
+    var labels = Labels.instances[0];
+    labels.$target.find("li.selected label").each(function(index, value) {
+      var id = $(value).data("id");
+
+      // Create hidden inputs
+      var baseName = "issue[issue_labels_attributes][" + index + "]";
+      var idInput = $("<input>").attr("name", baseName + "[label_id]").attr("type", "hidden").val(id);
+      form.append(idInput);
+    });
+  };
 })(jQuery);

@@ -53,6 +53,11 @@ ActiveRecord::Schema.define(:version => 20130413101651) do
 
   add_index "dashboards", ["user_id"], :name => "index_dashboards_on_user_id"
 
+  create_table "issue_labels", :force => true do |t|
+    t.integer "issue_id"
+    t.integer "label_id"
+  end
+
   create_table "issue_priorities", :force => true do |t|
     t.string   "name"
     t.integer  "number"
@@ -93,11 +98,6 @@ ActiveRecord::Schema.define(:version => 20130413101651) do
   add_index "issues", ["project_id"], :name => "index_issues_on_project_id"
   add_index "issues", ["reported_by_id"], :name => "index_issues_on_reported_by_id"
   add_index "issues", ["sprint_id"], :name => "index_issues_on_sprint_id"
-
-  create_table "issues_labels", :force => true do |t|
-    t.integer "issue_id"
-    t.integer "label_id"
-  end
 
   create_table "labels", :force => true do |t|
     t.string   "name"

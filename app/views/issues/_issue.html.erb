@@ -21,6 +21,10 @@
       <%= issue_priority(issue) %>
       <%= issue_reported_by(issue) %>
       <%= issue_reported_at(issue) %>
+
+      <% issue.labels.each do |label| %>
+        <%= issue_label("", label.name) %>
+      <% end %>
     </p>
   </td>
 </tr>

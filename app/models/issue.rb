@@ -16,9 +16,12 @@ class Issue < ActiveRecord::Base
   belongs_to :assigned_to, :class_name => "User"
   belongs_to :sprint
   has_many :comments, :dependent => :destroy
-  has_and_belongs_to_many :labels
+  has_many :issue_labels
+  has_many :labels, :through => :issue_labels
 
-  attr_accessible :project_id, :summary, :description, :issue_type_id, :issue_priority_id, :assigned_to_id, :estimate
+  accepts_nested_attributes_for :issue_labels, :allow_destroy => true
+
+  attr_accessible :project_id, :summary, :description, :issue_type_id, :issue_priority_id, :assigned_to_id, :estimate, :issue_labels_attributes
 
   validates :project_id, :summary, :issue_type_id, :number, :presence => true
   validates :number, :uniqueness => { :scope => :project_id }

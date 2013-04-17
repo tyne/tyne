@@ -7,7 +7,7 @@ class CreateLabels < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :issues_labels do |t|
+    create_table :issue_labels do |t|
       t.integer :issue_id
       t.integer :label_id
     end
