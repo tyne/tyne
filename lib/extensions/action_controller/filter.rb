@@ -13,7 +13,12 @@ module Extensions
 
         params[:filter].each do |filter|
           filter[1][0] = nil if filter[1][0] == '-1'
-          reflection = reflection.where(Hash[*filter])
+
+          if reflection.respond_to?(:"filter_by_#{filter[0]}")
+            reflection = reflection.send(:"filter_by_#{filter[0]}", filter[1])
+          else
+            reflection = reflection.where(:issues => Hash[*filter])
+          end
         end
 
         reflection

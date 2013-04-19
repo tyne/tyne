@@ -15,7 +15,7 @@ module Extensions
         if sort_scope(reflection)
           reflection = reflection.send(sort_scope(reflection), order)
         else
-          reflection = reflection.order("#{column} #{order}")
+          reflection = reflection.order("issues.#{column} #{order}")
         end
         reflection
       end

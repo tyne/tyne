@@ -16,13 +16,15 @@ class BacklogSidebarCell < Cell::Rails
   def filter(project)
     workers = project.workers.map { |x| [x.user.username, x.user.id] }
     assignees = workers.dup.unshift ["Unassigned", "-1"]
+    labels = project.labels.map { |x| [x.name, x.id] }
 
     @fields = [
       [:issue_type_id, IssueType.all.map { |x| [x.name, x.id] } ],
       [:issue_priority_id, IssuePriority.all.map { |x| [x.name, x.id] }],
       [:state, Issue.state_machine.states.map { |x| [I18n.t("states.#{x.name}"),  x.name] } ],
       [:assigned_to_id, assignees],
-        [:reported_by_id, workers]
+      [:reported_by_id, workers],
+      [:label, labels]
     ]
     render
   end

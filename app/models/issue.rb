@@ -35,6 +35,9 @@ class Issue < ActiveRecord::Base
 
   scope :sort_by_issue_type, lambda { |sord| joins(:issue_type).order("issue_types.name #{sord}") }
   scope :sort_by_issue_priority, lambda { |sord| includes(:issue_priority).order("issue_priorities.number #{sord}") }
+  scope :filter_by_label, lambda { |labels|
+    includes(:issue_labels).where(:issue_labels => { :label_id => labels })
+  }
 
   # Returns the issue number prefixed with the projecy key
   # to better identify issues.
