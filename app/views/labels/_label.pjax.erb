@@ -1,4 +1,4 @@
 <li class="<%= labelled?(label, issue) ? "selected" : "" %>">
 <label data-id="<%= label.id %>" data-present="<%= labelled_id(label, issue) %>" data-colour="<%= label.colour %>" style="background-color: <%= labelled?(label, issue) ? label.colour : "transparent" %>; color: <%= labelled?(label, issue) ? black_or_white(label.colour) : label.colour %>"><%= label.name %></label>
-  <%= link_to(image_tag("list_remove.png"), project_label_path(:project_id => @project.id, :id => label.id), :method => :delete, :remote => true, :confirm => "Are you sure you wish to delete this label?", :data => { :"confirm-title" => "Delete Label", :"confirm-proceed" => "Delete", :"confirm-proceed-class" => "btn-danger" }) %>
+  <%= link_to(content_tag(:i, "", :class => "icon-trash"), project_label_path(:project_id => @project.id, :id => label.id), :method => :delete, :remote => true, :confirm => "Are you sure you wish to delete this label?", :data => { :"confirm-title" => "Delete Label", :"confirm-proceed" => "Delete", :"confirm-proceed-class" => "btn-danger" }) %>
 </li>
