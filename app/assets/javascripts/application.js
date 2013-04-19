@@ -11,6 +11,7 @@
 //= require i18n
 //= require i18n/translations
 //= require mustache
+//= require spectrum
 //= require_tree ./support
 //= require_tree ./plugins
 //= require_tree ./extensions
@@ -29,4 +30,8 @@ $(function() {
 
   // support growable textareas
   $('textarea.growable').jtextarea();
+  $('input[data-type="colour"]').spectrum({
+    preferredFormat: "hex6",
+    showButtons: false
+  });
 });

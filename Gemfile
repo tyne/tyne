@@ -33,6 +33,7 @@ gem "state_machine"
 gem "acts_as_list"
 gem "google_visualr"
 gem 'twitter-bootstrap-rails-confirm', :git => 'https://github.com/bluerail/twitter-bootstrap-rails-confirm.git'
+gem 'spectrum-rails'
 
 # Tyne
 gem "best_in_place", :path => 'vendor/gems/best_in_place'

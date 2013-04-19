@@ -51,7 +51,7 @@
       <%= issue_label(Issue.human_attribute_name(:estimate), @issue.estimate) if @issue.estimate %>
 
       <% @issue.labels.each do |label| %>
-        <%= issue_label("", label.name) %>
+        <%= tag_for_label(label) %>
       <% end %>
     </p>
 

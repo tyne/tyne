@@ -20,16 +20,8 @@
         }
       }
 
-      &.selected {
-        label {
-          color: white;
-          background-color: #e1972f;
-        }
-      }
-
       label {
         padding-left: 3px;
-        font-weight: normal;
         color: #333;
         @include user-select(none);
         @include border-radius(4px);

@@ -27,7 +27,22 @@
     _this.$target.on("click", "label", function() {
       var label = $(this);
       var listItem =  label.closest("li");
+      var colour = label.data("colour");
+      var textColour = "#FFFFFF";
 
+      var red   = parseInt(colour.substr(1, 2), 16);
+      var green = parseInt(colour.substr(3, 2), 16);
+      var blue  = parseInt(colour.substr(5, 2), 16);
+
+      if (Luminance.isBright(red, green, blue)) {
+        textColour = "#000000";
+      }
+
+      if (listItem.is(".selected")) {
+        label.css("background-color", "").css("color", colour);
+      } else {
+        label.css("background-color", colour).css("color", textColour);
+      }
       listItem.toggleClass("selected");
     });
   };
