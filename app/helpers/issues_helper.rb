@@ -97,12 +97,14 @@ module IssuesHelper
     content_tag :span, value, :class => classes.join(' '), :title => title
   end
 
+  # Determines if a label is assigned to an issue
   def labelled?(label, issue)
     return false unless issue
 
     label.issues.include?(issue)
   end
 
+  # Returns the associated label identifier
   def labelled_id(label, issue)
     return unless issue
 
@@ -110,6 +112,7 @@ module IssuesHelper
     labelled.id if labelled
   end
 
+  # Renders a tag for a label.
   def tag_for_label(label)
     style = "background-color: #{label.colour}; color:#{black_or_white(label.colour)}"
     content_tag :span, label.name, :class => "tag", :title => label.name, :style => style

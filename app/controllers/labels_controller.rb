@@ -17,6 +17,7 @@ class LabelsController < ApplicationController
     end
   end
 
+  # Deletes a label for a project
   def destroy
     @label = @project.labels.find_by_id(params[:id])
 
