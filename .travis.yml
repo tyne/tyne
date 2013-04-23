@@ -11,8 +11,4 @@ before_install:
   - "cp config/database.yml.template config/database.yml"
 env:
   global:
-    - secure: "QTFjYT0NgWnrMTVzxJOPR1jXkF8gLZuv2vlz64L5zXIzgEr6sP6wfP3odMFs\nigVwVi4CHt6FiT5LXgp6O9SeTpv+rpQ4Fp+VaMB5WQb4enHt7KXcg/WxhkBb\nd/eFctRyew//6ASLh25tIy0JyabxlStNxm1Ke0xqSxZ8png4qj8="
-    - secure: "jJFtnrqe+r/ynhImy0b7km/P/8aAHS6RXEomjL5t04HYmSYI1W8YQKDntPUI\nU6SE/2DVX1HPhiKzJai6JqqxhNJENYwN5K+wDQTFOMlH+aCAEhfOHfzTnFXo\n3N8HT+GqMkBH/bqc6/8NH9zoywBddencWkwALvQQCV4BJ1NfeTg="
-    - secure: "BzaqsKowz/Ibai/GguzsgM0mF0DPzxXp98xTLU/uwTykzoPLG9/UG8blZi5D\nLgkGdILsRCJozSQGCjSpwgh+oTKTfTb9aQoNLzqCZuTFDHOCYTEHkLNdJo64\n86huqgri3NANZv9KJjbmrOqw80442YvhenbF4HULzu79vunPp+c="
-    - secure: "K6WnHikgCKv3fW8hLBFD1GsV//n3fikb4WbRDo9goO5402etreRWTgmrhCcj\n1UEPAX0PyuJ53W54lujKyM5VR2SRkvj0faLPLiKG8TGrQP/Rd9F8a9k1T3UE\n8UQeIwF90pnEgrTbjj21YoivU2RnbfHKrls+1I89j2Pe0okrrw8="
     - DISPLAY=:99.0
