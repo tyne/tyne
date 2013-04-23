@@ -1,8 +1,8 @@
-<% cache ["v9", "issue", 'edit', @issue] do %>
+<% cache ["v10", "issue", 'edit', @issue] do %>
   <div class="span6 offset3 well">
     <%= render :partial => 'form', :locals => { :issue => @issue, :url => issue_path(:user => @project.user.username, :key => @project.key, :id => @issue.number) } %>
   </div>
-  <div class="span2">
-    <%= render :partial => "labels/labels", :locals => { :issue => @issue } %>
-  </div>
 <% end %>
+<div class="span2">
+  <%= render :partial => "labels/labels", :locals => { :issue => @issue } %>
+</div>
