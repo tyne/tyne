@@ -1,0 +1,15 @@
+ui:
+  project: tyne
+  colour: "#ff0000"
+
+ux:
+  project: tyne
+  colour: "#0000ff"
+
+frontend:
+  project: tyne
+  colour: "#00ff00"
+
+backend:
+  project: tyne
+  colour: "#ffff00"

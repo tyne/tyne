@@ -14,6 +14,8 @@ class IssuesController < ApplicationController
   before_filter :load_issue, :only => [:workflow, :edit, :update, :show, :upvote, :downvote, :assign_to_me]
   before_filter :ensure_can_edit, :only => [:workflow, :edit, :update, :assign_to_me]
 
+  helper :labels
+
   # Displays the index view with the backlog.
   # The backlog can be sorted by passing a sorting parameter.
   def index

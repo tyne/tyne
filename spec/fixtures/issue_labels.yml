@@ -1,0 +1,15 @@
+one:
+  issue: foo
+  label: ui
+
+two:
+  issue: foo
+  label: ux
+
+three:
+  issue: bar
+  label: frontend
+
+four:
+  issue: baz
+  label: backend
