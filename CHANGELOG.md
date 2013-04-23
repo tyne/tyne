@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.7.4
+
+* Adds ability to add colourised labels to tickets
+
 ## v0.7.3
 
 * Adds ability to drag and drop issues on the agile board (which will perform a workflow transition)
