@@ -1,8 +1,8 @@
 Tyne::Application.configure do
   config.middleware.use ExceptionNotifier, :email => {
     :email_prefix => "[ERROR] ",
-    :sender_address => %{"Tyne" <notifications@tyne-tickets.org>},
-    :exception_recipients => %w{exceptions@tyne-tickets.org}
+    :sender_address => "notifications@tyne-tickets.org",
+    :exception_recipients => "exceptions@tyne-tickets.org"
   }
 
   # Settings specified here will take precedence over those in config/application.rb
