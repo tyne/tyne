@@ -11,7 +11,7 @@ class DashboardsController < ApplicationController
     @most_active_projects = Project.most_active(5)
     @audits = Audited::Adapters::ActiveRecord::Audit.unscoped.
       where(:associated_id => @accessible_projects.map { |x| x.id }, :associated_type => Project.name).
-      where("action is NOT 'update'").
+      where("action <> ?", "update").
       order("created_at DESC").
       limit(25)
   end
