@@ -1,11 +1,10 @@
 Tyne::Application.configure do
-  config.middleware.use ExceptionNotifier, :email => {
+  # Settings specified here will take precedence over those in config/application.rb
+  config.middleware.use ExceptionNotifier, {
     :email_prefix => "[ERROR] ",
     :sender_address => "notifications@tyne-tickets.org",
     :exception_recipients => "exceptions@tyne-tickets.org"
   }
-
-  # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
   config.cache_classes = true
