@@ -1,3 +1,4 @@
+# View helpers for labels
 module LabelsHelper
   # Determines if a label is assigned to an issue
   def labelled?(label, issue)
