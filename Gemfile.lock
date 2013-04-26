@@ -112,6 +112,8 @@ GEM
     diff-lcs (1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    exception_notification (3.0.1)
+      actionmailer (>= 3.0.4)
     excon (0.20.1)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -386,6 +388,7 @@ DEPENDENCIES
   compass-rails
   coveralls
   dalli
+  exception_notification
   factory_girl_rails
   foreman
   google_visualr
