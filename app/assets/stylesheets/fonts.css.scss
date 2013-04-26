@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'iconSweetsRegular';
+    src: font-url('iconsweets-webfont.eot');
+    src: font-url('iconsweets-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('iconsweets-webfont.woff') format('woff'),
+         font-url('iconsweets-webfont.ttf') format('truetype'),
+         font-url('iconsweets-webfont.svg#iconSweetsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+  color: #000000;
+}
+
+.mini-icon {
+  font-family: "iconSweetsRegular";
+  font-size: 16px;
+  width: 1.25em;
+  height: 16px;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+  color: #000000;
+  text-align: center;
+}
+
+.mini-icon-public:after {
+  content: "f";
+}

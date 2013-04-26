@@ -59,7 +59,7 @@ describe IssuesHelper do
       content.should have_selector "span.tag"
       content.should have_content date.to_date.to_s
 
-      issue.stub(:created_at).and_return(Date.today)
+      issue.stub(:created_at).and_return(DateTime.now)
       content = helper.issue_reported_at(issue)
       content.should have_content "Today"
     end

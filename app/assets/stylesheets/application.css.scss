@@ -3,5 +3,7 @@
  *= require bootstrap_and_overrides
  *= require mousetrap
  *= require spectrum
+ *= require fonts
+ *= require_tree ./plugins
  *= require compass_import
  */

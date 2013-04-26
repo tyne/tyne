@@ -1,12 +1,12 @@
 <div class="span3 dashboard-sidebar">
   <div class="well no-padding">
     <div class="top-bar">
-      <%= link_to t("misc.new_project"), new_project_path, :class => 'btn btn-inverse btn-small new-project' %>
-      <h2>My projects <em>(<%= @accessible_projects.count %>)</em></h2>
+      <h2>Your projects <em>(<%= @accessible_projects.count %>)</em></h2>
     </div>
     <ul class="nav nav-list">
       <%= render :partial => "project", :collection => @accessible_projects %>
     </ul>
+    <p class="description"><%= link_to "Create", new_project_path %> a new project.</p>
     <div class="top-bar">
       <h2>Most active projects</h2>
     </div>

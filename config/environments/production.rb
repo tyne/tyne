@@ -6,6 +6,8 @@ Tyne::Application.configure do
     :exception_recipients => "exceptions@tyne-tickets.org"
   }
 
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -54,7 +56,7 @@ Tyne::Application.configure do
   config.action_controller.asset_host = "https://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( .svg .eot .woff .ttf )
 
   # Disable delivery errors, bad email addresses will be ignored
   config.action_mailer.raise_delivery_errors = true

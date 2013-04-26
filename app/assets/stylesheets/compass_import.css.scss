@@ -1,23 +1,10 @@
-@import "compass";
+@import "compass/css3/border-radius";
+@import "compass/css3/images";
 @import "compass/css3/user-interface";
 
-@import "bootstrap_and_overrides";
-@import "mousetrap";
-
-@import "cells/loading_indicator";
-@import "cells/notification";
-@import "cells/pod";
-@import "cells/votes";
-
-@import "plugins/ui.daterangepicker";
-
-@import "widgets/core";
-@import "widgets/datepicker";
-@import "widgets/grid";
-@import "widgets/suggest";
+@import "cells/*";
 
 @import "activities";
-@import "best_in_place";
 @import "board";
 @import "comments";
 @import "dashboard";
@@ -27,7 +14,6 @@
 @import "issues";
 @import "labels";
 @import "layout";
-@import "modal";
 @import "pagination";
 @import "projects";
 @import "reports";
@@ -36,7 +22,6 @@
 @import "sorting";
 @import "sprints";
 @import "table";
-@import "tabs";
 @import "tags";
 @import "team_members";
 @import "users";

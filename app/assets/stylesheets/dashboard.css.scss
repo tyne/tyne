@@ -1,15 +1,30 @@
-@import "compass";
+.dashboard-sidebar {
+  p.description {
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+    margin: 0;
+    background-color: #ffffe0;
+  }
+
+  .issue-count {
+    position: relative;
+    float: right;
+  }
+}
 
 .top-bar {
-  border-bottom: 1px solid #DDD;
-  @include background-image(linear-gradient(#EEE, #FFF));
-  padding: 10px;
+  @include background-image(linear-gradient(#fafafa, #eaeaea));
+  border-top: 1px solid #ddd;
+  padding: 5px 5px 5px 10px;
+
+  &:first-child { border-top: none; }
 
   h2 {
     margin: 0px;
     padding: 5px;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 14px;
     display: inline;
     color: #555;
 
@@ -17,25 +32,22 @@
       color: #aaa;
     }
   }
-
-  .new-project {
-    float: right;
-    margin: 0px 10px;
-  }
 }
 
 ul.nav-list {
   padding: 0;
   li {
-    border-bottom: 1px dashed #ddd;
-
-    &:last-child { border-bottom: none; }
+    border-top: 1px solid #ddd;
 
     a {
       padding: 0;
       margin: 0;
       display: block;
       padding: 5px 15px;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
     }
   }
 }

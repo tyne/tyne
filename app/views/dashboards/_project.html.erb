@@ -1,3 +1,9 @@
-<% cache ["v2", "dashboard", project] do %>
-  <li><%= link_to project.name, main_app.backlog_path(:user => project.user.username, :key => project.key) %></li>
+<% cache ["v3", "dashboard", project] do %>
+  <li>
+    <a href="<%= backlog_path(:user => project.user.username, :key => project.key) %>">
+      <%= project_icon(project) %>
+      <%= project.name %>
+      <%= issue_number(project) %>
+    </a>
+  </li>
 <% end %>

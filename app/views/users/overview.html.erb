@@ -18,7 +18,7 @@
         <% @projects.order("name").each do |project| %>
           <tr>
             <td>
-              <%= link_to(project.name, main_app.backlog_path(:user => @user.username, :key => project.key)) %>
+              <%= link_to(project.name, backlog_path(:user => @user.username, :key => project.key)) %>
               <%= content_tag :p, project.description, :class => :description if project.description %>
             </td>
             <td class="td-last">

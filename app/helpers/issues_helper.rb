@@ -34,7 +34,7 @@ module IssuesHelper
   # Displays a label with the date when the issue has been reported
   def issue_reported_at(issue)
     date = issue.created_at.to_date
-    content = if date.today?
+    content = if date == Date.today
                 t("labels.today")
               else
                 date
