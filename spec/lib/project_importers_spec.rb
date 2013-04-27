@@ -8,13 +8,16 @@ describe ProjectImporters do
   let(:user) { users(:tobscher) }
 
   before :each do
-    ProjectImporters.registered_importers.clear
+    if ProjectImporters.registered_importers.include?(:foo)
+      ProjectImporters.registered_importers.delete(:foo)
+    end
   end
 
   describe :register do
     it "registers an importer with the given name" do
-      ProjectImporters.register(:foo, TestImporter)
-      ProjectImporters.registered_importers.should have(1).item
+      expect do
+        ProjectImporters.register(:foo, TestImporter)
+      end.to change(ProjectImporters.registered_importers, :length).by(1)
     end
   end
 
