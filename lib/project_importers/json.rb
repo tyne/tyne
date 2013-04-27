@@ -27,7 +27,7 @@ module ProjectImporters
     #    }
     def import(*args)
       options = args.extract_options!
-      @data = Hashie::Mash.new(::JSON.parse(options[:data]))
+      @data = Hashie::Mash.new(::JSON.parse(options[:data][:json]))
 
       create_project
     end

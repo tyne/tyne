@@ -7,6 +7,12 @@ Tyne::Application.routes.draw do
   delete "/logout", :action => "destroy", :as => :logout, :controller => "sessions"
   get "/logout", :action => "destroy", :as => :logout, :controller => "sessions"
 
+  controller "imports" do
+    get '/import', :action => 'index', :as => :import
+    get '/import/:provider', :action => 'provider', :as => :provider_import
+    post '/import/:provider', :action => 'perform', :as => :perform_import
+  end
+
   resources :projects do
     resources :labels, :only => [:create, :destroy]
   end

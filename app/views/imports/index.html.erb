@@ -1,0 +1,13 @@
+<div class="span6 offset3 well">
+  <h1>Import Assistant</h1>
+  <p class="lead">
+  Please select one of the following import providers to import projects from a different
+  system into Tyne.
+  </p>
+
+  <ul>
+    <% @importers.each do |key, value| %>
+      <li><%= link_to key.to_s, provider_import_path(:provider => key) %></li>
+    <% end %>
+  <ul>
+</div>

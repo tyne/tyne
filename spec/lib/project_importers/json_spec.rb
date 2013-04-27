@@ -32,7 +32,7 @@ describe ProjectImporters::JSON do
 
     it "creates a new project" do
       expect do
-        subject.import(:data => data.to_json)
+        subject.import(:data => { :json => data.to_json })
       end.to change(Project, :count).by(1)
 
       p = Project.last
@@ -42,7 +42,7 @@ describe ProjectImporters::JSON do
 
     it "creates an issue for each entry in the list" do
       expect do
-        subject.import(:data => data.to_json)
+        subject.import(:data => { :json => data.to_json })
       end.to change(Issue, :count).by(3)
 
       Issue.last.summary.should == "Imp3"

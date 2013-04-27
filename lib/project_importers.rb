@@ -14,7 +14,7 @@ module ProjectImporters
   # Returns the collection of registered importers
   # @return [ProjectImporters::Base]
   def self.registered_importers
-    @@registered_importers ||= {}
+    @registered_importers ||= {}
   end
 
   # Creates a new instance of importer with the given key
@@ -27,5 +27,5 @@ module ProjectImporters
     registered_importers[key].new(importer)
   end
 
-  autoload :JSON, "project_importers/json"
+  require "project_importers/json"
 end

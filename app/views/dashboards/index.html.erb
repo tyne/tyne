@@ -6,7 +6,7 @@
     <ul class="nav nav-list">
       <%= render :partial => "project", :collection => @accessible_projects %>
     </ul>
-    <p class="description"><%= link_to "Create", new_project_path %> a new project.</p>
+    <p class="description"><%= link_to "Create", new_project_path %> or <%= link_to "import", import_path %> a new project.</p>
     <div class="top-bar">
       <h2>Most active projects</h2>
     </div>
