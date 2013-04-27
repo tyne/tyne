@@ -29,8 +29,10 @@ module ProjectImporters
       options = args.extract_options!
       @data = Hashie::Mash.new(::JSON.parse(options[:data][:json]))
 
-      create_project
-    end
+      ActiveRecord::Base.transaction do
+        create_project
+      end
+    rescue; end
 
     private
     def create_project
@@ -44,6 +46,8 @@ module ProjectImporters
     end
 
     def create_issues(project)
+      return unless data.project.issues
+
       data.project.issues.each do |value|
         project.issues.create! do |issue|
           issue.summary = value.summary

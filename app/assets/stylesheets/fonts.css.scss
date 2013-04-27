@@ -9,6 +9,8 @@
     font-style: normal;
 }
 
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
 .icon {
   color: #000000;
 }
@@ -27,4 +29,8 @@
 
 .mini-icon-public:after {
   content: "f";
+}
+
+.mono {
+  font-family: 'Inconsolata', sans-serif;
 }

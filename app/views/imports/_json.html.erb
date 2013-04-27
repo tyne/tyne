@@ -2,7 +2,7 @@
   <h1>Import Assistant</h1>
   <p class="lead">Import your data from JSON:</p>
   <%= simple_form_for :data, :url => perform_import_path do |f| %>
-    <%= f.input :json, :as => :text %>
+    <%= f.input :json, :as => :text, :input_html => {:class => 'growable mono'}  %>
     <%= f.button :submit, :value => "Import", :class => "btn" %>
   <% end %>
 </div>
