@@ -2,7 +2,7 @@
   <li>
     <a href="<%= backlog_path(:user => project.user.username, :key => project.key) %>">
       <%= project_icon(project) %>
-      <%= project.name %>
+      <%= project.full_name %>
       <%= issue_number(project) %>
     </a>
   </li>
