@@ -1,0 +1,5 @@
+en:
+  importers:
+    json:
+      display_name: "JSON"
+      description: "JSON, or JavaScript Object Notation, is a text-based open standard designed for human-readable data interchange."

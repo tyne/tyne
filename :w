@@ -1,4 +1,4 @@
-<div class="span8 offset2 well">
+<div class="span8 offset3 well">
   <div class="importers">
     <h1>Import Assistant</h1>
     <p class="lead">
@@ -11,7 +11,7 @@
         <li>
           <h2><%= t("importers.#{key}.display_name") %></h2>
           <p><%= t("importers.#{key}.description") %></p>
-          <%= link_to "Import from #{I18n.t("importers.#{key}.display_name")}", provider_import_path(:provider => key) %>
+          <%= link_to "Import from #{I18n.t("importers.#{key}")}.display_name", provider_import_path(:provider => key) %>
         </li>
       <% end %>
       <ul>

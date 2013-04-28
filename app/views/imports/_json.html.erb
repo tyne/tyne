@@ -1,6 +1,24 @@
 <div class="span6 offset3 well">
   <h1>Import Assistant</h1>
   <p class="lead">Import your data from JSON:</p>
+  <pre>
+{
+  "project" : {
+      "key" : "IMP",
+      "name" : "Import",
+      "issues" : [ {
+            "description" : "Imported 1",
+            "summary" : "Imp1"
+          },
+          { "description" : "Imported 2",
+            "summary" : "Imp2"
+          },
+          { "description" : "Imported 3",
+            "summary" : "Imp3"
+          }
+        ]
+    }
+}</pre>
   <%= simple_form_for :data, :url => perform_import_path do |f| %>
     <%= f.input :json, :as => :text, :input_html => {:class => 'growable mono'}  %>
     <%= f.button :submit, :value => "Import", :class => "btn" %>

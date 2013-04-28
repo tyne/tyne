@@ -1,0 +1,30 @@
+.importers {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      width: 50%;
+      float: left;
+      display: block;
+
+      h2 {
+        color: #444;
+        font-size: 20px;
+        border-bottom: 1px solid #444;
+        width: 70%;
+      }
+
+      p {
+        color: #777;
+        width: 70%;
+        min-height: 40px;
+      }
+    }
+  }
+
+  br {
+    clear: left;
+  }
+}
