@@ -2,16 +2,14 @@ FactoryGirl.define do
   factory :user do
     name "Test"
     username "test"
-    uid 123456
-    token "foo"
+    email "foo@bar.com"
     gravatar_id "foo"
   end
 
   factory :bob, :class => "User" do
     name "Bob"
     username "bob"
-    uid 1337
-    token "bob"
+    email "bar@baz.com"
     gravatar_id "bob"
   end
 end

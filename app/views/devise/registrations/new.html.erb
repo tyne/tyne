@@ -1,13 +1,12 @@
 <div class="span6 offset3 well">
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true) do |f| %>
   <%= f.error_notification %>
 
-  <%= f.input :username, :required => true, :autofocus => true %>
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
+  <%= f.input :username, :required => true, :autofocus => true, :label => false, :placeholder => "Pick a username" %>
+  <%= f.input :email, :required => true, :label => false, :placeholder => "Your E-Mail" %>
+  <%= f.input :password, :required => true, :label => false, :placeholder => "Create a password" %>
 
   <%= f.button :submit, "Sign up for free", :class => "btn btn-success" %>
 <% end %>

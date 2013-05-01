@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :username, :gravatar_id, :notification_email, :login
 
+  validates :username, :presence => true, :uniqueness => true
+
   attr_accessor :login
 
   has_many :organization_memberships
