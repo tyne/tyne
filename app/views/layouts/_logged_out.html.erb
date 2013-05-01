@@ -1,5 +1,5 @@
 <%= render :partial => 'layouts/menu' %>
 
 <div class="pull-right">
-  <%= link_to "Sign in", login_path(:redirect_url => request.path), :class=> "btn btn-small sign-in"  %>
+  <%= link_to "Sign in", new_user_session_path, :class=> "btn btn-small sign-in"  %>
 </div>

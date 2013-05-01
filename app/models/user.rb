@@ -1,7 +1,17 @@
 # Represents an user
 class User < ActiveRecord::Base
-  validates :name, :uid, :token, :presence => true
-  attr_accessible :name, :username, :uid, :email, :token, :gravatar_id, :notification_email
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :authentication_keys => [:login]
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :username, :gravatar_id, :notification_email, :login
+
+  attr_accessor :login
 
   has_many :organization_memberships
   has_many :organizations, :through => :organization_memberships
@@ -16,11 +26,13 @@ class User < ActiveRecord::Base
 
   after_initialize :set_defaults
 
-  # Returns a Github API wrapper.
-  #
-  # @return Octokit::Client
-  def github_client
-    Octokit::Client.new(:login => username, :oauth_token => token)
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
   end
 
   # Returns the first dashboard in the list.

@@ -1,0 +1,16 @@
+<div class="span6 offset3 well">
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :username, :required => true, :autofocus => true %>
+  <%= f.input :email, :required => true %>
+  <%= f.input :password, :required => true %>
+  <%= f.input :password_confirmation, :required => true %>
+
+  <%= f.button :submit, "Sign up for free", :class => "btn btn-success" %>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

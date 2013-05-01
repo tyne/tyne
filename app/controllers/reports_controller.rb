@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
 
   before_filter :load_user
   before_filter :load_project
-  before_filter :require_login
+  before_filter :authenticate_user!
   before_filter :ensure_can_collaborate
   before_filter :add_report_breadcrumb
 

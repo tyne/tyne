@@ -51,12 +51,12 @@ gem 'thin'
 # Assets
 gem "asset_sync"
 
-gem "omniauth"
-gem "omniauth-github"
 gem "octokit"
 gem "rvm-capistrano"
 gem "sidekiq"
 gem "foreman"
+gem "hashie"
+gem "devise"
 
 group :production do
  gem 'pg'

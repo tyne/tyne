@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   before_filter :load_user
   before_filter :load_project
-  before_filter :require_login
+  before_filter :authenticate_user!
 
   # Creates a new comment for an issue
   def create

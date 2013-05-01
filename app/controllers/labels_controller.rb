@@ -4,7 +4,7 @@ class LabelsController < ApplicationController
   respond_to :html, :json
 
   before_filter :load_label_project
-  before_filter :require_login
+  before_filter :authenticate_user!
   before_filter :ensure_can_collaborate
 
   # Creates a new label for a project

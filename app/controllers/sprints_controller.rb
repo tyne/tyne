@@ -5,7 +5,7 @@ class SprintsController < AdminController
 
   before_filter :load_user
   before_filter :load_project
-  before_filter :require_login, :except => [:current]
+  before_filter :authenticate_user!, :except => [:current]
   before_filter :ensure_can_collaborate, :except => [:current]
 
   helper :issues
