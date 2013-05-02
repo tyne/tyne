@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Issue do
   it { should have_many :labels }
 
-  let(:user) { User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo") }
+  let(:user) { User.create!(:username => "Foo", :email => "foo@foo.com", :password => "foofoofoo") }
   let(:project) { user.projects.create!(:key => "Foo", :name => "Foo") }
   let(:issue) { create(:issue, :project => project) }
 
@@ -96,7 +96,7 @@ describe Issue do
 
   describe :custom_validation do
     it "should not allow to assign users which are not in any of teams" do
-      bob = User.create!(:name => "Bob", :uid => "B", :token => "Bob")
+      bob = User.create!(:username => "Bob", :email => "b@b.com", :password => "Bobbobbob")
 
       expect do
         project.issues.create!(:summary => "Foo", :assigned_to_id => bob.id, :issue_type_id => 1)
@@ -133,12 +133,6 @@ describe Issue do
         activity = sprint.activities.last
         activity.scope_change.should == issue.estimate
       end
-    end
-  end
-
-  describe :github_client do
-    it "should return an instance of octokit" do
-      user.github_client.should be_a Octokit::Client
     end
   end
 end

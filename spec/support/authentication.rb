@@ -12,22 +12,17 @@ module ControllerHelpers
 end
 
 shared_context 'authenticated' do
-  before :each do
-    @nickname = 'test'
-
-    OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
-          :provider => 'github',
-          :uid => '123545',
-          :info => { 'name' => 'test', :email => 'me@example.com', :nickname => @nickname },
-          :credentials => { 'token' => '123456' },
-          :extra => { 'raw_info' => { 'gravatar_id' => '123456' } }
-    })
-  end
-
   def login
+    @nickname = "Foo"
+
     visit root_path
-    click_link 'Sign in with Github'
+    click_link 'Sign up'
+
+    fill_in "user_username", :with => @nickname
+    fill_in "user_email", :with => "foo@bar.com"
+    fill_in "user_password", :with => "FooBarBaz"
+
+    click_button "Sign up for free"
   end
 
   def logout

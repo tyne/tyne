@@ -111,8 +111,8 @@ describe IssuesHelper do
 
   describe :users_to_assign do
     it "should return all workers of a project" do
-      user = User.create!(:name => "Foo", :uid => "F", :token => "Foo")
-      bob = User.create!(:name => "Bob", :uid => "B", :token => "Bob")
+      user = User.create!(:username => "Foo", :email => "f@f.com", :password => "FooFooFoo")
+      bob = User.create!(:username => "Bob", :email => "b@b.com", :password => "BobBobBob")
       project = user.projects.create!(:key => "FOO", :name => "Foo")
       issue = project.issues.build
 

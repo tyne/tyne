@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe VotesCell do
-  let(:user) { User.create!(:name => 'Foo', :username => 'Foo', :uid => 'foo', :token => 'foo') }
+  let(:user) { User.create!(:username => 'Foo', :email => 'foo@foo.com', :password => 'foofoofoo') }
   let(:project) { user.projects.create!(:key => 'Foo', :name => 'Foo') }
   let(:issue) { Issue.create!(:summary => 'Foo', :project_id => project.id, :issue_type_id => 1) }
 

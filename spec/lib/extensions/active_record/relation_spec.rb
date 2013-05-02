@@ -17,7 +17,7 @@ describe ActiveRecord::Relation do
     end
 
     context :not_empty do
-      let(:user) { User.create!(:name => "Foo", :uid => 1337, :token => "Secure") }
+      let(:user) { User.create!(:username => "Foo", :email => "f@f.com", :password => "foofoofoo") }
 
       before :each do
         user.projects.create!(:key => "FOO", :name => "Foo")

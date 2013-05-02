@@ -4,6 +4,7 @@ FactoryGirl.define do
     username "test"
     email "foo@bar.com"
     gravatar_id "foo"
+    password "foofoofoo"
   end
 
   factory :bob, :class => "User" do
@@ -11,5 +12,6 @@ FactoryGirl.define do
     username "bob"
     email "bar@baz.com"
     gravatar_id "bob"
+    password "foofoofoo"
   end
 end

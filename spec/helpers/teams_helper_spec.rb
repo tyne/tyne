@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe TeamsHelper do
   before :each do
-    @john = User.create!(:name => "John", :username => "John", :uid => "j", :token => "foo")
-    @bob = User.create!(:name => "Bob", :username => "Bob", :uid => "b", :token => "foo")
-    @sally = User.create!(:name => "Sally", :username => "Sally", :uid => "s", :token => "foo")
+    @john = User.create!(:name => "John", :username => "John", :email => "j@j.com", :password => "foofoofoo")
+    @bob = User.create!(:name => "Bob", :username => "Bob", :email => "b@b.com", :password => "foofoofoo")
+    @sally = User.create!(:name => "Sally", :username => "Sally", :email => "s@s.com", :password => "foofoofoo")
 
     @project = @john.projects.create!(:key => "F", :name => "Foo")
   end
