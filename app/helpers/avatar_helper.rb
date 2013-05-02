@@ -7,8 +7,6 @@ module AvatarHelper
   def avatar_url(user, options={})
     default_url = "retro"
 
-    return default_url unless user.gravatar_id
-
     "http://gravatar.com/avatar/#{user.gravatar_id}.png?s=#{options[:width]}&d=#{CGI.escape(default_url)}"
   end
 

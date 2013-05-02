@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :lockable,
          :authentication_keys => [:login]
 
   # Setup accessible (or protected) attributes for your model
@@ -14,6 +15,8 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
 
   attr_accessor :login
+
+  before_save :set_gravatar_id
 
   has_many :organization_memberships
   has_many :organizations, :through => :organization_memberships
@@ -45,8 +48,12 @@ class User < ActiveRecord::Base
     dashboards.first
   end
 
+  private
   def set_defaults
     self.dashboards.build(:name => "Default")
   end
-  private :set_defaults
+
+  def set_gravatar_id
+    self.gravatar_id = Digest::MD5.hexdigest(self.email).to_s
+  end
 end
