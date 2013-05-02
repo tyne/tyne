@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
 
   after_initialize :set_defaults
 
+  # Overrides authentication method to enabled login via Username or E-Mail.
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)

@@ -6,10 +6,10 @@ describe ProjectsController do
   context :not_logged_in do
     it "should not allow any actions" do
       post :create
-      response.should redirect_to login_path(:redirect_url => projects_path)
+      response.should redirect_to new_user_session_path
 
       delete :destroy, :id => 1
-      response.should redirect_to login_path(:redirect_url => projects_path)
+      response.should redirect_to new_user_session_path
     end
   end
 
@@ -18,7 +18,7 @@ describe ProjectsController do
     let(:project) { projects(:bluffr) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -39,7 +39,7 @@ describe ProjectsController do
     let(:user) { users(:tobscher) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :new do

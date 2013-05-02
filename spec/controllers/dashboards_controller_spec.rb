@@ -4,7 +4,7 @@ describe DashboardsController do
   context :not_logged_in do
     it "should not allow any actions" do
       get :index
-      response.should redirect_to login_path(:redirect_url => dashboards_path)
+      response.should redirect_to new_user_session_path
     end
   end
 
@@ -12,7 +12,7 @@ describe DashboardsController do
     let(:user) { users(:tobscher) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
 

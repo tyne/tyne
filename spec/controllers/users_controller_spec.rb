@@ -4,7 +4,7 @@ describe UsersController do
   let(:user) { users(:tobscher) }
 
   before :each do
-    controller.stub(:current_user).and_return(user)
+    sign_in user
   end
 
   describe :overview do

@@ -6,7 +6,7 @@ describe LabelsController do
     let(:project) { projects(:bluffr) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -25,7 +25,7 @@ describe LabelsController do
     let(:project) { projects(:tyne) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :create do

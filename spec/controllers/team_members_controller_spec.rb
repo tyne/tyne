@@ -8,7 +8,7 @@ describe TeamMembersController do
     let(:project) { projects(:bluffr) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -31,15 +31,15 @@ describe TeamMembersController do
 
   context :logged_in do
     let!(:user) do
-      User.create!(:name => "Foo", :username => "Foo", :uid => "foo", :token => "foo")
+      User.create!(:name => "Foo", :username => "Foo", :email => "me@example.com", :password => "foofoofoo")
     end
     let!(:bob) do
-      User.create!(:name => "Bob", :username => "Bob", :uid => "bob", :token => "bob")
+      User.create!(:name => "Bob", :username => "Bob", :email => "me2@example.com", :password => "bobbobbob")
     end
     let(:project) { user.projects.create!(:key => "FOO", :name => "Foo") }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :create do

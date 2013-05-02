@@ -7,7 +7,7 @@ describe CommentsController do
     let(:issue) { issues(:qux) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -27,7 +27,7 @@ describe CommentsController do
     its (:is_admin_area?) { should be_false }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :create do

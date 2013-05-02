@@ -8,7 +8,7 @@ describe TeamsController do
     let(:project) { projects(:bluffr) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -34,7 +34,7 @@ describe TeamsController do
     let(:project) { projects(:tyne) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :index do
@@ -49,7 +49,7 @@ describe TeamsController do
 
     describe :suggest_user do
       before :each do
-        User.create!(:name => "Bar", :username => "Bar", :uid => "bar", :token => "bar")
+        User.create!(:name => "Bar", :username => "Bar", :email => "me@example.com", :password => "barbarbar")
         controller.stub(:require_owner)
         get :suggest_user, :user => user.username, :key => project.key, :id => project.teams.first.id, :term => "Ba", :format => :json
       end

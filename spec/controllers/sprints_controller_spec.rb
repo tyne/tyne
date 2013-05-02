@@ -6,7 +6,7 @@ describe SprintsController do
     let(:project) { projects(:bluffr) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -45,7 +45,7 @@ describe SprintsController do
     let(:sprint) { sprints(:alpha) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :index do

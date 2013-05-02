@@ -7,7 +7,7 @@ describe IssuesController do
     let(:issue) { issues(:qux) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :privacy do
@@ -54,7 +54,7 @@ describe IssuesController do
     let(:issue) { issues(:foo) }
 
     before :each do
-      controller.stub(:current_user).and_return(user)
+      sign_in user
     end
 
     describe :index do
