@@ -24,3 +24,11 @@ en:
       index: "%{user}/%{key} - Reports"
       issue_type_ratio: "%{user}/%{key} - Issue Type Ratio"
       burn_down: "%{user}/%{key} - Burn Down"
+    registrations:
+      new:  "Sign Up"
+    passwords:
+      new: "Forgot Password?"
+    confirmations:
+      new: "Resent confirmation instructions"
+    unlocks:
+      new: "Resent unlock instructions"
