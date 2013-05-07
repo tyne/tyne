@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.7.5
+
+* Fixes a problem where user with a blank name in GitHub could not
+sign up
+
 ## v0.7.4
 
 * Adds ability to add colourised labels to tickets
