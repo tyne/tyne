@@ -35,6 +35,8 @@ gem "google_visualr"
 gem 'twitter-bootstrap-rails-confirm', :git => 'https://github.com/bluerail/twitter-bootstrap-rails-confirm.git'
 gem 'spectrum-rails'
 gem 'exception_notification'
+gem "omniauth"
+gem "omniauth-github"
 
 # Tyne
 gem "best_in_place", :path => 'vendor/gems/best_in_place'

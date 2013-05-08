@@ -9,5 +9,7 @@
   <%= f.button :submit, "Sign in", :class => "btn" %>
 <% end %>
 
+or <%= link_to "Sign in with GitHub", user_omniauth_authorize_path(:github) %>
+
 <%= render "devise/shared/links" %>
 </div>

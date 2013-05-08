@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable,
+         :omniauthable, :omniauth_providers => [:github],
          :authentication_keys => [:login]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :name, :username, :gravatar_id, :notification_email, :login
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :uid, :provider,
+                  :name, :username, :gravatar_id, :notification_email, :login
 
   validates :username, :presence => true, :uniqueness => true
 
@@ -39,6 +40,11 @@ class User < ActiveRecord::Base
     else
       where(conditions).first
     end
+  end
+
+  def self.find_for_github_oauth(auth, signed_in_resource=nil)
+    processor = AuthProcessor.new(auth)
+    processor.find_or_create_user
   end
 
   # Returns the first dashboard in the list.

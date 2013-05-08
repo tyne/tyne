@@ -11,7 +11,7 @@ class AuthProcessor
   #
   # @return TyneAuth::User
   def find_or_create_user
-    unless user = User.find_by_uid(uid)
+    unless user = User.where(:provider => credentials.provider, :uid => credentials.uid).first
       user = User.create! do |user|
         user.uid = uid
         user.name = name_or_nickname
@@ -19,6 +19,9 @@ class AuthProcessor
         user.email = email
         user.token = token
         user.gravatar_id = gravatar_id
+        user.provider = provider
+        user.notification_email = email
+        user.password = Devise.friendly_token[0,20]
       end
     end
     user
@@ -27,26 +30,30 @@ class AuthProcessor
   private
 
   def uid
-    credentials["uid"]
+    credentials.uid
+  end
+
+  def provider
+    credentials.provider
   end
 
   def name_or_nickname
-    credentials["info"]["name"] || nickname
+    credentials.info.name || nickname
   end
 
   def nickname
-    credentials["info"]["nickname"]
+    credentials.info.nickname
   end
 
   def email
-    credentials["info"]["email"]
+    credentials.info.email
   end
 
   def gravatar_id
-    credentials["extra"]["raw_info"]["gravatar_id"]
+    credentials.extra.raw_info.gravatar_id
   end
 
   def token
-    credentials["credentials"]["token"]
+    credentials.credentials.token
   end
 end
