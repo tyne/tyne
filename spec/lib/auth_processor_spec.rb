@@ -2,8 +2,9 @@ require 'spec_helper'
 
 describe AuthProcessor do
   let(:auth_details) do
-    {
+    OmniAuth::AuthHash.new({
       'uid' => "1",
+      'provider' => "github",
       'info' => {
         'name' => "Foo",
         'nickname' => "Bar",
@@ -17,14 +18,14 @@ describe AuthProcessor do
             'gravatar_id' => "1"
           }
       }
-    }
+    })
   end
   subject { described_class.new(auth_details) }
 
   describe :find_or_create_user do
     context "when user exists" do
       before :each do
-        User.stub(:find_by_uid).and_return(:foo)
+        User.stub(:find_by_provider_and_uid).and_return(:foo)
       end
 
       it "should return the existing user" do

@@ -11,7 +11,7 @@ class AuthProcessor
   #
   # @return TyneAuth::User
   def find_or_create_user
-    unless user = User.where(:provider => credentials.provider, :uid => credentials.uid).first
+    unless user = User.find_by_provider_and_uid(credentials.provider, credentials.uid)
       user = User.create! do |user|
         user.uid = uid
         user.name = name_or_nickname
