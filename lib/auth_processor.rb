@@ -38,7 +38,11 @@ class AuthProcessor
   end
 
   def name_or_nickname
-    credentials.info.name || nickname
+    if credentials.info.name.present?
+      credentials.info.name
+    else
+      nickname
+    end
   end
 
   def nickname

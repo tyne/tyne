@@ -27,14 +27,7 @@ Run the following command to install all the dependencies:
 bundle install
 ```
 
-### Database configuration
-
-Copy `config/database.yml.template` to `config/database.yml` and
-enter your database details.
-
-Run the following command: ```bundle exec rake db:setup```
-
-### Additional configuration (e.g. OmniAuth, SMTP server)
+### Application configuration (e.g. OmniAuth, SMTP server)
 
 Copy `config/tyne.yml.template` to `config/tyne.yml` and
 enter the required details.
@@ -46,6 +39,13 @@ Name: Tyne (localhost)
 URL: http://localhost:3000
 Callback URL: http://localhost:3000/auth/github/callback
 ```
+
+### Database configuration
+
+Copy `config/database.yml.template` to `config/database.yml` and
+enter your database details.
+
+Run the following command: ```bundle exec rake db:setup```
 
 ### Start the server
 

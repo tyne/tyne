@@ -20,6 +20,7 @@ describe AuthProcessor do
       }
     })
   end
+
   subject { described_class.new(auth_details) }
 
   describe :find_or_create_user do
@@ -29,7 +30,6 @@ describe AuthProcessor do
       end
 
       it "should return the existing user" do
-
         subject.find_or_create_user.should == :foo
       end
     end
@@ -58,6 +58,12 @@ describe AuthProcessor do
 
       it "should default the name to the nickname if not given in the auth details" do
         auth_details['info'].delete('name')
+        new_user = subject.find_or_create_user
+        new_user.name.should == "Bar"
+      end
+
+      it "does fallback the name to the nickname if empty" do
+        auth_details['info']['name'] = ""
         new_user = subject.find_or_create_user
         new_user.name.should == "Bar"
       end

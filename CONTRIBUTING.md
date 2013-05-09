@@ -2,7 +2,7 @@
 
 ## Submitting a new issue
 
-If you need to submit a new issue please go to: http://www.tyne-tickets.org/Tobscher/TYNE/issues/new
+If you need to submit a new issue please go to: http://app.tyne-tickets.org/Tobscher/TYNE/issues/new
 
 ## Merging requests
 
