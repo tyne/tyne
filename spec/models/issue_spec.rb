@@ -100,11 +100,11 @@ describe Issue do
 
       expect do
         project.issues.create!(:summary => "Foo", :assigned_to_id => bob.id, :issue_type_id => 1)
-      end.to raise_error ActiveRecord::RecordInvalid
+      end.to raise_error
 
       expect do
         project.issues.create!(:summary => "Foo", :assigned_to_id => user.id, :issue_type_id => 1)
-      end.to_not raise_error ActiveRecord::RecordInvalid
+      end.to_not raise_error
     end
   end
 
