@@ -1,4 +1,4 @@
-source 'https://api.rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 
@@ -20,7 +20,7 @@ gem "jquery-rails", '~> 2.2.0'
 gem 'jquery-cookie-rails'
 
 gem "simple_form"
-gem 'client_side_validations', :git => "https://github.com/bcardarella/client_side_validations.git", :branch => "3-2-stable"
+gem 'client_side_validations', :git => "https://www.github.com/bcardarella/client_side_validations.git", :branch => "3-2-stable"
 gem 'client_side_validations-simple_form'
 gem "mousetrap-rails"
 gem "redcarpet"
@@ -32,12 +32,12 @@ gem "responders"
 gem "state_machine"
 gem "acts_as_list"
 gem "google_visualr"
-gem 'twitter-bootstrap-rails-confirm', :git => 'https://github.com/bluerail/twitter-bootstrap-rails-confirm.git'
+gem 'twitter-bootstrap-rails-confirm', :git => 'https://www.github.com/bluerail/twitter-bootstrap-rails-confirm.git'
 gem 'spectrum-rails'
 gem 'exception_notification'
 
 # Tyne
-gem "best_in_place", :path => 'vendor/gems/best_in_place'
+gem "best_in_place"
 
 gem 'modernizr-rails'
 gem 'twitter-bootstrap-rails'
