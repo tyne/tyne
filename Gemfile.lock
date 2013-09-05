@@ -1,18 +1,18 @@
 GIT
-  remote: git@github.com:bcardarella/client_side_validations.git
+  remote: https://www.github.com/bcardarella/client_side_validations.git
   revision: 56bdafa7502e3aba899a9ce56784392e3d8b0566
   branch: 3-2-stable
   specs:
     client_side_validations (3.2.6)
 
 GIT
-  remote: git@github.com:bluerail/twitter-bootstrap-rails-confirm.git
+  remote: https://www.github.com/bluerail/twitter-bootstrap-rails-confirm.git
   revision: ac91f3ff9bc0232f0cfb6f6c1f771ae829a56e8c
   specs:
     twitter-bootstrap-rails-confirm (1.0.1)
 
 GEM
-  remote: https://api.rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.14)
       actionpack (= 3.2.14)
