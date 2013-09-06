@@ -108,7 +108,7 @@ describe SprintsController do
         it "should not delete the sprint" do
           expect do
             project.sprints.find(sprint.id)
-          end.to_not raise_error(ActiveRecord::RecordNotFound)
+          end.to_not raise_error()
           response.should_not be_success
         end
       end
