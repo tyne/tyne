@@ -16,8 +16,6 @@ Tyne is a webbased issue tracking application with the following features:
 * Charts (Burn Down Chart, etc.)
 * E-Mail notifications
 
-Do you want to check the current status of the project? We have deployed a demo to http://www.tyne-tickets.org
-
 ## Installation
 
 ### Gem dependencies
